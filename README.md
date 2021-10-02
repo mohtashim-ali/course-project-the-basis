@@ -1,4 +1,4 @@
-## The Basis
+## Project Title Here
 
 This is a standard README.md file for you to replace. You'll want to include your own content here!
 
@@ -7,4 +7,4 @@ these look very much like .txt files, so you can write them in a very similar wa
 
 ### Introduction
 
-Place text here
+Body text here
