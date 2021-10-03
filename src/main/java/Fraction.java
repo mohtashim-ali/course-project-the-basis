@@ -72,9 +72,10 @@ class Fraction extends Number {
         return new Fraction(new IntegerValue((top_value/divisor) * (this.get_top_value().get_value()/top_value) *
                 (this.get_bottom_value().get_value()/bottom_value)),
                             new IntegerValue(bottom_value/divisor));
-
-
     }
+
+    // Must add - Multiplication of fractions, division of fractions
+
     public void print(){
         System.out.println(this.top_value.get_value() + " / " + this.bottom_value.get_value());
     }
