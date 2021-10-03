@@ -7,5 +7,4 @@ class RealNumber {
     public void print(){
         System.out.println(this.value);
     }
-
 }
