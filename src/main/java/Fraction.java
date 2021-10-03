@@ -40,8 +40,8 @@ class Fraction extends Number {
     }
     public Fraction simplify_fraction(){
         // Simplify top and bottom
-        int top_value = this.get_top_value().get_value();
-        int bottom_value = this.get_bottom_value().get_value();
+        int top_value = Math.abs(this.get_top_value().get_value());
+        int bottom_value = Math.abs(this.get_bottom_value().get_value());
         ArrayList<Integer> top_factor = new ArrayList<Integer>();
         ArrayList<Integer> bottom_factor = new ArrayList<Integer>();
         ArrayList<Integer> intersection = new ArrayList<Integer>();
@@ -69,7 +69,9 @@ class Fraction extends Number {
         else{
             divisor = Collections.max(intersection);
         }
-        return new Fraction(new IntegerValue(top_value/divisor), new IntegerValue(bottom_value/divisor));
+        return new Fraction(new IntegerValue((top_value/divisor) * (this.get_top_value().get_value()/top_value) *
+                (this.get_bottom_value().get_value()/bottom_value)),
+                            new IntegerValue(bottom_value/divisor));
 
 
     }
