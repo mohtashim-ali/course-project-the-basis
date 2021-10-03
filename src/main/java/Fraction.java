@@ -29,5 +29,8 @@ public class Fraction {
         new_fraction.set_bottom_value(this.get_bottom_value()*other.get_bottom_value());
         return new_fraction;
     }
+    public String print(){
+        return this.top_value + " / " + this.bottom_value;
+    }
 
 }
