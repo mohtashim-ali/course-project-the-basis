@@ -2,13 +2,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
 
-class Fraction extends Number {
+class Fraction extends RealNumber {
     private IntegerValue top_value;
     private IntegerValue bottom_value;
     private final IntegerValue negative_one = new IntegerValue(-1);
 
     public Fraction(IntegerValue top_value, IntegerValue bottom_value){
-        super(top_value.get_value()/bottom_value.get_value());
+        super((float) top_value.get_value()/bottom_value.get_value());
         if (bottom_value.get_value() != 0){
             this.top_value = top_value;
             this.bottom_value = bottom_value;
@@ -30,6 +30,8 @@ class Fraction extends Number {
     }
 
     public Fraction add_fraction(Fraction other){
+        this.simplify_fraction();
+        other.simplify_fraction();
         IntegerValue top = this.top_value.multiply_integer(other.bottom_value).add_integer(other.get_top_value().multiply_integer(this.get_bottom_value()));
         IntegerValue bottom = this.get_bottom_value().multiply_integer(other.get_bottom_value());
         return new Fraction(top, bottom).simplify_fraction();
@@ -69,6 +71,12 @@ class Fraction extends Number {
         else{
             divisor = Collections.max(intersection);
         }
+        /*
+        if (bottom_value/divisor == 1){
+            return new IntegerValue((top_value/divisor) * (this.get_top_value().get_value()/top_value) *
+                    (this.get_bottom_value().get_value()/bottom_value));
+        }
+         */
         return new Fraction(new IntegerValue((top_value/divisor) * (this.get_top_value().get_value()/top_value) *
                 (this.get_bottom_value().get_value()/bottom_value)),
                             new IntegerValue(bottom_value/divisor));

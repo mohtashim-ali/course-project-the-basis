@@ -1,4 +1,4 @@
-class IntegerValue extends Number {
+class IntegerValue extends RealNumber {
     private int value;
 
     public IntegerValue(int value){
@@ -21,7 +21,7 @@ class IntegerValue extends Number {
         IntegerValue new_other = new IntegerValue(other.get_value() * -1);
         return add_integer(new_other);
     }
-    public Number divide_integer(IntegerValue other){
+    public RealNumber divide_integer(IntegerValue other){
         if (this.get_value()%other.get_value() == 0){
             return new IntegerValue(this.get_value()/other.get_value());
         }
