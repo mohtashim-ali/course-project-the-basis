@@ -7,22 +7,25 @@ public class ComplexNumber {
     }
 
     public ComplexNumber add(ComplexNumber other){
-        // pass
+        return null;
     }
     public ComplexNumber subtract(ComplexNumber other){
         // pass
+        return null;
     }
     public ComplexNumber multiply(ComplexNumber other){
         // pass
+        return null;
     }
     public ComplexNumber divide(ComplexNumber other){
         // pass
+        return null;
     }
     public ComplexNumber square(){
-
+        return null;
     }
     public ComplexNumber power(ComplexNumber pow){
-
+        return null;
     }
     // Idea: All other classes inherit these four methods since every number is in the complex field just change how they
     // operate.
