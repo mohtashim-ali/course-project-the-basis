@@ -32,12 +32,12 @@ public class Fraction extends RealNumber {
     public Fraction add(Fraction other){
         this.simplify();
         other.simplify();
-        IntegerValue top = this.top_value.multiply_integer(other.bottom_value).add_integer(other.get_top_value().multiply_integer(this.get_bottom_value()));
-        IntegerValue bottom = this.get_bottom_value().multiply_integer(other.get_bottom_value());
+        IntegerValue top = this.top_value.multiply(other.bottom_value).add(other.get_top_value().multiply(this.get_bottom_value()));
+        IntegerValue bottom = this.get_bottom_value().multiply(other.get_bottom_value());
         return new Fraction(top, bottom).simplify();
     }
     public Fraction subtract(Fraction other){
-        Fraction other_new = new Fraction(other.get_top_value().multiply_integer(this.negative_one), other.get_bottom_value());
+        Fraction other_new = new Fraction(other.get_top_value().multiply(this.negative_one), other.get_bottom_value());
         return add(other_new);
     }
     public Fraction simplify(){
