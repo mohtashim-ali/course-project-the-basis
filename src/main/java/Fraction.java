@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Objects;
 
-class Fraction extends RealNumber {
+public class Fraction extends RealNumber {
     private IntegerValue top_value;
     private IntegerValue bottom_value;
     private final IntegerValue negative_one = new IntegerValue(-1);
