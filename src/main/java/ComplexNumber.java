@@ -27,6 +27,6 @@ public class ComplexNumber {
     public ComplexNumber power(ComplexNumber pow){
         return null;
     }
-    // Idea: All other classes inherit these four methods since every number is in the complex field just change how they
+    // Idea: All other classes inherit these six methods since every number is in the complex field just change how they
     // operate.
 }
