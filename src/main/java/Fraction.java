@@ -29,18 +29,18 @@ public class Fraction extends RealNumber {
         return this.bottom_value;
     }
 
-    public Fraction add_fraction(Fraction other){
-        this.simplify_fraction();
-        other.simplify_fraction();
+    public Fraction add(Fraction other){
+        this.simplify();
+        other.simplify();
         IntegerValue top = this.top_value.multiply_integer(other.bottom_value).add_integer(other.get_top_value().multiply_integer(this.get_bottom_value()));
         IntegerValue bottom = this.get_bottom_value().multiply_integer(other.get_bottom_value());
-        return new Fraction(top, bottom).simplify_fraction();
+        return new Fraction(top, bottom).simplify();
     }
-    public Fraction subtract_fraction(Fraction other){
+    public Fraction subtract(Fraction other){
         Fraction other_new = new Fraction(other.get_top_value().multiply_integer(this.negative_one), other.get_bottom_value());
-        return add_fraction(other_new);
+        return add(other_new);
     }
-    public Fraction simplify_fraction(){
+    public Fraction simplify(){
         // Simplify top and bottom
         int top_value = Math.abs(this.get_top_value().get_value());
         int bottom_value = Math.abs(this.get_bottom_value().get_value());

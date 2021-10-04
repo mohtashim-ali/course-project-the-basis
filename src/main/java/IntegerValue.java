@@ -26,7 +26,7 @@ public class IntegerValue extends RealNumber {
             return new IntegerValue(this.get_value()/other.get_value());
         }
         Fraction n1 = new Fraction(this, other);
-        return n1.simplify_fraction();
+        return n1.simplify();
     }
     public void print(){
         System.out.println(this.value);
