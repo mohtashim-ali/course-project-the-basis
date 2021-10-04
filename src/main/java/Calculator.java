@@ -4,6 +4,6 @@ public class Calculator {
         IntegerValue n4 = new IntegerValue(3);
         IntegerValue n5 = new IntegerValue(-12);
         Fraction n6 = new Fraction(new IntegerValue(10), new IntegerValue(1020));
-        n6.simplify().print();
+        n6.simplify();
     }
 }
