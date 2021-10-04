@@ -18,6 +18,12 @@ public class ComplexNumber {
     public ComplexNumber divide(ComplexNumber other){
         // pass
     }
+    public ComplexNumber square(){
+
+    }
+    public ComplexNumber power(ComplexNumber pow){
+
+    }
     // Idea: All other classes inherit these four methods since every number is in the complex field just change how they
     // operate.
 }
