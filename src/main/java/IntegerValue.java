@@ -6,6 +6,7 @@ public class IntegerValue extends RealNumber {
         this.value = value;
     }
     public void set_value(int val){
+        /** Sets 'this.value' to a given value*/
         this.value = val;
     }
     public int get_value(){
