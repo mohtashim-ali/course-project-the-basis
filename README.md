@@ -1,6 +1,6 @@
 ## Specification: Calculator for Math Students
 
-As a brief summary, our project is aimed towards students enrolled in mathematic courses which cover topics in 
+As a brief summary, our project is aimed towards students enrolled in math courses which cover topics in 
 calculus and linear algebra.
 
 ### Introduction
