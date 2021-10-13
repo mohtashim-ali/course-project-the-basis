@@ -1,0 +1,88 @@
+```
+[
+  {
+    "name": "BasicCalculator (Entity)",
+    "superclasses": "",
+    "subclasses": "Calculus, LinearAlgebra",
+    "type": 2,
+    "responsibilities": [
+      "Defines methods such as addition and multiplication for different class operations."
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "CalculatorManager (Controller)",
+    "superclasses": "",
+    "subclasses": "BasicCalculator",
+    "type": 1,
+    "responsibilities": [
+      "Checks for valid/invalid inputs into either Calculus mode or Linear Algebra mode. Additionally updates the calculator when information is received."
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "CalculusMode (Entity)",
+    "superclasses": "BasicCalculator",
+    "subclasses": "Expression, Equation",
+    "type": 1,
+    "responsibilities": [
+      "Determines if the user selects calculus mode and gives access to all methods under the CalculusMode class."
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "LinearAlgebraMode (Entity)",
+    "superclasses": "BasicCalculator",
+    "subclasses": "Matrix",
+    "type": 1,
+    "responsibilities": [
+      "Determines if the user selects Linear Algebra mode and gives access to all methods under the LinearAlgebraMode class."
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Equation",
+    "superclasses": "CalculusMode",
+    "subclasses": "Expression",
+    "type": 1,
+    "responsibilities": [
+      "Solves multiples variables and polynomial equations."
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Expression",
+    "superclasses": "Equation",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Placeholder class."
+    ],
+    "collaborators": [
+      "Integrals, Derivatives, Sums, Series, Sequences, Limits, Products, Domain and Range, Continuity, Polynomials"
+    ]
+  },
+  {
+    "name": "Matrix",
+    "superclasses": "LinearAlgebraMode",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Takes in a matrix and matrix size and preforms the selected methods on the inputted matrix."
+    ],
+    "collaborators": [
+      "matrixAddition, matrixMultiplication, crossProduct, determinants, rref, vectors, linearIndependence, rowSpaces, columnSpaces, nullSpaces, inverses, trace, eigenValues, eigenVectors, diagonalization"
+    ]
+  }
+]
+```
