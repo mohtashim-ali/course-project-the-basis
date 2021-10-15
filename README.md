@@ -1,27 +1,24 @@
-## Specification: Calculator for Math Students
+## Specification: Calculator
 
-As a brief summary, our project is aimed towards students enrolled in math courses which cover topics in 
-calculus and linear algebra.
+The objective or scope of our domain is to be able to compute basic mathematical operations using BEDMAS
 
 ### Introduction
 
-A problem we have faced is that when we want to check homework, online calculators are scattered all 
-over the place, and it makes it hard to ensure there are no mistakes in a short amount of time.
-
-Calculus and Linear Algebra are the two most popular topics and having both topics and their corresponding 
-calculators into one application will help students save time by allowing them to understand their mistakes in a shorter 
-amount of time, which in return gives students more time to study/review material. 
+To narrow down our scope, currently our project will be able to take in a mathematical statement, compute the answer, and output the answer.
 
 ### Breakdown
 
-1. Students will be presented with the option to use either a basic calculator, linear algebra calculator or a calculus calculator.
-2. Once a topic is selected, there will be a list of calculators. For example, in calculus there will be options such as integral solver, and a find the derivative calculator. 
-3. Then, there will be the option to place an input, which then the app will process accordingly and output the result!
-4. We also plan on having the option to retrieve previous calculations from a "History" section
+1. Users will be able to type in a basic mathematical statement such as 2+2
+2. The program will then process the input, and solve for the answer
+3. Then, once enter/AC is clicked, the answer is displayed
 
 ### Conclusion
 
-Since the specification is in early stages, things are subject to change. However, our project will follow the main idea of this specification!
+Our current goal is to get the basic operations working, and having an input and output
+
+### Future Ideas
+
+If and when we have the time, we plan on adding a linear algebra calculator and possibly a calculator which can compute integrals!
 
 
 
