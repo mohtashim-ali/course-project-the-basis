@@ -1,21 +1,30 @@
-import java.net.http.HttpResponse;
-
 public class WebProcessor {
     /*
-     String input can be either Expr/Eq
+    Takes a string input and converts it to either an Expression or an Equation.
      */
-    private final String input;
+    public String input;
+
     public WebProcessor(String input){
         this.input = input;
     }
     /*
-       If returns true it is an expression, else, it is an equation
+    If returns true it is an expression, returns false otherwise.
      */
     public boolean checkExpression(){
         return this.input.contains("=");
     }
-    public Expression processInput(){
-        // TO DO Convert String to Expression
+    /*
+    Finds the operator;
+     */
+    public String findOperator() {
+        if(this.input.contains("+")
+    }
+    /*
+    1 + 1
+    1 + 1 = 2
+     */
+    public void processInput(){
         return null;
     }
+
 }

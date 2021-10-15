@@ -5,6 +5,6 @@ public class BasicOpEval extends BasicOpHandler {
         this.expr = e;
     }
     public double EvaluateExpression(){
-
+        return 2.02;
     }
 }
