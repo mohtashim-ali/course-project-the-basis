@@ -1,4 +1,4 @@
-## Specification: Calculator
+## Specification: Basic Calculator
 
 The objective or scope of our domain is to be able to compute basic mathematical operations using BEDMAS
 
