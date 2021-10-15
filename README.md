@@ -1,6 +1,6 @@
 ## Specification: Basic Calculator
 
-The objective or scope of our domain is to be able to compute basic mathematical operations using BEDMAS
+The objective or scope of our domain is to be able to compute and simplify basic mathematical operations using BEDMAS
 
 ### Introduction
 
@@ -18,7 +18,7 @@ Our current goal is to get the basic operations working, and having an input and
 
 ### Future Ideas
 
-If and when we have the time, we plan on adding a linear algebra calculator and possibly a calculator which can compute integrals!
+Integrate, Linear Algebra, and potentially Calculus operation into our calculator.
 
 
 
