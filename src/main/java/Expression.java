@@ -1,4 +1,4 @@
-public class Expression extends CalculusMode{
+public class Expression extends Calculator {
     public Expression() {
         //super(input);
     }
