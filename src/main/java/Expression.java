@@ -10,6 +10,7 @@ public class Expression {
     public Expression(double operand1, String operator, double operand2) {
         this.operand1 = operand1;
         this.operand2 = operand2;
+        this.operator = operator;
     }
 
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class BasicOpHandler {
 
-    public int add(ArrayList<Integer> other_values){
-
+    public void add(ArrayList<Integer> other_values){
+        return;
     }
 }
