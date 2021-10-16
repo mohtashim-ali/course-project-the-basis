@@ -8,7 +8,7 @@ To narrow down our scope, currently our project will be able to take in a mathem
 
 ### Breakdown
 
-1. Users will be able to type in a basic mathematical statement, such as 2+2
+1. Users will be able to type in a basic mathematical statement, such as ```2+2```
 2. The program will then process the input, and solve for the answer
 3. Then, the program will display the output in the console.
 
