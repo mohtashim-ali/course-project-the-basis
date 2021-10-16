@@ -4,7 +4,9 @@ Welcome to our project! Below is a breakdown which makes it easy for the viewer 
 
 ## Phase 0
 
-The java files worked on in Phase 0 are: [WalkthroughCustomInput](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/WalkthroughCustomInput.java), [InputProcessor](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/InputProcessor.java), [Expression](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/Expression.java), and [ExpressionHandler](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/ExpressionHandler.java),
+The java files worked on in Phase 0 are: [WalkthroughCustomInput](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/WalkthroughCustomInput.java), [InputProcessor](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/InputProcessor.java), [Expression](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/Expression.java), and [ExpressionHandler](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/ExpressionHandler.java).
+
+### Components
 
 1. [Specification](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/specification.md)
 2. CRC Models (will add link)
