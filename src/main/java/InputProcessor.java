@@ -9,7 +9,7 @@ public class InputProcessor {
     public String input;
 
     public static void main(String[] args) {
-        InputProcessor input = new InputProcessor("12-4");
+        InputProcessor input = new InputProcessor("12+4");
         Expression temp = input.processInput();
         System.out.println(temp.compute());
     }
@@ -27,16 +27,15 @@ public class InputProcessor {
     Converts a string to an Expression.
      */
     public Expression processInput() {
-        String[] operators = new String[]{"\\+", "-", "/", "\\*"};
+        String[] operators = new String[]{"+", "-", "/", "*"};
         String opr = "";
         for (String operator : operators) {
             if (this.input.contains(operator)) {
                 opr = operator;
             }
         }
-        String[] new_array = this.input.split(opr);
-        double operand1 = Double.parseDouble(new_array[0]);
-        double operand2 = Double.parseDouble(new_array[1]);
+        double operand1 = Double.parseDouble(String.valueOf(this.input.charAt(0)));
+        double operand2 = Double.parseDouble(String.valueOf(this.input.charAt(2)));
         return new Expression(operand1, opr, operand2);
     }
 }
