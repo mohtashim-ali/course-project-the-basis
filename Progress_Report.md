@@ -23,11 +23,11 @@ For our skeleton code, we focused on getting the 4 basic operations to work corr
 
 Mohtashim
 
-> I have been working on organzing the Github repo so it is organized, alongside creating the walkthrough class which allows for custom inputs from the console. I also worked on the specification, and the steps on how to use the calculator since I wrote the class for it. I plan on working on adding website implementation, and allowing the user to keep on asking expressions in the walkthrough class.
+> I have been working on organzing the Github repo so it is organized, alongside creating the walkthrough class which allows for custom inputs from the console. I also worked on the specification, and the steps on how to use the calculator since I wrote the class for it. Test case file was created, alongside the formatting to make adding new test cases easier.I plan on working on adding website implementation, and allowing the user to keep on asking expressions in the walkthrough class.
 
 Nofel
 
-> Text Here
+> Some of my contribution consists of writing some code in the expression and expressionHandler file while suggesting ideas on how the calculator will be formatted. I have contributed ideas about potential feature and flaws the calculator may have in the future. My primary contribution was making the CRC models. I made the CRC into a google slides presentation format while adding and removing stuff from the presentation as we went along. Me and my teammates removed and added stuff based on the feedback given by the TA and Professor. After each new method is implemented I added some test cases I thought would be necessary incase we wanted to change our desgin/code.
 
 Kyle 
 
