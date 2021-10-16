@@ -1,11 +1,11 @@
 # Progress Report
 
-> Our domain is a calculator website utility, and below are the contents of the progress report!
+Our domain is a calculator website utility, and below are the contents of the progress report!
 
 
 ## Specification
 
-> In short, our goal for phase 0 was to narrow down onto a specific goal so that we could have a strong starting point. Currently, our calculator is able to compute basic operations such as addition, subtraction, divistion and multiplication using a custom input, recursion and outputs the correct answer!
+In short, our goal for phase 0 was to narrow down onto a specific goal so that we could have a strong starting point. Currently, our calculator is able to compute basic operations such as addition, subtraction, divistion and multiplication using a custom input, recursion and outputs the correct answer!
 
 ## CRC Model
 
@@ -40,7 +40,7 @@
 
 ## Skeleton Code
 
-> For our skeleton code, we focused on getting the 4 basic operations to work correctly with order of operations. We also made a controller class which can take in a custom input, and output the correct answer.
+For our skeleton code, we focused on getting the 4 basic operations to work correctly with order of operations. We also made a controller class which can take in a custom input, and output the correct answer.
 
 ## Questions
 
@@ -49,7 +49,7 @@
 
 ## What has worked well for our design
 
-> Several things have worked well for our design. Firstly, breaking up mathematical objects into different categories allowed us to write much cleaner and design-friendly code using handlers. With the object as our entity class and the handler holding our use cases for that object, we were able to separate the complex properties of the object from the operations that it can do. Another part that helped us was having an input processor that grabs data from our [to be] website and parses it into different objects. This controller will help bridge the gap between the user and the backend. Lastly, breaking up complicated functions and methods into interfaces or classes helped simplify the code writing process. For example, we dedicated an interface to simplify expressions. There are several ways that a mathematical expression can be broken down and simplified depending on the objects it contains. Keeping that in a single function would be far too complicated and arguably wouldn't align clean architecture designs.
+Several things have worked well for our design. Firstly, breaking up mathematical objects into different categories allowed us to write much cleaner and design-friendly code using handlers. With the object as our entity class and the handler holding our use cases for that object, we were able to separate the complex properties of the object from the operations that it can do. Another part that helped us was having an input processor that grabs data from our [to be] website and parses it into different objects. This controller will help bridge the gap between the user and the backend. Lastly, breaking up complicated functions and methods into interfaces or classes helped simplify the code writing process. For example, we dedicated an interface to simplify expressions. There are several ways that a mathematical expression can be broken down and simplified depending on the objects it contains. Keeping that in a single function would be far too complicated and arguably wouldn't align clean architecture designs.
 
 ## Group Member Contributions
 
