@@ -87,6 +87,7 @@ public class CalculatorTest {
         assert temp.compute() == 34.5;
 
     }
+    @Test
     public void singleDigit() throws ExpressionException {
         InputProcessor input = new InputProcessor("5");
         Expression temp = input.processInput(input.listInput());
