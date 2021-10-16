@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 
 public class InputProcessor {
-    /*
+    /**
     Takes a string input and converts it to either an Expression or an Equation.
      */
     public String input;
@@ -17,13 +17,13 @@ public class InputProcessor {
     public InputProcessor(String input){
         this.input = input;
     }
-    /*
+    /**
     If returns true it is an expression, returns false otherwise.
      */
     public boolean checkExpression(){
         return this.input.contains("=");
     }
-    /*
+    /**
     Converts a string to an Expression.
      */
 
