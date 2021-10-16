@@ -1,6 +1,6 @@
 ## Specification: Basic Calculator
 
-The objective or scope of our domain is to be able to compute and simplify basic mathematical operations using BEDMAS
+The objective or scope of our domain is to be able to compute and simplify basic mathematical operations following order of operations.
 
 ### Introduction
 
