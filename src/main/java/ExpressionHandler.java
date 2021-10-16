@@ -28,8 +28,9 @@ public abstract class ExpressionHandler {
         valid_operater = false;
         for (String op : this.operations)
         {
-            if (Objects.equals(op, this.operator)){
+            if (Objects.equals(op, this.operator)) {
                 valid_operater = true;
+                break;
             }
 
         }
