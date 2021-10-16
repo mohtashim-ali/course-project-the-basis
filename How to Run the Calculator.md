@@ -1,0 +1,16 @@
+# How to Run the Calculator
+
+Begin by navigating to the walkthrough class!
+
+## Note
+
+Currently addition, subtraction, division and multiplication are supported.
+
+## Steps
+
+1. First, run the class and you will see the console open
+2. Type in the mathematical expression you want to compute
+3. The expression will be solved in the background and the correct answer will be outputted
+
+
+
