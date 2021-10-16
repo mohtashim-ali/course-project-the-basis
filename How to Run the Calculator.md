@@ -1,6 +1,6 @@
 # How to Run the Calculator
 
-Begin by navigating to the walkthrough class!
+Begin by navigating to the "WalkthroughCustomInput" class!
 
 ## Note
 
