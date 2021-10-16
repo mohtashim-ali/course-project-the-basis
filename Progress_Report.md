@@ -11,7 +11,9 @@ In short, our goal for phase 0 was to narrow down onto a specific goal so that w
 
 ## Scenario Walk-through
 
-## Skeleton Program
+## Skeleton Code
+
+For our skeleton code, we focused on getting the 4 basic operations to work correctly with order of operations. We also made a controller class which can take in a custom input, and output the correct answer.
 
 ## Open Question we are stuggling with
 
