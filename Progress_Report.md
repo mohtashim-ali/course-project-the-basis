@@ -1,6 +1,6 @@
 # Progress Report
 
-Our domain is a calculator website utility, and below are the contents of the progress report!
+Our domain is a math calculator utility hosted on a website, and below are the contents of the progress report!
 
 
 ## Specification
