@@ -21,11 +21,9 @@ For our skeleton code, we focused on getting the 4 basic operations to work corr
 
 ## Group Member Contributions
 
-Below are the group members speaking about their contributions to the project
-
 Mohtashim
 
-> Text Here
+> I have been working on organzing the Github repo so it is organized, alongside creating the walkthrough class which allows for custom inputs from the console. I also worked on the specification, and the steps on how to use the calculator since I wrote the class for it. I plan on working on adding website implementation, and allowing the user to keep on asking expressions in the walkthrough class.
 
 Nofel
 
