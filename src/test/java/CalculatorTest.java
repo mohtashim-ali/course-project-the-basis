@@ -38,5 +38,11 @@ public class CalculatorTest {
         Expression temp = input.processInput(input.listInput());
         assert temp.compute() == 5.0;
     }
+    @Test
+    public void additionMultiplePositiveNumbers(){
+        InputProcessor input = new InputProcessor("5 + 3 + 4");
+        Expression temp = input.processInput(input.listInput());
+        assert temp.compute() == 12.0;
+    }
 
 }
