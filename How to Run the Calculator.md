@@ -4,7 +4,7 @@ Begin by navigating to the "WalkthroughCustomInput" class!
 
 ## Note
 
-Currently addition, subtraction, division and multiplication are supported.
+Currently only addition, subtraction, division and multiplication are supported because of the current specifiation for Phase 0.
 
 ## Steps
 
