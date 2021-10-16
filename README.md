@@ -4,7 +4,7 @@ Welcome to our project! Below is a table of contects which make it easy for the 
 
 ## Phase 0
 
-1. [Specification](specifiation.md)
+1. [Specification](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/specification.md)
 2. CRC Models (will add link)
 3. Scenario Walk-Through (will add link)
 4. Progress Report (will add link)
