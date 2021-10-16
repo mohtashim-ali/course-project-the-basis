@@ -1,6 +1,10 @@
 # The Basis
 
-Welcome to our project! Below is a breakdown which makes it easy for the viewer to learn about our Calculator.
+Welcome to our project! Below is a breakdown of our project and the stages we will complete. 
+
+## Domain
+
+The domain of our project is a mathematical calculator which is hosted on the web as a utility.
 
 ## Phase 0
 
