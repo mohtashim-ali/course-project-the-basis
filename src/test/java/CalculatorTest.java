@@ -44,5 +44,12 @@ public class CalculatorTest {
         Expression temp = input.processInput(input.listInput());
         assert temp.compute() == 12.0;
     }
+    @Test
+    public void threeNumbersSubtraction(){
+        InputProcessor input = new InputProcessor("1 - 1 - 0");
+        Expression temp = input.processInput(input.listInput());
+        assert temp.compute() == 0.0;
+    }
+
 
 }
