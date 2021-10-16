@@ -1,6 +1,6 @@
 # The Basis
 
-Welcome to our project! Below is a breakdown which make it easy for the viwer to learn about our Calculator.
+Welcome to our project! Below is a breakdown which makes it easy for the viewer to learn about our Calculator.
 
 ## Phase 0
 
