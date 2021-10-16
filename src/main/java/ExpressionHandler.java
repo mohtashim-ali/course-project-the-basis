@@ -40,7 +40,9 @@ public abstract class ExpressionHandler {
 
         }
         if (!valid_operator){
-            throw new ExpressionException("Invalid Operator");
+            if (!Objects.equals(this.operator, "")){
+                throw new ExpressionException("Invalid Operator");
+            }
         }
     }
 
@@ -55,6 +57,9 @@ public abstract class ExpressionHandler {
                 return this.operand1 - this.operand2;
             case "*":
                 return this.operand1 * this.operand2;
+        }
+        if (this.operator.equals("")){
+            return this.operand1;
         }
         if (this.operand2 == 0){
             throw new ExpressionException("Undefined");

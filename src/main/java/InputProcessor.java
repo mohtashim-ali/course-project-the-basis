@@ -9,7 +9,7 @@ public class InputProcessor {
     public String input;
 
     public static void main(String[] args) throws ExpressionException {
-        InputProcessor input = new InputProcessor("12 / 4 - 3 + 6 * 18");
+        InputProcessor input = new InputProcessor("10");
         Expression temp = input.processInput(input.listInput());
         System.out.println(temp.compute());
     }
@@ -75,6 +75,10 @@ public class InputProcessor {
          * Function that processes input by Array of operands and operators.
          *
          */
+        if (expr.size() == 1){
+            double operand1 = Double.parseDouble(expr.get(0));
+            return new Expression(operand1, "", 0);
+        }
         if (expr.size() == 3){
             double operand1 = Double.parseDouble(expr.get(0));
             double operand2 = Double.parseDouble(expr.get(2));
