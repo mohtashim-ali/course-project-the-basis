@@ -1,4 +1,4 @@
-public class Expression {
+public class Expression extends ExpressionHandler{
     /*
      Takes in 2 numeric values, and evaluates them with the given operator.
      */
@@ -8,6 +8,7 @@ public class Expression {
     public String operator;
 
     public Expression(double operand1, String operator, double operand2) {
+        super(operand1, operator, operand2);
         this.operand1 = operand1;
         this.operand2 = operand2;
         this.operator = operator;
@@ -16,19 +17,5 @@ public class Expression {
     Computes given expression with the appropriate operator
     and returns the result
      */
-    public Double compute() {
-        switch (this.operator) {
-            case "+":
-                return this.operand1 + this.operand2;
-            case "-":
-                return this.operand1 - this.operand2;
-            case "*":
-                return this.operand1 * this.operand2;
-        }
-        if (this.operand2 == 0){
-            return null;
-        }
-        return this.operand1 / this.operand2;
-    }
 
 }
