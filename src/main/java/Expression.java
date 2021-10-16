@@ -12,5 +12,19 @@ public class Expression {
         this.operand2 = operand2;
         this.operator = operator;
     }
+    /*
+    computes given expression with the appropriate operator
+    and returns the result
+     */
+    public double compute() {
+        if (this.operator.equals("+")) {
+            return this.operand1 + this.operand2;
+        } else if (this.operator.equals("-")) {
+            return this.operand1 - this.operand2;
+        } else if (this.operator.equals("*")) {
+            return this.operand1 * this.operand2;
+        }
+        return this.operand1 / this.operand2;
+    }
 
 }
