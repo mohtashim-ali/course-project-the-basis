@@ -17,12 +17,13 @@ public class Expression {
     and returns the result
      */
     public double compute() {
-        if (this.operator.equals("+")) {
-            return this.operand1 + this.operand2;
-        } else if (this.operator.equals("-")) {
-            return this.operand1 - this.operand2;
-        } else if (this.operator.equals("*")) {
-            return this.operand1 * this.operand2;
+        switch (this.operator) {
+            case "+":
+                return this.operand1 + this.operand2;
+            case "-":
+                return this.operand1 - this.operand2;
+            case "*":
+                return this.operand1 * this.operand2;
         }
         return this.operand1 / this.operand2;
     }
