@@ -40,12 +40,3 @@ public class InputProcessor {
         return new Expression(operand1, opr, operand2);
     }
 }
-
-
-//        ArrayList<Expression> temp = new ArrayList<Expression>();
-//        for (int i=0; i < this.input.length(); i++) {
-//            if(this.input.charAt(i) == '+' || this.input.charAt(i) == '-' ||
-//                    this.input.charAt(i) == '*' || this.input.charAt(i) == '/') {
-//                Expression new_expression = new Expression();
-//            }
-//        }

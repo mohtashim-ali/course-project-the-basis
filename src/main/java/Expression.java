@@ -1,6 +1,6 @@
 public class Expression {
     /*
-    Takes in 2 numeric values, and evaluates them with the given operator.
+     Takes in 2 numeric values, and evaluates them with the given operator.
      */
 
     public double operand1;
@@ -13,7 +13,7 @@ public class Expression {
         this.operator = operator;
     }
     /*
-    computes given expression with the appropriate operator
+    Computes given expression with the appropriate operator
     and returns the result
      */
     public double compute() {
