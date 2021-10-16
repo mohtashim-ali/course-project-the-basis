@@ -1,10 +1,12 @@
 ## Specification: Basic Calculator
 
-Below is the breakdown of our specifiation!
+Below is the breakdown of our specification!
 
 ### Introduction
 
 To narrow down our scope, currently our project will be able to take in a mathematical expression, compute the answer, and output the answer. The expressions will be computed following order of operations.
+
+Currently, addition, subtraction, division, and multiplication are all supported. This was done to keep our scope speific for Phase 0.
 
 ### Breakdown
 
@@ -19,6 +21,3 @@ Our current goal is to get the basic operations working, and having an input and
 ### Future Ideas
 
 Integrate, Linear Algebra, and potentially Calculus operations into our calculator. For the UI, we hope to have a website completed!
-
-
-
