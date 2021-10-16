@@ -1,8 +1,11 @@
 # Scenario Walkthrough
 
-The program beings with the WalksThroughCustomInput class which acts as a controller. It's role is to recieve the user's expression, alongside ensuring the input is valid for the InputProcessor class.
+The program beings with the WalksthroughCustomInput class which acts as a controller. It's role is to recieve the user's expression, alongside ensuring the input is valid for the InputProcessor class.
 
 In InputProcessor, the input string is converted into a expression which will allow for Expression to compute the answer. Once this output is sent to the Expression class, 
+
+
+Finally, the WalkthroughCustomInput class recieves the computed calcualtion, and prints it into the console.
 
 
 
