@@ -93,6 +93,12 @@ public class CalculatorTest {
         Expression temp = input.processInput(input.listInput());
         assert temp.compute() == 5.0;
     }
+    @Test
+    public void NegativesingleDigit() throws ExpressionException {
+        InputProcessor input = new InputProcessor("-5");
+        Expression temp = input.processInput(input.listInput());
+        assert temp.compute() == -5.0;
+    }
 
 
 
