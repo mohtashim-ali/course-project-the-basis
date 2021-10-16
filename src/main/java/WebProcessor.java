@@ -30,9 +30,9 @@ public class WebProcessor {
     public Expression processInput() {
         String[] operators = new String[]{"[+]", "[-]", "[/]", "[*]"};
         String opr = "";
-        for (int i=0; i<operators.length; i++){
-            if (this.input.contains(operators[i])){
-                opr = operators[i];
+        for (String operator : operators) {
+            if (this.input.contains(operator)) {
+                opr = operator;
             }
         }
 
