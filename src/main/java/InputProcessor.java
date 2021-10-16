@@ -9,7 +9,7 @@ public class InputProcessor {
     public String input;
 
     public static void main(String[] args) throws ExpressionException {
-        InputProcessor input = new InputProcessor("10");
+        InputProcessor input = new InputProcessor("10 + 10 * 20 + 30 / 5");
         Expression temp = input.processInput(input.listInput());
         System.out.println(temp.compute());
     }

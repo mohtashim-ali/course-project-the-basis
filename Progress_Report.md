@@ -42,7 +42,7 @@ In short, our goal for phase 0 was to narrow down onto a specific goal so that w
 
 For our skeleton code, we focused on getting the 4 basic operations to work correctly with order of operations. We also made a controller class which can take in a custom input, and output the correct answer.
 
-## Ouestions
+## Questions
 
 ## What has worked well for our design?
 
@@ -58,7 +58,13 @@ Nofel
 
 Kyle 
 
-> Algorithms, design structure and group coordination were my significant additions to The Basis group. Core design ideas were based on the work that I creatively and professionally drew out for the team. I consistently optimized structures and functions across our entire program and wrote some of my own to aid us in parsing strings into mathematical expressions. I designed unique exceptions to object classes to prevent unforeseen errors and wrote Javadocs and tests for every method I created. Many slides to describe our CRC cards were completed by me, and I took the initiative to coordinate group meetings and assign tasks and corresponding deadlines to team members.
+> Algorithms, design structure and group coordination were my significant additions to The Basis group. Core design ideas were based on the work that I creatively and professionally drew out for the team. I consistently optimized structures and functions across our entire program and wrote some of my own to aid us in parsing strings into mathematical expressions. I designed unique exceptions to object classes to prevent unforeseen errors and wrote Javadocs and tests for every method I created. Many slides to describe our CRC cards were completed by me, and I took the initiative to coordinate group meetings and assign tasks and corresponding deadlines to team members.  In code, some of my major pieces were 
+>* Input Processor
+>    * processInput()
+>    * listInput()
+>* ExpressionHandler
+>* Expression
+>* Several tests in CalculatorTest
 
 Achraf
 
