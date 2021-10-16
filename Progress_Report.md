@@ -9,13 +9,40 @@ In short, our goal for phase 0 was to narrow down onto a specific goal so that w
 
 ## CRC Model
 
+#### Entity Classes
+
+1. User - Input user data and sends to other classes
+2. History - Stores user inputs
+3. Expression - 
+4. Equation - 
+
+#### Use Case Classes
+
+1. InputProcessor - 
+2. ExpressionHandler - 
+3. EquationHandler - 
+4. LinIndepHandler (Future Goal) - 
+5. RREFHandler (Future Goal) - 
+
+#### Controller Classes
+
+1. UserHandler - 
+2. WalkthroughCustomInput - 
+
+#### Basic Command Line
+
+1. WalkthroughCustomInput Class - 
+2. Calculator HTML (Future Goal) - 
+
 ## Scenario Walk-through
+
+
 
 ## Skeleton Code
 
 For our skeleton code, we focused on getting the 4 basic operations to work correctly with order of operations. We also made a controller class which can take in a custom input, and output the correct answer.
 
-## Open Question we are stuggling with
+## Ouestions
 
 ## What has worked well for our design?
 
