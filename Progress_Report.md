@@ -36,6 +36,8 @@ In short, our goal for phase 0 was to narrow down onto a specific goal so that w
 
 ## Scenario Walk-through
 
+To keep it simple, first the user types in a mathematical expression, such as ```2 + 2```. Then, the input is processed to make sure it is in the valid form, sent to the InputProcessor class where it is split up, checked for any errors, and computed. Finally, the WalkthroughCustomInput class prints the computed answer.
+
 
 
 ## Skeleton Code
