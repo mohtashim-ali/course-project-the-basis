@@ -4,7 +4,7 @@ Welcome to our project! Below is a breakdown of our project and the stages we wi
 
 ## Domain
 
-The domain of our project is a mathematical calculator which is hosted on the web as a utility.
+The domain of our project is a mathematical calculator which is hosted on the web as a utility. We have completed expressions which are solved following order of operations.
 
 ## Phase 0
 
