@@ -15,7 +15,7 @@ public class Expression extends ExpressionHandler{
      * @param operator double
      * @param operand2 double
      */
-    public Expression(double operand1, String operator, double operand2) {
+    public Expression(double operand1, String operator, double operand2) throws ExpressionException {
         super(operand1, operator, operand2);
         this.operand1 = operand1;
         this.operand2 = operand2;
