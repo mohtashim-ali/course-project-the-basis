@@ -1,4 +1,4 @@
-# How to Run the Calculator
+# How to use the Calculator
 
 Begin by navigating to the "WalkthroughCustomInput" class!
 
