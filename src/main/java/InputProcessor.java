@@ -9,7 +9,7 @@ public class InputProcessor {
     public String input;
 
     public static void main(String[] args) {
-        InputProcessor input = new InputProcessor("12 - 4 + 3 + 6 + 18");
+        InputProcessor input = new InputProcessor("12 / 4 - 3 + 6 * 18");
         Expression temp = input.processInput(input.listInput());
         System.out.println(temp.compute());
     }
@@ -27,14 +27,48 @@ public class InputProcessor {
     Converts a string to an Expression.
      */
 
+    /**
+     * @return ArrayList
+     */
     public ArrayList<String> listInput(){
+        /**
+         * Function that splits the input into a list of operands and operators.
+         */
         return new ArrayList<>(Arrays.asList(this.input.split(" ")));
+    }
+
+    /**
+     * @param n1 String
+     * @param n2 String
+     * @return boolean
+     */
+    public boolean compareOperators(String n1, String n2){
+        /**
+         * Function that compares different types of operators.
+         */
+        ArrayList<String> operations = new ArrayList<>(Arrays.asList("-", "+", "/", "*"));
+        int splitter = 2;
+        int n1_position = operations.indexOf(n1);
+        int n2_position = operations.indexOf(n2);
+        if (n1_position < splitter && n2_position >= splitter){
+            return true;
+        }
+        else if (n1_position < splitter){
+            return false;
+        }
+        else if (n2_position >= splitter){
+            return false;
+        }
+        else{
+            return false;
+        }
+
     }
 
     public Expression processInput(ArrayList<String> expr) {
         /**
          *
-         * Later implement working for n operands and m operators
+         * Function that processes input by Array of operands and operators.
          *
          */
         if (expr.size() == 3){
@@ -43,25 +77,18 @@ public class InputProcessor {
             return new Expression(operand1, expr.get(1), operand2);
         }
         else{
-            Expression expr1 = this.processInput((new InputProcessor(expr.get(0) + " " + expr.get(1) + " " + expr.get(2))).listInput());
+            int highest_order_op = 1;
+            for (int i = 2; i<=expr.size()-1; i++){
+                if (this.compareOperators(expr.get(highest_order_op), expr.get(i))){
+                    highest_order_op = i;
+                }
+            }
+            Expression expr1 = this.processInput((new InputProcessor(expr.get(highest_order_op-1) + " "
+                    + expr.get(highest_order_op) + " " + expr.get(highest_order_op+1))).listInput());
             double operand2 = expr1.compute();
-            expr.remove(0); expr.remove(0); expr.remove(0);
-            expr.add(0, Double.toString(operand2));
+            expr.remove(highest_order_op-1); expr.remove(highest_order_op-1); expr.remove(highest_order_op-1);
+            expr.add(highest_order_op-1, Double.toString(operand2));
             return this.processInput(expr);
         }
-        /*
-        String[] operators = new String[]{"+", "-", "/", "*"};
-        String opr = "";
-        int operator_index = 1;
-        for (String operator : operators) {
-            if (this.input.contains(operator)) {
-                opr = operator;
-                operator_index = this.input.indexOf(opr);
-            }
-        }
-        double operand1 = Double.parseDouble(this.input.substring(0, operator_index));
-        double operand2 = Double.parseDouble(this.input.substring(operator_index+1, this.input.length()));
-        return new Expression(operand1, opr, operand2);
-         */
     }
 }

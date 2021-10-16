@@ -44,5 +44,41 @@ public class CalculatorTest {
         Expression temp = input.processInput(input.listInput());
         assert temp.compute() == 12.0;
     }
+    @Test
+    public void testCompareOperators(){
+        InputProcessor input = new InputProcessor("");
+        assert !input.compareOperators("+", "-");
+        assert !input.compareOperators("*", "/");
+        assert input.compareOperators("+", "*");
+        assert input.compareOperators("-", "*");
+        assert input.compareOperators("+", "/");
+        assert input.compareOperators("-", "/");
+        assert !input.compareOperators("*", "+");
+        assert !input.compareOperators("*", "-");
+        assert !input.compareOperators("/", "+");
+        assert !input.compareOperators("/", "-");
+    }
+    @Test
+    public void mixOperationsOrder(){
+        InputProcessor input = new InputProcessor("12 / 4 - 3 + 6 * 18");
+        Expression temp = input.processInput(input.listInput());
+        assert temp.compute() == 108.0;
+
+    }
+    @Test
+    public void mixOperationsOrder2(){
+        InputProcessor input = new InputProcessor("12 / 4 * 3 + 6 * 18");
+        Expression temp = input.processInput(input.listInput());
+        assert temp.compute() == 117.0;
+
+    }
+    @Test
+    public void mixOperationsOrder3(){
+        InputProcessor input = new InputProcessor("12 + 4 + 3 / 6 + 18");
+        Expression temp = input.processInput(input.listInput());
+        assert temp.compute() == 34.5;
+
+    }
+
 
 }
