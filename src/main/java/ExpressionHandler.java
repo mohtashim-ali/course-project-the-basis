@@ -14,7 +14,6 @@ public abstract class ExpressionHandler {
     public double operand2;
     public String operator;
     public List<String> operations = List.of(new String[]{"+", "-", "*", "/", "^"});
-    private boolean valid_operater;
 
     /**
      * @param operand1 double
@@ -25,16 +24,16 @@ public abstract class ExpressionHandler {
         this.operand1 = operand1;
         this.operand2 = operand2;
         this.operator = operator;
-        valid_operater = false;
+        boolean valid_operator = false;
         for (String op : this.operations)
         {
             if (Objects.equals(op, this.operator)) {
-                valid_operater = true;
+                valid_operator = true;
                 break;
             }
 
         }
-        if (!valid_operater){
+        if (!valid_operator){
             throw new ExpressionException("Invalid Operator");
         }
     }
