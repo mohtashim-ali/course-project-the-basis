@@ -1,3 +1,6 @@
+/**
+ * Expression Object.
+ */
 public class Expression extends ExpressionHandler{
     /*
      Takes in 2 numeric values, and evaluates them with the given operator.
@@ -7,15 +10,15 @@ public class Expression extends ExpressionHandler{
     public double operand2;
     public String operator;
 
+    /**
+     * @param operand1 double
+     * @param operator double
+     * @param operand2 double
+     */
     public Expression(double operand1, String operator, double operand2) {
         super(operand1, operator, operand2);
         this.operand1 = operand1;
         this.operand2 = operand2;
         this.operator = operator;
     }
-    /*
-    Computes given expression with the appropriate operator
-    and returns the result
-     */
-
 }
