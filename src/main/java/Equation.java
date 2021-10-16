@@ -11,4 +11,6 @@ public class Equation {
         this.right = right;
     }
 
+
+
 }
