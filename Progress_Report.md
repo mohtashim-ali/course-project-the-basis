@@ -37,7 +37,7 @@ Kyle
 
 Achraf
 
-> Text Here
+> My contributations mainly came from the implementations of the code, as well as some design choices. I also constructed the Fraction class which is responsible for creating the fractions in our calculator. To the overall project i made changes which improved functionality of the calculator.
 
 Hamza
 
