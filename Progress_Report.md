@@ -31,7 +31,7 @@ Nofel
 
 Kyle 
 
-> Text Here
+> Algorithms, design structure and group coordination were my significant additions to The Basis group. Core design ideas were based on the work that I creatively and professionally drew out for the team. I consistently optimized structures and functions across our entire program and wrote some of my own to aid us in parsing strings into mathematical expressions. I designed unique exceptions to object classes to prevent unforeseen errors and wrote Javadocs and tests for every method I created. Many slides to describe our CRC cards were completed by me, and I took the initiative to coordinate group meetings and assign tasks and corresponding deadlines to team members.
 
 Achraf
 
