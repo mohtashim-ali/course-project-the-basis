@@ -29,13 +29,15 @@ public class InputProcessor {
     public Expression processInput() {
         String[] operators = new String[]{"+", "-", "/", "*"};
         String opr = "";
+        int operator_index = 1;
         for (String operator : operators) {
             if (this.input.contains(operator)) {
                 opr = operator;
+                operator_index = this.input.indexOf(opr);
             }
         }
-        double operand1 = Double.parseDouble(String.valueOf(this.input.charAt(0)));
-        double operand2 = Double.parseDouble(String.valueOf(this.input.charAt(2)));
+        double operand1 = Double.parseDouble(this.input.substring(0, operator_index));
+        double operand2 = Double.parseDouble(this.input.substring(operator_index+1, this.input.length()));
         return new Expression(operand1, opr, operand2);
     }
 }
