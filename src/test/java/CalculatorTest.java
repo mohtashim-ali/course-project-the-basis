@@ -50,6 +50,12 @@ public class CalculatorTest {
         Expression temp = input.processInput(input.listInput());
         assert temp.compute() == 0.0;
     }
+    @Test
+    public void MulitpleNumbersSubtraction(){
+        InputProcessor input = new InputProcessor("25 - 1 - 4 - 2 - 1 - 4 - 5 - 2");
+        Expression temp = input.processInput(input.listInput());
+        assert temp.compute() == 6.0;
+    }
 
 
 }
