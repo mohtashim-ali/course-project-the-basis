@@ -4,9 +4,9 @@ public class CalculatorTest {
 
     @Test
     public void addition() {
-        InputProcessor input = new InputProcessor("5+4");
+        InputProcessor input = new InputProcessor("5+5");
         Expression temp = input.processInput();
-        assert temp.compute() == 9.0;
+        assert temp.compute() == 10.0;
     }
     @Test
     public void subtraction() {
