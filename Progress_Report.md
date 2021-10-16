@@ -1,26 +1,23 @@
-#Progress Report
+# Progress Report
 
 Our domain is a calculator website utility, and below are the contents of the progress report!
 
-## Summaries
 
-Below are summaries of the specifiation, CRC models, and walkthrough
-
-#### Specification
+### Specification
 
 In short, our goal for phase 0 was to narrow down onto a specific goal so that we could have a strong starting point. Currently, our calculator is able to compute basic operations such as addition, subtraction, divistion and multiplication using a custom input, recursion and outputs the correct answer!
 
-#### CRC Model
+### CRC Model
 
-#### Scenario Walk-through
+### Scenario Walk-through
 
-#### Skeleton Program
+### Skeleton Program
 
-## Open Question we are stuggling with
+### Open Question we are stuggling with
 
-## What has worked well for our design?
+### What has worked well for our design?
 
-## Group Member Contributions
+### Group Member Contributions
 
 Mohtashim
 
