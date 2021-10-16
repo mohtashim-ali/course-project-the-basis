@@ -26,6 +26,11 @@ public class CalculatorTest {
         Expression temp = input.processInput();
         assert temp.compute() == 2.0;
     }
-
+    @Test
+    public void divisionByZero() {
+        InputProcessor input = new InputProcessor("5/0");
+        Expression temp = input.processInput();
+        assert temp.compute() == null;
+    }
 
 }
