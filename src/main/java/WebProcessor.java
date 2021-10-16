@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class WebProcessor {
@@ -8,7 +9,7 @@ public class WebProcessor {
     public String input;
 
     public static void main(String[] args) {
-        WebProcessor input = new WebProcessor("1+1");
+        WebProcessor input = new WebProcessor("1-1");
         Expression temp = input.processInput();
         System.out.println(temp.operator);
 
@@ -27,27 +28,18 @@ public class WebProcessor {
     Converts a string to an Expression.
      */
     public Expression processInput() {
-        if(this.input.contains("+")) {
-            String[] new_array = this.input.split("\\+");
-            double operand1 = Double.parseDouble(new_array[0]);
-            double operand2 = Double.parseDouble(new_array[1]);
-            return new Expression(operand1, "+", operand2);
-        } else if(this.input.contains("-")) {
-            String[] new_array = this.input.split("-");
-            double operand1 = Double.parseDouble(new_array[0]);
-            double operand2 = Double.parseDouble(new_array[1]);
-            return new Expression(operand1, "-", operand2);
-        } else if(this.input.contains("*")) {
-            String[] new_array = this.input.split("\\*");
-            double operand1 = Double.parseDouble(new_array[0]);
-            double operand2 = Double.parseDouble(new_array[1]);
-            return new Expression(operand1, "*", operand2);
-        } else {
-            String[] new_array = this.input.split("/");
-            double operand1 = Double.parseDouble(new_array[0]);
-            double operand2 = Double.parseDouble(new_array[1]);
-            return new Expression(operand1, "/", operand2);
+        String[] operators = new String[]{"[+]", "[-]", "[/]", "[*]"};
+        String opr = "";
+        for (int i=0; i<operators.length; i++){
+            if (this.input.contains(operators[i])){
+                opr = operators[i];
+            }
         }
+
+        String[] new_array = this.input.split(opr);
+        double operand1 = Double.parseDouble(new_array[0]);
+        double operand2 = Double.parseDouble(new_array[2]);
+        return new Expression(operand1, opr, operand2);
     }
 }
 
