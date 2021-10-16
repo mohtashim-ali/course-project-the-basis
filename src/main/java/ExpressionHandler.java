@@ -39,7 +39,14 @@ public abstract class ExpressionHandler {
      * @return Expression
      */
     public Expression simplify(){
+        /**
+         * Might need to add a whole class for this as there are multiple ways of simplifying different expressions.
+         */
+        // 1/sqrt(2) -> sqrt(2)/2
         //TO DO
         return new Expression(1, "+", 2);
+    }
+    public void print(){
+        System.out.println(this.operand1 + " " + this.operator + " " + this.operand2);
     }
 }
