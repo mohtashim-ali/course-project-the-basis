@@ -8,12 +8,11 @@ Welcome to our project! Below is a breakdown which make it easy for the viwer to
 2. CRC Models (will add link)
 3. Scenario Walk-Through (will add link)
 4. Progress Report (will add link)
+5. How to Use the Calculator (will add link)
 
-### How to Run the Calculator
-
-(will add steps)
 
 ## Phase 1
+
 
 ## Phase 2
 
