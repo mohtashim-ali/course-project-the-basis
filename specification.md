@@ -1,10 +1,10 @@
 ## Specification: Basic Calculator
 
-The objective or scope of our domain is to be able to compute and simplify basic mathematical operations following order of operations.
+Below is the breakdown of our specifiation!
 
 ### Introduction
 
-To narrow down our scope, currently our project will be able to take in a mathematical expression, compute the answer, and output the answer.
+To narrow down our scope, currently our project will be able to take in a mathematical expression, compute the answer, and output the answer. The expressions will be computed following order of operations.
 
 ### Breakdown
 
