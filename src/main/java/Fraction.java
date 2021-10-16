@@ -9,12 +9,15 @@ public class Fraction {
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
+        if (this.denominator == 0){
+            // Create an exception
+        }
     }
 
     public static void main(String[] args) {
         Fraction f1 = new Fraction(15, 7);
         Fraction f2 = new Fraction (6, 7);
-        Fraction f3 = f1.add_fraction(f2);
+        Fraction f3 = f1.add(f2);
         System.out.println(f3.numerator);
     }
 
@@ -36,7 +39,7 @@ public class Fraction {
      * @param other
      * @return The sum of both fractions.
      */
-    public Fraction add_fraction(Fraction other) {
+    public Fraction add(Fraction other) {
         if(this.denominator == other.denominator) {
             Fraction new_fraction = new Fraction(this.numerator + other.numerator, this.denominator);
             return new_fraction.simplify();
@@ -51,7 +54,7 @@ public class Fraction {
      * @param other
      * @return
      */
-    public Fraction substract_fraction(Fraction other) {
+    public Fraction substract(Fraction other) {
         if(this.denominator == other.denominator) {
             Fraction new_fraction = new Fraction(this.numerator - other.numerator, this.denominator);
             return new_fraction.simplify();
@@ -66,7 +69,7 @@ public class Fraction {
      * @param other
      * @return the product of both fractions.
      */
-    public Fraction multiply_fraction(Fraction other) {
+    public Fraction multiply(Fraction other) {
         return new Fraction(this.numerator * other.numerator, this.denominator * other.denominator).simplify();
     }
 
@@ -75,9 +78,9 @@ public class Fraction {
      * @param other
      * @return
      */
-    public Fraction divide_fraction(Fraction other) {
+    public Fraction divide(Fraction other) {
         Fraction flipped = new Fraction(other.denominator, other.numerator);
-        return this.multiply_fraction(flipped);
+        return this.multiply(flipped);
     }
 
     /**

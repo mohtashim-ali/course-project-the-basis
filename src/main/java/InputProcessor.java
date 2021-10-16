@@ -8,7 +8,7 @@ public class InputProcessor {
      */
     public String input;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExpressionException {
         InputProcessor input = new InputProcessor("12 / 4 - 3 + 6 * 18");
         Expression temp = input.processInput(input.listInput());
         System.out.println(temp.compute());
@@ -69,7 +69,7 @@ public class InputProcessor {
      * @param expr ArrayList
      * @return Expression
      */
-    public Expression processInput(ArrayList<String> expr) {
+    public Expression processInput(ArrayList<String> expr) throws ExpressionException {
         /**
          *
          * Function that processes input by Array of operands and operators.

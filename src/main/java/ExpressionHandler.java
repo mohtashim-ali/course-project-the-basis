@@ -1,3 +1,11 @@
+import java.util.List;
+import java.util.Objects;
+
+class ExpressionException extends Exception {
+    public ExpressionException(String errorMessage) {
+        super(errorMessage);
+    }
+}
 /**
  * ExpressionHandler Class that handles all operations done to an Expression.
  */
@@ -5,22 +13,35 @@ public abstract class ExpressionHandler {
     public double operand1;
     public double operand2;
     public String operator;
+    public List<String> operations = List.of(new String[]{"+", "-", "*", "/", "^"});
+    private boolean valid_operater;
 
     /**
      * @param operand1 double
      * @param operator String
      * @param operand2 double
      */
-    public ExpressionHandler(double operand1, String operator, double operand2) {
+    public ExpressionHandler(double operand1, String operator, double operand2) throws ExpressionException {
         this.operand1 = operand1;
         this.operand2 = operand2;
         this.operator = operator;
+        valid_operater = false;
+        for (String op : this.operations)
+        {
+            if (Objects.equals(op, this.operator)){
+                valid_operater = true;
+            }
+
+        }
+        if (!valid_operater){
+            throw new ExpressionException("Invalid Operator");
+        }
     }
 
     /**
      * @return Double
      */
-    public Double compute() {
+    public Double compute() throws ExpressionException {
         switch (this.operator) {
             case "+":
                 return this.operand1 + this.operand2;
@@ -30,7 +51,7 @@ public abstract class ExpressionHandler {
                 return this.operand1 * this.operand2;
         }
         if (this.operand2 == 0){
-            return null;
+            throw new ExpressionException("Undefined");
         }
         return this.operand1 / this.operand2;
     }
@@ -38,7 +59,7 @@ public abstract class ExpressionHandler {
     /**
      * @return Expression
      */
-    public Expression simplify(){
+    public Expression simplify() throws ExpressionException {
         /**
          * Might need to add a whole class for this as there are multiple ways of simplifying different expressions.
          */
