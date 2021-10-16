@@ -15,7 +15,7 @@ In short, our goal for phase 0 was to narrow down onto a specific goal so that w
 
 For our skeleton code, we focused on getting the 4 basic operations to work correctly with order of operations. We also made a controller class which can take in a custom input, and output the correct answer.
 
-## Questions
+## Open Question we are stuggling with
 
 ## What has worked well for our design?
 
@@ -39,4 +39,4 @@ Achraf
 
 Hamza
 
-> Text Here
+> I contributed by assisting with ideas in the InputProccesor class, as well as making the validateInput method. I also added multiple test cases for various methods to ensure our code was in the best shape possible. I additionally helped with making the CRC models as well as gathering ideas for it.
