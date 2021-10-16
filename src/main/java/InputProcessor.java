@@ -2,20 +2,19 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class WebProcessor {
+public class InputProcessor {
     /*
     Takes a string input and converts it to either an Expression or an Equation.
      */
     public String input;
 
     public static void main(String[] args) {
-        WebProcessor input = new WebProcessor("122222222-1343434343");
+        InputProcessor input = new InputProcessor("12-4");
         Expression temp = input.processInput();
-        System.out.println(temp.operator);
-
+        System.out.println(temp.compute());
     }
 
-    public WebProcessor(String input){
+    public InputProcessor(String input){
         this.input = input;
     }
     /*
@@ -35,7 +34,6 @@ public class WebProcessor {
                 opr = operator;
             }
         }
-
         String[] new_array = this.input.split(opr);
         double operand1 = Double.parseDouble(new_array[0]);
         double operand2 = Double.parseDouble(new_array[1]);
