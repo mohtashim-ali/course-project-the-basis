@@ -9,7 +9,7 @@ public class WebProcessor {
     public String input;
 
     public static void main(String[] args) {
-        WebProcessor input = new WebProcessor("1-1");
+        WebProcessor input = new WebProcessor("122222222-1343434343");
         Expression temp = input.processInput();
         System.out.println(temp.operator);
 
@@ -28,7 +28,7 @@ public class WebProcessor {
     Converts a string to an Expression.
      */
     public Expression processInput() {
-        String[] operators = new String[]{"[+]", "[-]", "[/]", "[*]"};
+        String[] operators = new String[]{"\\+", "-", "/", "\\*"};
         String opr = "";
         for (String operator : operators) {
             if (this.input.contains(operator)) {
@@ -38,7 +38,7 @@ public class WebProcessor {
 
         String[] new_array = this.input.split(opr);
         double operand1 = Double.parseDouble(new_array[0]);
-        double operand2 = Double.parseDouble(new_array[2]);
+        double operand2 = Double.parseDouble(new_array[1]);
         return new Expression(operand1, opr, operand2);
     }
 }
