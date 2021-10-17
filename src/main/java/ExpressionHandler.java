@@ -71,7 +71,7 @@ public abstract class ExpressionHandler {
      * @return Expression
      */
     public Expression simplify() throws ExpressionException {
-        /**
+        /*
          * Might need to add a whole class for this as there are multiple ways of simplifying different expressions.
          */
         // 1/sqrt(2) -> sqrt(2)/2

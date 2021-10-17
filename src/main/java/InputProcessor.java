@@ -23,7 +23,7 @@ public class InputProcessor {
     public boolean checkExpression(){
         return this.input.contains("=");
     }
-    /**
+    /*
     Converts a string to an Expression.
      */
 
@@ -31,8 +31,8 @@ public class InputProcessor {
      * @return ArrayList
      */
     public ArrayList<String> listInput(){
-        /**
-         * Function that splits the input into a list of operands and operators.
+        /*
+          Function that splits the input into a list of operands and operators.
          */
         return new ArrayList<>(Arrays.asList(this.input.split(" ")));
     }
@@ -43,8 +43,8 @@ public class InputProcessor {
      * @return boolean
      */
     public boolean compareOperators(String n1, String n2){
-        /**
-         * Function that compares different types of operators.
+        /*
+          Function that compares different types of operators.
          */
         ArrayList<String> operations = new ArrayList<>(Arrays.asList("-", "+", "/", "*"));
         int splitter = 2;
@@ -70,10 +70,10 @@ public class InputProcessor {
      * @return Expression
      */
     public Expression processInput(ArrayList<String> expr) throws ExpressionException {
-        /**
-         *
-         * Function that processes input by Array of operands and operators.
-         *
+        /*
+
+          Function that processes input by Array of operands and operators.
+
          */
         if (expr.size() == 1){
             double operand1 = Double.parseDouble(expr.get(0));

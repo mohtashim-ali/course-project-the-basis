@@ -11,7 +11,7 @@ public class WalkthroughCustomInput{
         System.out.println("Please type in a mathematical expression:");
         String expression = input.nextLine();
 
-        StringBuffer s = new StringBuffer();
+        StringBuilder s = new StringBuilder();
         String[] arr = new String[expression.length()+expression.length()-1];
         if (!expression.contains(" ")) {
             for (int i=0; i<expression.length(); i++) {
