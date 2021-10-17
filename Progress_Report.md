@@ -46,7 +46,7 @@ For our skeleton code, we focused on getting the 4 basic operations to work corr
 
 ## Questions
 
-1. Should we focus on backend for Phases 1 & 2, or is it better to have a fronend and a good enough backend?
+1. Should we focus on backend for Phases 1 & 2, or is it better to have a frontend and a good enough backend?
 2. How "complex" should the frontend be? Is a basic and simple design enough?
 
 ## What has worked well for our design
@@ -61,7 +61,7 @@ Mohtashim
 
 Nofel
 
-> Some of my contribution consists of writing some code in the expression and expressionHandler file while suggesting ideas on how the calculator will be formatted. I have contributed ideas about potential feature and flaws the calculator may have in the future. My primary contribution was making the CRC models. I made the CRC into a google slides presentation format while adding and removing stuff from the presentation as we went along. Me and my teammates removed and added stuff based on the feedback given by the TA and Professor. After each new method is implemented I added some test cases I thought would be necessary incase we wanted to change our desgin/code.
+> Some of my contribution consists of writing some code in the expression and expressionHandler file while suggesting ideas on how the calculator will be formatted. I have contributed ideas about potential feature and flaws the calculator may have in the future. My primary contribution was making the CRC models. I made the CRC into a google slides presentation format while adding and removing stuff from the presentation as we went along. Me and my teammates removed and added stuff based on the feedback given by the TA and Professor. After each new method is implemented I added some test cases I thought would be necessary incase we wanted to change our design/code.
 
 Kyle 
 
@@ -75,7 +75,7 @@ Kyle
 
 Achraf
 
-> My contributations mainly came from the implementations of the code, as well as some design choices. I also constructed the Fraction class which is responsible for creating the fractions in our calculator. To the overall project i made changes which improved functionality of the calculator.
+> My contributions mainly came from the implementations of the code, as well as some design choices. I also constructed the Fraction class which is responsible for creating the fractions in our calculator. To the overall project i made changes which improved functionality of the calculator.
 
 Hamza
 
