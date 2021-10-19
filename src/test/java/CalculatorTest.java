@@ -103,7 +103,7 @@ public class CalculatorTest {
     public void NoWhitespace() throws ExpressionException {
         InputProcessor input = new InputProcessor("5+5-9+8*7+9/7");
         Expression temp = input.processInput(input.listInput());
-        System.out.println(input);
+        String expected_output = "5 + 5 - 9 + 8 * 7 + 9 / 7";
     }
 
 
