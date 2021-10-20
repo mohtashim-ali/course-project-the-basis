@@ -9,26 +9,20 @@ public class WalkthroughCustomInput{
         Scanner input = new Scanner(System.in);
 
         System.out.println("Please type in a mathematical expression:");
-        String expression = input.nextLine();
-
-        StringBuffer s = new StringBuffer();
-        String[] arr = new String[expression.length()+expression.length()-1];
-        if (!expression.contains(" ")) {
-            for (int i=0; i<expression.length(); i++) {
-                arr[i] = String.valueOf(expression.charAt(i));
-                arr[i+1] = " ";
-            }
-
-            for(int i = 0; i < arr.length-expression.length()+1; i++) {
-                s.append(arr[i]);
-                s.append(" ");
+        String string_input = input.nextLine();
+        String expression = string_input.replaceAll(" ", "");
+        String final_string = "";
+        int j = 0;
+        for (int i = 0; i < expression.length(); i++) {
+            if(expression.charAt(i) == '*' || expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == '/') {
+                final_string += expression.substring(j, i) + " " + expression.charAt(i) + " ";
+                j = i + 1;
             }
         }
-        InputProcessor user = new InputProcessor(s.toString());
-        Expression userinput = user.processInput(user.listInput());
-
-        System.out.println(userinput.compute());
-
+        final_string += expression.substring(j, expression.length());
+        InputProcessor user = new InputProcessor(final_string);
+        System.out.println(final_string);
+        System.out.println(user.processInput().compute());
     }
 
 }

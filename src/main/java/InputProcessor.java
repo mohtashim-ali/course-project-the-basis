@@ -1,21 +1,15 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
-public class InputProcessor {
+public class InputProcessor{
     /**
     Takes a string input and converts it to either an Expression or an Equation.
      */
-    public String input;
-
-    public static void main(String[] args) throws ExpressionException {
-        InputProcessor input = new InputProcessor("10 + 10 * 20 + 30 / 5");
-        Expression temp = input.processInput(input.listInput());
-        System.out.println(temp.compute());
-    }
+    public ArrayList<String> input;
 
     public InputProcessor(String input){
-        this.input = input;
+        this.input = new ArrayList<>(Arrays.asList(input.split(" ")));;
+
     }
     /**
     If returns true it is an expression, returns false otherwise.
@@ -28,16 +22,6 @@ public class InputProcessor {
      */
 
     /**
-     * @return ArrayList
-     */
-    public ArrayList<String> listInput(){
-        /**
-         * Function that splits the input into a list of operands and operators.
-         */
-        return new ArrayList<>(Arrays.asList(this.input.split(" ")));
-    }
-
-    /**
      * @param n1 String
      * @param n2 String
      * @return boolean
@@ -46,7 +30,7 @@ public class InputProcessor {
         /**
          * Function that compares different types of operators.
          */
-        ArrayList<String> operations = new ArrayList<>(Arrays.asList("-", "+", "/", "*"));
+        ArrayList<String> operations = new ArrayList<>(Arrays.asList("-", "+", "*", "/"));
         int splitter = 2;
         int n1_position = operations.indexOf(n1);
         int n2_position = operations.indexOf(n2);
@@ -66,37 +50,36 @@ public class InputProcessor {
     }
 
     /**
-     * @param expr ArrayList
      * @return Expression
      */
-    public Expression processInput(ArrayList<String> expr) throws ExpressionException {
+    public Expression processInput() throws ExpressionException {
         /**
          *
          * Function that processes input by Array of operands and operators.
          *
          */
-        if (expr.size() == 1){
-            double operand1 = Double.parseDouble(expr.get(0));
+        if (this.input.size() == 1){
+            double operand1 = Double.parseDouble(this.input.get(0));
             return new Expression(operand1, "", 0);
         }
-        if (expr.size() == 3){
-            double operand1 = Double.parseDouble(expr.get(0));
-            double operand2 = Double.parseDouble(expr.get(2));
-            return new Expression(operand1, expr.get(1), operand2);
+        if (this.input.size() == 3){
+            double operand1 = Double.parseDouble(this.input.get(0));
+            double operand2 = Double.parseDouble(this.input.get(2));
+            return new Expression(operand1, this.input.get(1), operand2);
         }
         else{
             int highest_order_op = 1;
-            for (int i = 2; i<=expr.size()-1; i++){
-                if (this.compareOperators(expr.get(highest_order_op), expr.get(i))){
+            for (int i = 2; i<=this.input.size()-1; i++){
+                if (this.compareOperators(this.input.get(highest_order_op), this.input.get(i))){
                     highest_order_op = i;
                 }
             }
-            Expression expr1 = this.processInput((new InputProcessor(expr.get(highest_order_op-1) + " "
-                    + expr.get(highest_order_op) + " " + expr.get(highest_order_op+1))).listInput());
+            Expression expr1 = (new InputProcessor(this.input.get(highest_order_op-1) + " "
+                    + this.input.get(highest_order_op) + " " + this.input.get(highest_order_op+1))).processInput();
             double operand2 = expr1.compute();
-            expr.remove(highest_order_op-1); expr.remove(highest_order_op-1); expr.remove(highest_order_op-1);
-            expr.add(highest_order_op-1, Double.toString(operand2));
-            return this.processInput(expr);
+            this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1);
+            this.input.add(highest_order_op-1, Double.toString(operand2));
+            return this.processInput();
         }
     }
 }
