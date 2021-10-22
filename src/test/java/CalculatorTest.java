@@ -99,18 +99,5 @@ public class CalculatorTest {
         Expression temp = input.processInput();
         assert temp.compute() == -5.0;
     }
-    /*@Test
-    public void NoWhitespace() throws ExpressionException {
-        InputProcessor input = new InputProcessor("5+5-9+8*7+9/7");
-        Expression temp = input.processInput(input.listInput());
-<<<<<<< HEAD
-        String expected_output = "5 + 5 - 9 + 8 * 7 + 9 / 7";
-    }
-=======
-        System.out.println(input);
-    }*/
->>>>>>> Kyles_Branch
-
-
 
 }
