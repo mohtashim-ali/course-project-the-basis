@@ -6,43 +6,43 @@ public class CalculatorTest {
     @Test
     public void addition() throws ExpressionException {
         InputProcessor input = new InputProcessor("5 + 5");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 10.0;
     }
     @Test
     public void subtraction() throws ExpressionException {
         InputProcessor input = new InputProcessor("5 - 4");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 1.0;
     }
     @Test
     public void multiplication() throws ExpressionException {
         InputProcessor input = new InputProcessor("5 * 4");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 20.0;
     }
     @Test
     public void division() throws ExpressionException {
         InputProcessor input = new InputProcessor("10 / 5");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 2.0;
     }
     @Test (expected = ExpressionException.class)
     public void divisionByZero() throws ExpressionException {
         InputProcessor input = new InputProcessor("5 / 0");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         temp.compute();
     }
     @Test
     public void multiplicationByNegative() throws ExpressionException {
         InputProcessor input = new InputProcessor("-5 * -1");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 5.0;
     }
     @Test
     public void additionMultiplePositiveNumbers() throws ExpressionException {
         InputProcessor input = new InputProcessor("5 + 3 + 4");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 12.0;
     }
     @Test
@@ -62,49 +62,54 @@ public class CalculatorTest {
     @Test
     public void mixOperationsOrder() throws ExpressionException {
         InputProcessor input = new InputProcessor("12 / 4 - 3 + 6 * 18");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 108.0;
 
     }
     @Test
     public void mixOperationsOrder2() throws ExpressionException {
         InputProcessor input = new InputProcessor("12 / 4 * 3 + 6 * 18");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 117.0;
 
     }
     @Test
     public void mixOperationsOrder3() throws ExpressionException {
         InputProcessor input = new InputProcessor("12 + 4 + 3 / 6 + 18");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         temp.compute();
 
     }
     @Test (expected = ExpressionException.class)
     public void invalidOperation() throws ExpressionException {
         InputProcessor input = new InputProcessor("12 ( 4");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 34.5;
 
     }
     @Test
     public void singleDigit() throws ExpressionException {
         InputProcessor input = new InputProcessor("5");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == 5.0;
     }
     @Test
     public void NegativesingleDigit() throws ExpressionException {
         InputProcessor input = new InputProcessor("-5");
-        Expression temp = input.processInput(input.listInput());
+        Expression temp = input.processInput();
         assert temp.compute() == -5.0;
     }
-    @Test
+    /*@Test
     public void NoWhitespace() throws ExpressionException {
         InputProcessor input = new InputProcessor("5+5-9+8*7+9/7");
         Expression temp = input.processInput(input.listInput());
+<<<<<<< HEAD
         String expected_output = "5 + 5 - 9 + 8 * 7 + 9 / 7";
     }
+=======
+        System.out.println(input);
+    }*/
+>>>>>>> Kyles_Branch
 
 
 

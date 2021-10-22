@@ -20,12 +20,9 @@ public class WalkthroughCustomInput{
             }
         }
         final_string += expression.substring(j, expression.length());
-        System.out.println(final_string);
         InputProcessor user = new InputProcessor(final_string);
-        Expression userinput = user.processInput(user.listInput());
-
-        System.out.println(userinput.compute());
-
+        System.out.println(final_string);
+        System.out.println(user.processInput().compute());
     }
 
 }
