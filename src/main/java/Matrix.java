@@ -3,13 +3,13 @@ public class Matrix extends MatrixHandler{
      Creates a matrix.
      */
 
-    int[][] matrix;
+    double[][] matrix;
 
     /**
      *
      * @param matrix int[][]
      */
-    public Matrix(int[][] matrix) {
+    public Matrix(double[][] matrix) {
         super(matrix);
     }
 }
