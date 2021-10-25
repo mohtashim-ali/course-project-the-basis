@@ -1,3 +1,4 @@
+import MATLAB;
 public class MatrixHandler {
     /**
      Creates a matrix.
@@ -11,6 +12,11 @@ public class MatrixHandler {
      */
     public MatrixHandler(double[][] matrix) {
         this.matrix = matrix;
+    }
+
+    public static void main(String[] args) {
+        double[][] new_matrix = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
+        Matrix temp = new Matrix(new_matrix);
     }
 
     /**
@@ -36,34 +42,39 @@ public class MatrixHandler {
     /**
      * Multiples the matrix by a scalar.
      * @param scalar
-     * @return
      */
-    public Matrix scalarMult(double scalar) {
-        // todo
-        return null;
+    public void scalarMult(double scalar) {
+        for(int i = 0; i < this.matrix.length; i++) {
+            for (int j = 0; j < this.matrix[i].length; j++) {
+                double temp = scalar * this.matrix[i][j];
+                this.matrix[i][j] = temp;
+            }
+        }
     }
 
     /**
-     * Adds row1 to row2.
+     * Adds row2 to row1.
      * @param row1
      * @param row2
      * @return
      */
-    public Matrix rowAdd(int row1, int row2) {
-        // todo
-        return null;
+    public void rowAdd(int row1, int row2) {
+        for(int i = 0; i < this.matrix[row1].length; i++) {
+            this.matrix[row1 - 1][i] += this.matrix[row2 - 1][i];
+        }
     }
 
     /**
-     * Adds scalar * row1 to row2.
+     * Adds scalar * row2 to row1.
      * @param row1
      * @param row2
      * @param scalar
      * @return
      */
-    public Matrix addScalarMult(int row1, int row2, double scalar) {
-        // todo
-        return null;
+    public void addScalarMult(int row1, int row2, double scalar) {
+        for(int i = 0; i < this.matrix[row1].length; i++) {
+            this.matrix[row1 - 1][i] += scalar * this.matrix[row2 - 1][i];
+        }
     }
 
     /**
@@ -72,9 +83,11 @@ public class MatrixHandler {
      * @param row2
      * @return
      */
-    public Matrix rowSwap(int row1, int row2) {
-        // todo
-        return null;
+    public void rowSwap(int row1, int row2) {
+        double[] temp1 = this.matrix[row1 - 1];
+        double[] temp2 = this.matrix[row2 - 1];
+        this.matrix[row1 - 1] = temp2;
+        this.matrix[row2 - 1] = temp1;
     }
 
     /**
@@ -82,7 +95,6 @@ public class MatrixHandler {
      * @return
      */
     public Matrix RREF() {
-        // todo
         return null;
     }
 
@@ -95,5 +107,19 @@ public class MatrixHandler {
         return null;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder final_string = new StringBuilder("[[");
+        for(int i = 0; i < this.matrix.length; i++) {
+            for(int j=0; j < this.matrix[i].length; j++) {
+                if(j != this.matrix[i].length - 1) {
+                    final_string.append(this.matrix[i][j]).append(", ");
+                } else {
+                    final_string.append(this.matrix[i][j]).append("],").append("\n").append("[");
+                }
+            }
+        }
+        return final_string.toString().substring(0, final_string.length() - 3) + "]";
+    }
 }
 
