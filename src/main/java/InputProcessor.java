@@ -30,7 +30,7 @@ public class InputProcessor{
         /*
           Function that compares different types of operators.
          */
-        ArrayList<String> operations = new ArrayList<>(Arrays.asList("-", "+", "*", "/"));
+        ArrayList<String> operations = new ArrayList<>(Arrays.asList("-", "+", "*", "/", "^"));
         int splitter = 2;
         int n1_position = operations.indexOf(n1);
         int n2_position = operations.indexOf(n2);
