@@ -1,4 +1,4 @@
-import MATLAB;
+
 public class MatrixHandler {
     /**
      Creates a matrix.
@@ -24,9 +24,14 @@ public class MatrixHandler {
      * @param other
      * @return
      */
-    public Matrix add(Matrix other) {
-        // todo
-        return null;
+    public double[][] add(Matrix other) {
+        if (this.matrix.length == other.matrix.length) {
+            for (int i=0; i<matrix.length; i++) {
+                for (int j=0; j<this.matrix[i].length; j++)
+                    this.matrix[i][j] += other.matrix[i][j];
+            }
+        }
+        return this.matrix;
     }
 
     /**
@@ -34,22 +39,28 @@ public class MatrixHandler {
      * @param other
      * @return
      */
-    public Matrix substract(Matrix other) {
-        // todo
-        return null;
+    public double[][] substract(Matrix other) {
+        if (this.matrix.length == other.matrix.length) {
+            for (int i=0; i<matrix.length; i++) {
+                for (int j=0; j<this.matrix[i].length; j++)
+                    this.matrix[i][j] -= other.matrix[i][j];
+            }
+        }
+        return this.matrix;
     }
 
     /**
      * Multiples the matrix by a scalar.
      * @param scalar
      */
-    public void scalarMult(double scalar) {
+    public double[][] scalarMult(double scalar) {
         for(int i = 0; i < this.matrix.length; i++) {
             for (int j = 0; j < this.matrix[i].length; j++) {
                 double temp = scalar * this.matrix[i][j];
                 this.matrix[i][j] = temp;
             }
         }
+        return this.matrix;
     }
 
     /**
