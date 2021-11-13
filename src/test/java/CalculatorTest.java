@@ -99,5 +99,25 @@ public class CalculatorTest {
         Expression temp = input.processInput();
         assert temp.compute() == -5.0;
     }
+    @Test
+    public void exponentOneDigit() throws ExpressionException {
+        InputProcessor input = new InputProcessor("2 ^ 2");
+        Expression temp = input.processInput();
+        assert temp.compute() == 4.0;
+    }
+    @Test
+    public void exponentAddition() throws ExpressionException {
+        InputProcessor input = new InputProcessor("2 ^ 2 + 2 ^ 3");
+        Expression temp = input.processInput();
+        assert temp.compute() == 12.0;
+    }
+
+    @Test
+    public void doubleExponent() throws ExpressionException {
+        InputProcessor input = new InputProcessor("2 ^ 2 ^ 2");
+        Expression temp = input.processInput();
+        assert temp.compute() == 16.0;
+
+    }
 
 }
