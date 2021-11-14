@@ -1,8 +1,4 @@
-# Design Report
-
-This file contains the inforation for the Phase 1 design report.
-
-### SOLID
+## SOLID
 
 How well does your design adhere to the SOLID design principles?
 
@@ -18,7 +14,7 @@ Acknowledging bad design can earn you marks and demonstrates understanding — e
 
 > Answer here
 
-### Clean Architecture
+## Clean Architecture
 
 Is your program consistent with Clean Architecture?
 
@@ -41,7 +37,7 @@ Give us a concrete example from something like your UI or an interaction with a 
 
 > Answer here
 
-### Design Patterns
+## Design Patterns
 
 Has your group used design patterns in appropriate places in the code? Identified and described any patterns that could be applied in future with more time?
 
@@ -52,7 +48,7 @@ Be careful that there aren't any obvious places a design pattern should have bee
 
 > Answer here
 
-### Use of GitHub Features
+## Use of GitHub Features
 
 Did your group make an effort to use some of the various features of GitHub to facilitate development of your code?
 
@@ -77,7 +73,7 @@ Review each other's Pull Requests as you go!
 
 > Answer here
 
-### Testing
+## Testing
 
 Are most components of your system tested? Are there any components that would be difficult to test due to your design?
 We know time is tight in the project, so it is fine if you don't test everything if your group decides to focus on other aspects of the program, but we want to see evidence of testing.
@@ -85,7 +81,7 @@ A significant portion of your code should be tested to earn full marks for this 
 
 > Answer here
 
-### Refactoring
+## Refactoring
 
 Is there evidence that your team has refactored code in a meaningful way during the project?
 Point to specific Pull Requests!
@@ -97,7 +93,7 @@ Are there any obvious code smells still in your code that you missed fixing?
 > Answer here
 
 
-### Code Organization
+## Code Organization
 
 Is your code organized in a meaningful way? Is it easy to find things in your package structure?
 
@@ -107,7 +103,7 @@ Tell us about how you decided to organize your code and why!
 
 > Answer here
 
-### Functionality
+## Functionality
 
 Does your program do what the specification says it should do?
 Demo your program's functionality to your TA or make a short video!
