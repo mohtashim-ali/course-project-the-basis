@@ -19,7 +19,7 @@ A brief description of how your project is consistent with the SOLID design prin
 ## Packaging Strategies
 A brief description of which packaging strategies you considered, which you decided to use, and why. (see slide 7 from the packages slides)
 
-# Design Patterns
+## Design Patterns
 A summary of any design patterns your group has implemented (or plans to implement).
 
 ## Progress Report
