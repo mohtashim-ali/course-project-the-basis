@@ -5,13 +5,13 @@ public class Matrix extends MatrixHandler{
      Creates a matrix.
      */
 
-    ArrayList<ArrayList<Double>> matrix;
+    ArrayList<ArrayList<Fraction>> matrix;
 
     /**
      *
      * @param matrix int[][]
      */
-    public Matrix(ArrayList<ArrayList<Double>> matrix) {
+    public Matrix(ArrayList<ArrayList<Fraction>> matrix) {
         super(matrix);
     }
 }
