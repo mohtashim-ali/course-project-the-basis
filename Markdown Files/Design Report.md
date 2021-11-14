@@ -26,7 +26,6 @@ A summary of any design patterns your group has implemented (or plans to impleme
 A progress report
 
 ## Questions
-open questions your group is struggling with
-what has worked well so far with your design
+1. How should we implement user log in and sign up from a backend standpoint? I tried to use Spring however it seems too complicated for what we want, so is it okay to implement something simple?
 
 ## Summary of what each group member is working on and plans on working on next
