@@ -1,26 +1,23 @@
-import MATLAB;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class MatrixHandler {
     /**
-     Creates a matrix.
+     * Creates a matrix.
      */
 
-    double[][] matrix;
+    ArrayList<ArrayList<Double>> matrix;
 
     /**
-     *
      * @param matrix double[][]
      */
-    public MatrixHandler(double[][] matrix) {
+    public MatrixHandler(ArrayList<ArrayList<Double>> matrix) {
         this.matrix = matrix;
-    }
-
-    public static void main(String[] args) {
-        double[][] new_matrix = {{1.0, 2.0, 3.0}, {4.0, 5.0, 6.0}, {7.0, 8.0, 9.0}};
-        Matrix temp = new Matrix(new_matrix);
     }
 
     /**
      * Adds 2 matrices
+     *
      * @param other
      * @return
      */
@@ -31,6 +28,7 @@ public class MatrixHandler {
 
     /**
      * Substracts 2 matrices
+     *
      * @param other
      * @return
      */
@@ -41,57 +39,62 @@ public class MatrixHandler {
 
     /**
      * Multiples the matrix by a scalar.
+     *
      * @param scalar
      */
     public void scalarMult(double scalar) {
-        for(int i = 0; i < this.matrix.length; i++) {
-            for (int j = 0; j < this.matrix[i].length; j++) {
-                double temp = scalar * this.matrix[i][j];
-                this.matrix[i][j] = temp;
+        for (int i = 0; i < this.matrix.size(); i++) {
+            for (int j = 0; j < this.matrix.get(i).size(); j++) {
+                double temp = scalar * this.matrix.get(i).get(j);
+                this.matrix.get(i).set(j, temp);
             }
         }
     }
 
     /**
      * Adds row2 to row1.
+     *
      * @param row1
      * @param row2
      * @return
      */
     public void rowAdd(int row1, int row2) {
-        for(int i = 0; i < this.matrix[row1].length; i++) {
-            this.matrix[row1 - 1][i] += this.matrix[row2 - 1][i];
+        for (int i = 0; i < this.matrix.get(row1).size(); i++) {
+            this.matrix.get(row1 - 1).set(i, this.matrix.get(row2 - 1).get(i));
         }
     }
 
     /**
      * Adds scalar * row2 to row1.
+     *
      * @param row1
      * @param row2
      * @param scalar
      * @return
      */
     public void addScalarMult(int row1, int row2, double scalar) {
-        for(int i = 0; i < this.matrix[row1].length; i++) {
-            this.matrix[row1 - 1][i] += scalar * this.matrix[row2 - 1][i];
+        for (int i = 0; i < this.matrix.get(row1).size(); i++) {
+            this.matrix.get(row1 - 1).set(i, scalar * this.matrix.get(row2 - 1).get(i));
         }
     }
 
     /**
      * Swaps 2 rows in a given matrix.
+     *
      * @param row1
      * @param row2
      * @return
      */
     public void rowSwap(int row1, int row2) {
-        double[] temp1 = this.matrix[row1 - 1];
-        double[] temp2 = this.matrix[row2 - 1];
-        this.matrix[row1 - 1] = temp2;
-        this.matrix[row2 - 1] = temp1;
+        ArrayList<Double> temp1 = this.matrix.get(row1 - 1);
+        ArrayList<Double> temp2 = this.matrix.get(row2 - 1);
+        this.matrix.set(row1 - 1, temp2);
+        this.matrix.set(row2 - 1, temp1);
     }
 
     /**
      * Returns the RREF of this matrix.
+     *
      * @return
      */
     public Matrix RREF() {
@@ -100,6 +103,7 @@ public class MatrixHandler {
 
     /**
      * Returns the inverse of this matrix.
+     *
      * @return
      */
     public Matrix inverse() {
@@ -110,16 +114,51 @@ public class MatrixHandler {
     @Override
     public String toString() {
         StringBuilder final_string = new StringBuilder("[[");
-        for(int i = 0; i < this.matrix.length; i++) {
-            for(int j=0; j < this.matrix[i].length; j++) {
-                if(j != this.matrix[i].length - 1) {
-                    final_string.append(this.matrix[i][j]).append(", ");
+        for (int i = 0; i < this.matrix.size(); i++) {
+            for (int j = 0; j < this.matrix.get(i).size(); j++) {
+                if (j != this.matrix.get(i).size() - 1) {
+                    final_string.append(this.matrix.get(i).get(j)).append(", ");
                 } else {
-                    final_string.append(this.matrix[i][j]).append("],").append("\n").append("[");
+                    final_string.append(this.matrix.get(i).get(j)).append("],").append("\n").append("[");
                 }
             }
         }
         return final_string.toString().substring(0, final_string.length() - 3) + "]";
+    }
+
+    public double determinant() {
+        if (this.matrix.size() == 2 && this.matrix.get(0).size() == 2) {
+            double a, b, c, d;
+            a = this.matrix.get(0).get(0);
+            b = this.matrix.get(0).get(1);
+            c = this.matrix.get(1).get(0);
+            d = this.matrix.get(1).get(1);
+            return a * d - b * c;
+        } else {
+            double determinant = 0;
+            ArrayList<Double> row = this.matrix.get(0);
+            int n = 0;
+            while (n < this.matrix.size()){
+                ArrayList<ArrayList<Double>> temp = new ArrayList<>();
+                for (int i = 1; i < this.matrix.size(); i++) {
+                    ArrayList<Double> temp_row = new ArrayList<>();
+                    for (int j = 0; j < this.matrix.size(); j++) {
+                        if (j != n){
+                            temp_row.add(this.matrix.get(i).get(j));
+                        }
+                    }
+                    temp.add(temp_row);
+                }
+                Matrix m = new Matrix(temp);
+                if (n % 2 == 0) {
+                    determinant += row.get(n) * m.determinant();
+                } else {
+                    determinant -= row.get(n) * m.determinant();
+                }
+                n += 1;
+            }
+            return determinant;
+        }
     }
 }
 
