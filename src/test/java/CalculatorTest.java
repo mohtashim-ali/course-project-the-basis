@@ -119,5 +119,42 @@ public class CalculatorTest {
         assert temp.compute() == 16.0;
 
     }
+    @Test
+    public void testSin() {
+        double input = new Trigonometry().computeSin(90);
+        System.out.println(input);
+        assert input == 0.894;
+    }
+    @Test
+    public void testCos(){
+        double input = new Trigonometry().computeCos(270);
+        System.out.println(input);
+        assert input == 0.9844;
 
-}
+    }
+    @Test
+    public void testTan() {
+        double input = new Trigonometry().computeTan(80);
+        System.out.println(input);
+        assert input == 9.0027;
+    }
+    @Test
+    public void testCsc() {
+        double input = new Trigonometry().computeCsc(240);
+        System.out.println(input);
+        assert input == 1.0578;
+    }
+    @Test
+    public void testSec() {
+        double input = new Trigonometry().computeSec(180);
+        System.out.println(input);
+        assert input == -1.6708;
+    }
+    @Test
+    public void testCot() {
+        double input = new Trigonometry().computeCot(360);
+        System.out.println(input);
+        assert input == -0.2959;
+    }
+
+    }

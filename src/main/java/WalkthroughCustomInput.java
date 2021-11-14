@@ -14,7 +14,7 @@ public class WalkthroughCustomInput{
         String final_string = "";
         int j = 0;
         for (int i = 0; i < expression.length(); i++) {
-            if(expression.charAt(i) == '*' || expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == '/') {
+            if(expression.charAt(i) == '*' || expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == '/'|| expression.charAt(i) == '^') {
                 final_string += expression.substring(j, i) + " " + expression.charAt(i) + " ";
                 j = i + 1;
             }
