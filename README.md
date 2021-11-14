@@ -12,14 +12,16 @@ The classes worked on and used in Phase 0 are: [WalkthroughCustomInput](https://
 
 ### Components
 
-1. [Specification](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/specification.md)
-2. [CRC Models](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Calculator%20CRC%20Model.pdf)
-3. [Scenario Walk-Through](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Scenario%20Walkthrough.md)
-4. [Progress Report](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Progress_Report.md)
-5. [How to use the Calculator](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/How%20to%20Run%20the%20Calculator.md)
+1. [Specification](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/specification.md)
+2. [CRC Models](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Calculator%20CRC%20Model.pdf)
+3. [Scenario Walk-Through](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Scenario%20Walkthrough.md)
+4. [Progress Report](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Progress_Report.md)
+5. [How to use the Calculator](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/How%20to%20Run%20the%20Calculator.md)
 
 
 ## Phase 1
+
+1. [Design Report](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Design%20Report.md)
 
 
 ## Phase 2

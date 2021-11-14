@@ -1,6 +1,7 @@
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
+import java.lang.Math;
 
 /**
  * ExpressionException Class that allows for custom exceptions of creating invalid expressions.
@@ -58,7 +59,11 @@ public abstract class ExpressionHandler {
                 return this.operand1 - this.operand2;
             case "*":
                 return this.operand1 * this.operand2;
+            case "^":
+                return Math.pow(this.operand1, this.operand2);
+
         }
+
         if (this.operator.equals("")){
             return this.operand1;
         }
