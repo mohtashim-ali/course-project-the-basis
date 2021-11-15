@@ -45,31 +45,31 @@ public class MatrixHandlerTest extends TestCase {
         Matrix temp = new Matrix(new_matrix);
         assert Objects.equals(temp.determinant().toString(), "-3/1");
     }
-    public void testDeterminant3() {
-        ArrayList<Fraction> m1 = new ArrayList<>() {{
-            add(new Fraction(2, 1));
-            add(new Fraction(2, 1));
-            add(new Fraction(3, 1));
-        }};
-        ArrayList<Fraction> m2 = new ArrayList<>() {{
-            add(new Fraction(4, 1));
-            add(new Fraction(5, 1));
-            add(new Fraction(6, 1));
-        }};
-        ArrayList<Fraction> m3 = new ArrayList<>() {{
-            add(new Fraction(7, 1));
-            add(new Fraction(8, 1));
-            add(new Fraction(9, 1));
-        }};
-        ArrayList<ArrayList<Fraction>> new_matrix = new ArrayList<>() {{
-            add(m1);
-            add(m2);
-            add(m3);
-        }};
-        Matrix temp = new Matrix(new_matrix);
-        System.out.println(temp.determinant().toString());
-        assert Objects.equals(temp.determinant().toString(), "-3/1");
-    }
+//    public void testDeterminant3() {
+//        ArrayList<Fraction> m1 = new ArrayList<>() {{
+//            add(new Fraction(2, 1));
+//            add(new Fraction(2, 1));
+//            add(new Fraction(3, 1));
+//        }};
+//        ArrayList<Fraction> m2 = new ArrayList<>() {{
+//            add(new Fraction(4, 1));
+//            add(new Fraction(5, 1));
+//            add(new Fraction(6, 1));
+//        }};
+//        ArrayList<Fraction> m3 = new ArrayList<>() {{
+//            add(new Fraction(7, 1));
+//            add(new Fraction(8, 1));
+//            add(new Fraction(9, 1));
+//        }};
+//        ArrayList<ArrayList<Fraction>> new_matrix = new ArrayList<>() {{
+//            add(m1);
+//            add(m2);
+//            add(m3);
+//        }};
+//        Matrix temp = new Matrix(new_matrix);
+//        System.out.println(temp.determinant().toString());
+//        assert Objects.equals(temp.determinant().toString(), "-3/1");
+//    }
 //    public void testDeterminant4() {
 //        ArrayList<Fraction> m1 = new ArrayList<>() {{
 //            add(2.0);
