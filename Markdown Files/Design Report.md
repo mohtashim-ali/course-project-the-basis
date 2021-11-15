@@ -68,4 +68,4 @@ Hamza
 
 Kyle
 
-> text
+> My tasks consisted of front-end work with our website and aiding in back-end frameworks/code. Lots of functions and algorithms such as determinant/RREF in MatrixHandler were designed by me or with the aid of my knowledge. Several test cases were created for MatrixHandler that helped us debug issues though we are still facing issues with code generality. Furthermore our website was created purely by me and will aid much of my team members in creating users and calculator history. In the future, I hope to put more effort into flushing out our backend designs and creating efficient systems in our calculator.
