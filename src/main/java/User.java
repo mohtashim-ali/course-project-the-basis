@@ -55,5 +55,9 @@ public class User {
     public ArrayList<String> getHistory() throws IOException {
         return history.searchByKeyword(this.username);
     }
+
+    public String getUsername() {
+        return this.username;
+    }
 }
 

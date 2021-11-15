@@ -22,6 +22,7 @@ The classes worked on and used in Phase 0 are: [WalkthroughCustomInput](https://
 ## Phase 1
 
 1. [Design Report](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Design%20Report.md)
+2. [Progress Report](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Progess%20Report%20Phase%201.md)
 
 
 ## Phase 2

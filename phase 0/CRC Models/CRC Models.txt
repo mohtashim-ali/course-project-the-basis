@@ -39,7 +39,7 @@
   {
     "name": "LinearAlgebraMode (Entity)",
     "superclasses": "BasicCalculator",
-    "subclasses": "Matrix",
+    "subclasses": "Calculator",
     "type": 1,
     "responsibilities": [
       "Determines if the user selects Linear Algebra mode and gives access to all methods under the LinearAlgebraMode class."
@@ -73,7 +73,7 @@
     ]
   },
   {
-    "name": "Matrix",
+    "name": "Calculator",
     "superclasses": "LinearAlgebraMode",
     "subclasses": "",
     "type": 1,
