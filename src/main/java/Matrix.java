@@ -1,15 +1,17 @@
+import java.util.ArrayList;
+
 public class Matrix extends MatrixHandler{
     /**
      Creates a matrix.
      */
 
-    double[][] matrix;
+    ArrayList<ArrayList<Fraction>> matrix;
 
     /**
      *
      * @param matrix int[][]
      */
-    public Matrix(double[][] matrix) {
+    public Matrix(ArrayList<ArrayList<Fraction>> matrix) {
         super(matrix);
     }
 }

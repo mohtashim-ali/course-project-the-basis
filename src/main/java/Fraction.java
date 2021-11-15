@@ -32,6 +32,12 @@ public class Fraction {
             if(this.numerator % i == 0 && this.denominator % i ==0 )
                 gcd = i;
         }
+        if (Math.abs(this.numerator) == Math.abs(this.denominator)) {
+            return new Fraction(this.numerator/this.denominator, 1);
+        }
+        if (this.numerator == 0) {
+            return new Fraction(0, 1);
+        }
         return new Fraction(this.numerator / gcd, this.denominator / gcd);
     }
     /**
@@ -92,4 +98,8 @@ public class Fraction {
     }
 
 
+    public String toString(){
+        return this.numerator + "/" + this.denominator;
+    }
 }
+

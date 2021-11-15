@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathquill/0.10.1/mathquill.js"></script>
     <link rel="stylesheet" href="http://mathquill.com/mathquill.css">
     <link rel="stylesheet" href="css.css"/>
-    <script defer src="//unpkg.com/mathlive/dist/mathlive.min.js"></script>
     <script>
         var MQ = MathQuill.getInterface(2);
     </script>
@@ -24,8 +23,9 @@
 <div class="px-4 pt-5 my-5 text-center">
     <h1 class="display-4 fw-bold mb-5">The Basis Calculator</h1>
     <div class="col-lg-6 mx-auto mt-5">
+        <p><span style="display: flex; padding: 10px 25px; text-align: left" id="expression"></span></p>
         <div class="column pb-3">
-            <button name="limit" id = "limit" onclick="document.getElementById('math_field').setValue('\\lim _{x\\to \\infty }\\left(\\right)')" class="btn btn-secondary btn-lg px-4 me-sm-3 button_size"><span class="mathquill-static-math">\lim</span></button>
+            <button name="limit" id = "limit" onclick="answerMathField.write('\\lim _{x\\to \\infty }\\left(\\right)')" class="btn btn-secondary btn-lg px-4 me-sm-3 button_size"><span class="mathquill-static-math">\lim</span></button>
             <script>
                 const limit = MQ.StaticMath(document.getElementById('limit'));
                 limit.latex()
@@ -77,41 +77,25 @@
                 const abs = MQ.StaticMath(document.getElementById('abs'));
                 abs.latex()
             </script>
-            <button name="matrix" id="matrix" onclick="document.getElementById('math_field').setValue('\\begin{bmatrix}\n'+
-'  0   &   0 \\\\\n'+
-'  0       &   0\n'+
-'\\end{bmatrix}')" class="btn btn-secondary btn-lg px-4 me-sm-3 button_size">2\times 2</button>
+            <button name="matrix" id="matrix" onclick="answerMathField.write('\\begin{pmatrix}&\\\\ &\\end{pmatrix}')" class="btn btn-secondary btn-lg px-4 me-sm-3 button_size">2\times 2</button>
             <script>
                 const matrix = MQ.StaticMath(document.getElementById('matrix'));
                 matrix.latex()
             </script>
         </div>
-        <div class="col">
-            <math-field id="math_field" style="
-                        font-size: 25px;
-                        border-radius: 5px;
-                        border: 1px solid rgba(255,255,255,0.3);
-                        box-shadow: 0 0 8px rgba(255,255,255,0.2);"
-                        fonts-directory="//unpkg.com/mathlive/dist/fonts/"
-                >
-            </math-field>
-            <button type="submit" name=”calculateButton” class="btn btn-primary btn-lg px-4 me-sm-3 mt-5" onclick="calculate()">Calculate!</button>
-        </div>
     </div>
+    <button type="submit" name=”calculateButton” class="btn btn-primary btn-lg px-4 me-sm-3" onclick="calculate()">Calculate!</button>
 </div>
 <div class="px-4 pt-5 my-5 text-center">
     <h3>2</h3>
 </div>
 <script>
-    var mathFieldSpan = document.getElementById('math-field');
-    var latexSpan = document.getElementById('latex');
-
-    var MQ = MathQuill.getInterface(2); // for backcompat
-    var mathField = MQ.MathField(mathFieldSpan, {
-        spaceBehavesLikeTab: true, // configurable
+    var answerSpan = document.getElementById('expression');
+    var answerMathField = MQ.MathField(answerSpan, {
         handlers: {
-            edit: function() { // useful event handlers
-                latexSpan.textContent = mathField.latex(); // simple API
+            edit: function() {
+                var enteredMath = answerMathField.latex(); // Get entered math in LaTeX format
+                checkAnswer(enteredMath);
             }
         }
     });
