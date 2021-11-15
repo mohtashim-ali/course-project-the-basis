@@ -46,6 +46,7 @@ A progress report
 
 ## Questions
 1. How should we implement user log in and sign up from a backend standpoint? I tried to use Spring however it seems too complicated for what we want, so is it okay to implement something simple?
+2. Is having a database necessary for our program even if your program does not necessarily require it? We have already somewhat implemented a database but it necessary we keep it for the next phase?
 
 ## Summary of what each group member is working on and plans on working on next
 
