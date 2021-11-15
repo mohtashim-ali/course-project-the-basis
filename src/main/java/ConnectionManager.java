@@ -1,6 +1,9 @@
 import java.io.*;
 import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class ConnectionManager {
@@ -27,17 +30,22 @@ public class ConnectionManager {
         String str;
         while((str = br.readLine()) != null) {
             words = str.split(",");
-            if(words[0].equals(keyword)) {
+            if(this.filename.equals("users.txt") && words[0].equals(keyword)) {
                 output.add(words[1]);
+            } else if(this.filename.equals("history.txt") && words[1].equals(keyword)) {
+                output.add(words[0] + "," + words[2]);
             }
         }
         return output;
     }
 
     public static void main(String[] args) throws IOException {
-        ConnectionManager users = new ConnectionManager("users.txt");
-        ArrayList<String> fc = users.searchByKeyword("Achraf");
-        System.out.println(fc.isEmpty());
+        ConnectionManager users = new ConnectionManager("history.txt");
+        ArrayList<String> fc = users.searchByKeyword("moh");
+        //System.out.println(fc.get(0));
+        Date date = GregorianCalendar.getInstance().getTime();
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        System.out.println(sdf.format(date));
 
     }
 
