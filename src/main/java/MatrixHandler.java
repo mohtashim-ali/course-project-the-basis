@@ -170,10 +170,29 @@ public class MatrixHandler {
      *
      * @return
      */
-    public double[][] inverse() {
-        // todo
-        return null;
+    public ArrayList<ArrayList<Fraction>> inverse() {
+        int n = 0;
+        int m = 0;
+        for (ArrayList<Fraction> i : this.matrix) {
+            if (i.size() == 2 & n == 0) {
+                i.add(new Fraction(1, 1).add(new Fraction(n, 1)));
+                n = 1;
+            } else if (i.size() == 2 & n == 1) {
+                i.add(new Fraction(0, n).add(new Fraction(n, n)));
+            } else if (i.size() == 3 & m == 0) {
+                i.add(new Fraction(1, 1).add(new Fraction(m, 1).add(new Fraction(m, 1))));
+                m = 1;
+            } else if (i.size() == 3 & m == 1) {
+                i.add(new Fraction(0, m).add(new Fraction(m, m)).add(new Fraction(m, 0)));
+                m = 2;
+            } else if (i.size() == 3 & m == 2) {
+                i.add(new Fraction(0, m).add(new Fraction(0, 1).add(new Fraction(1, 1))));
+            }
+        }
+        Matrix ans = new Matrix(this.matrix);
+        return ans.RREF();
     }
+
 
     @Override
     public String toString() {
@@ -225,5 +244,6 @@ public class MatrixHandler {
             return determinant;
         }
     }
+
 }
 
