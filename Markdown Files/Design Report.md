@@ -53,7 +53,7 @@ Nofel
 
 Achraf
 
-> text
+> The majority of my contributations came from implementing a data base. At first, I tried using a mySQL database using a jdbc connector however I ran into too many problems and found that it was generally overkill for how we wanted our project to work. So instead, we decided to just go with simply writing/reading to a txt file. I also helped with the linear Algebra side of things and some of the user features.
 
 Hamza
 
