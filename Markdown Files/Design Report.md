@@ -32,7 +32,7 @@ Users
 
 ## Packaging Strategies
 
-Our group explored and inspected all of the packaging strategies but only considered one. The one packaging strategy we considered and decided to implement was the "Inside/Outside" packaging strategy. We decided on this strategy because we found it very easy to implement and understand. It allowed us to separate our code into three folders, one for front-end, one for back-end, and one for our history. This strategy seemed the most reasonable to us so we focused on it and built our code structure accordingly. A packaging strategy that we considered but didn't implement is the "By Feature" packaging strategy. As we were exploring this strategy, we seemed to find it too unorganized and instead looked for another strategy to follow.
+> Our group explored and inspected all of the packaging strategies but only considered one. The one packaging strategy we considered and decided to implement was the "Inside/Outside" packaging strategy. We decided on this strategy because we found it very easy to implement and understand. It allowed us to separate our code into three folders, one for front-end, one for back-end, and one for our history. This strategy seemed the most reasonable to us so we focused on it and built our code structure accordingly. A packaging strategy that we considered but didn't implement is the "By Feature" packaging strategy. As we were exploring this strategy, we seemed to find it too unorganized and instead looked for another strategy to follow.
 
 ## Design Patterns
 
