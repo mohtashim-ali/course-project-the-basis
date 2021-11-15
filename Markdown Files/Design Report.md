@@ -1,7 +1,5 @@
 ## Updated Specification
 
-Briefly highlight any additional functionality that you have implemented between phase 0 and the end of phase 1.
-
 Additonal Functionality between Phase 0 and Phase 1
 
 > 1. Users
@@ -17,12 +15,8 @@ Additonal Functionality between Phase 0 and Phase 1
 > 11. Matrix Subtraction
 > 12. Updated WalkthroughCustomInput
 
-Optionally, include a well-formatted diagram of your code. This is called a class diagram (Links to an external site.), and there is an international standard called the Unified Modelling Language (Links to an external site.) (UML) that describes them in detail. However! Please don't worry about the details, just use boxes and arrows like we do in the slides. If you're curious, you can create a full UML class diagram for all or part (at your group's discretion) of your program.
-NOTE 1: This can really help your TA understand what you did, but if presented poorly it won't be of much use.
-NOTE 2: If you have access to the Pro version of IntelliJ, it can generate class diagrams for you, but make sure it is well formatted if you hand one in!
 
 ## Major Design Decisions
-A description of any major design decisions your group has made (along with brief explanations of why you made them).
 
 Users
 
@@ -39,4 +33,4 @@ A brief description of which packaging strategies you considered, which you deci
 
 ## Design Patterns
 
-> Mohtashim: I plan on implementing the Template Method design patterns to implement Users. The reason this pattern will make modifying code easier is because I can add restrictions between a Calculator User, and an Admin. For example, Admims will be able to access the history of all calculations. Also, they will be able to look at the list of users with their passwords in the event a Calculator User requests to see their password because they forgot it. In regards to the Template Method, Calculator Users will be presented with a message which will prevent them from accessing the list of users. While Admins will be able to log in and access the list of users. This is still a work in progress, however this is how I plan to implement the Template Method design pattern to our code.
+> I plan on implementing the Template Method design patterns to implement Users. The reason this pattern will make modifying code easier is because I can add restrictions between a Calculator User, and an Admin. For example, Admims will be able to access the history of all calculations. Also, they will be able to look at the list of users with their passwords in the event a Calculator User requests to see their password because they forgot it. In regards to the Template Method, Calculator Users will be presented with a message which will prevent them from accessing the list of users. While Admins will be able to log in and access the list of users. This is still a work in progress, however this is how I plan to implement the Template Method design pattern to our code.
