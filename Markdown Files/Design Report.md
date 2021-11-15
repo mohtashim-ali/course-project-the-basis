@@ -23,7 +23,8 @@ Users
 > When deciding on Users, we had a hard time deciding what type of users we should have. Initially we thought of having a basic user, linear algebra user, and a user which had access to both. From a design point, we agreed this did not make sense since a lot of excess methods and classes would have to be made, when in a calculator a user should have access to everything. We moved to having a Calculator user, and an Admin user. This made more sense to us since we could make an Entity class for users, then implement a design pattern to differentiate between the two types of users. Alongside, this will help us shorten our code and prevent unnecessary functions and classes which would make our code overcrowded.
 
 ## Clean Architecture
-A brief description of how your project adheres to Clean Architecture (if you notice a violation and aren't sure how to fix it, talk about that too!)
+
+> Our project adheres to Clean Architecture by ensuring Entities do not know about outside classes such as controllers. For example, the User class is an Entity class and to ensure using it does not violate clean architecture we called User in WalkthroughCustomInput. This ensures the User class is not calling WalkthroughCustomInput. Another idea we had was implementing a database for History using MySQL. However, doing this would break Clean Architecture since we were taking the user input and storing it into a database at the same time. To fix this, we could make a interface for the history part of our program. But, we decided on using a text file approach which does not break clean architecture.
 
 ## SOLID
 
