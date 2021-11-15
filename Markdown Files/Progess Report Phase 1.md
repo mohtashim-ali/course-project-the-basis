@@ -5,6 +5,7 @@
 2. Is having a database necessary for our program even if our program does not necessarily require it? We have already somewhat implemented a database but is it necessary we keep it for the next phase?
 
 ## What has worked well for your design?
+> For our design, what worked well was the way each task in the program was divided. To be more precise, each class with complex operations has a handler for it. The handler of each class holds the method or rules for said class, while the other class holds all the properties. This design method helped us a lot with our program, especially when processing the input. It helped us by splitting our large/complex classes into two more comprehensible ones. Because of this it was more easier to find and locate bugs while at the same time making the code more readable. In essence, splitting our classes into different two classes, one with methods and the other one with property helped us significantly when implementing the program itself 
 
 ## Summary of what each group member is working on and plans on working on next
 
