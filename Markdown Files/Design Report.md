@@ -41,9 +41,6 @@ A brief description of which packaging strategies you considered, which you deci
 
 > Mohtashim: I plan on implementing the Template Method design patterns to implement Users. The reason this pattern will make modifying code easier is because I can add restrictions between a Calculator User, and an Admin. For example, Admims will be able to access the history of all calculations. Also, they will be able to look at the list of users with their passwords in the event a Calculator User requests to see their password because they forgot it. In regards to the Template Method, Calculator Users will be presented with a message which will prevent them from accessing the list of users. While Admins will be able to log in and access the list of users. This is still a work in progress, however this is how I plan to implement the Template Method design pattern to our code.
 
-## Progress Report
-A progress report
-
 ## Questions
 1. How should we implement user log in and sign up from a backend standpoint? I tried to use Spring however it seems too complicated for what we want, so is it okay to implement something simple?
 2. Is having a database necessary for our program even if our program does not necessarily require it? We have already somewhat implemented a database but is it necessary we keep it for the next phase?
