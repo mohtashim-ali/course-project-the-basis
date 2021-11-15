@@ -9,6 +9,8 @@ Additonal Functionality between Phase 0 and Phase 1
 > 3. RREF
 > 4. Inverse
 > 5. Determinants
+> 6. Trignomerty 
+> 7. Exponents
 
 
 Optionally, include a well-formatted diagram of your code. This is called a class diagram (Links to an external site.), and there is an international standard called the Unified Modelling Language (Links to an external site.) (UML) that describes them in detail. However! Please don't worry about the details, just use boxes and arrows like we do in the slides. If you're curious, you can create a full UML class diagram for all or part (at your group's discretion) of your program.
