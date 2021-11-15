@@ -13,7 +13,7 @@ Additonal Functionality between Phase 0 and Phase 1
 > 7. Exponents
 > 8. Row Swap
 > 9. Scalar Multiplication
-> 10. Matrix Sddition 
+> 10. Matrix Addition 
 > 11. Matrix Subtraction
 > 12. Updated WalkthroughCustomInput
 
