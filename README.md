@@ -23,6 +23,7 @@ The classes worked on and used in Phase 0 are: [WalkthroughCustomInput](https://
 
 1. [Design Report](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Design%20Report.md)
 2. [Progress Report](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Progess%20Report%20Phase%201.md)
+3. [How to run the Calculator](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/How%20to%20Run%20the%20Calculator%20-%20Phase%201.md)
 
 
 ## Phase 2
