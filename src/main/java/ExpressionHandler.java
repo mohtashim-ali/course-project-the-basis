@@ -63,6 +63,7 @@ public abstract class ExpressionHandler {
                 return Math.pow(this.operand1, this.operand2);
 
         }
+
         if (this.operator.equals("")){
             return this.operand1;
         }
