@@ -20,9 +20,15 @@ public class MatrixHandler {
      * @param other
      * @return
      */
-    public Matrix add(Matrix other) {
-        // todo
-        return null;
+    public ArrayList<ArrayList<Fraction>> addMatrix(Matrix other) {
+        if (this.matrix.size() == other.matrix.size()) {
+            for (int i=0; i<this.matrix.size(); i++) {
+                for (int j=0; j<this.matrix.get(i).size(); j++) {
+                    this.matrix.get(i).get(j).add(other.matrix.get(i).get(j));
+                }
+            }
+        }
+        return this.matrix;
     }
 
     /**
@@ -31,9 +37,15 @@ public class MatrixHandler {
      * @param other
      * @return
      */
-    public Matrix substract(Matrix other) {
-        // todo
-        return null;
+    public ArrayList<ArrayList<Fraction>> substractMatrix(Matrix other) {
+        if (this.matrix.size() == other.matrix.size()) {
+            for (int i=0; i<this.matrix.size(); i++) {
+                for (int j=0; j<this.matrix.get(i).size(); j++) {
+                    this.matrix.get(i).get(j).substract(other.matrix.get(i).get(j));
+                }
+            }
+        }
+        return this.matrix;
     }
 
     /**
