@@ -51,7 +51,7 @@ Mohtashim
 
 Nofel
 
-> My contribution in this phase was mostly focused on the backend. My first task was to test the compute method in the Expression class and extend it with more basic operands. So far, I have implemented addition, subtraction, muliplication, divition, and preforming exponential operations. My second task in this phase was to implement trigonometry. A separate class was made for trigonometry, and I implemented all trigonometry operations sin, cos, tan, sec, and so on. Another task I was working on in this phase was the inverse of a matrix. In the RREF handler file, I was working on implementing an inverse of a given matrix. I hade to modify a lot of my code so it can more freindly and compatable with the frontend for phase 2.
+> My contribution in this phase was mostly focused on the backend. My first task was to test the compute method in the Expression class and extend it with more basic operands. So far, I have implemented addition, subtraction, muliplication, divition, and preforming exponential operations. My second task in this phase was to implement trigonometry. A separate class was made for trigonometry, and I implemented all trigonometry operations sin, cos, tan, sec, and so on. Another task I was working on in this phase was the inverse of a matrix. In the RREF handler file, I was working on implementing an inverse of a given matrix. I hade to modify a lot of my code so it can be more freindly and compatable with the frontend for phase 2.
 
 Achraf
 
