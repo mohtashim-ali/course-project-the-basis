@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
@@ -5,10 +6,9 @@ import java.util.Scanner;
 
 public class WalkthroughCustomInput {
 
-
-    public static void main(String[] args) throws ExpressionException {
-        HashMap<String, String> logins = new HashMap<>();
-        User usr = new User(logins);
+    public static void main(String[] args) throws ExpressionException, IOException {
+        //HashMap<String, String> logins = new HashMap<>();
+        //User usr = new User(logins);
         Scanner input = new Scanner(System.in);
         String temp;
         do {
@@ -20,16 +20,18 @@ public class WalkthroughCustomInput {
                 String username = input.nextLine();
                 System.out.println("Please type in a password: ");
                 String password = input.nextLine();
-                usr.signUp(username, password);
-                usr.login(username, password);
+                User new_user = new User(username, password);
+                new_user.signUp();
 
             } else if (acc.equals("N")) {
                 System.out.println("Please type in your username: ");
                 String username = input.nextLine();
                 System.out.println("Please type in your password: ");
                 String password = input.nextLine();
+                User logged_in_user = new User(username, password);
+                System.out.println(logged_in_user.login(username, password));
 
-                while (!usr.login(username, password)) {
+                while (!logged_in_user.login(username, password)) {
                     System.out.println("Incorrect password, please try again: ");
                     password = input.nextLine();
                 }
@@ -55,6 +57,7 @@ public class WalkthroughCustomInput {
             temp = input.nextLine();
         } while (!Objects.equals(temp, "Q"));
     }
+
 }
 
 
