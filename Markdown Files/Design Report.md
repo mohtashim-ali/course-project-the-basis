@@ -57,7 +57,7 @@ Achraf
 
 Hamza
 
-> text
+> My contributions for this phase of the project consisted of making methods in the MatrixHandler class. The MatrixHandler class is a class consisting of various Linear Algebra methods that compute Linear Algebra computations. I was tasked with coding multiple functions in this class as well as making as many test cases as possible to ensure our code's validity. The methods I was tasked with were the add method, the subtract method and the RREF method. I also edited and fixed the code of various methods in other classes in order for the code to collaborate together without error. 
 
 Kyle
 
