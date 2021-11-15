@@ -41,10 +41,10 @@ public class WalkthroughCustomInput {
         System.out.println("You are now logged in!");
         String temp;
         do {
+            ConnectionManager history = new ConnectionManager("history.txt");
             System.out.println("1. Compute");
             System.out.println("2. History");
             int input1 = input.nextInt();
-
             if (input1 == 1) {
                 Scanner input2 = new Scanner(System.in);
                 System.out.println("Please type in a mathematical expression:");
@@ -60,12 +60,13 @@ public class WalkthroughCustomInput {
                 }
                 final_string += expression.substring(j, expression.length());
                 InputProcessor user = new InputProcessor(final_string);
+                history.addToFile(new_user.getUsername() + "," + final_string);
                 System.out.println(final_string);
                 System.out.println(user.processInput().compute());
 
             }
             else if(input1 == 2) {
-                new_user.getHistory();
+                System.out.println(new_user.getHistory());
             }
 
             System.out.println("Please type in Q to stop the calculator, or press enter to continue: ");
