@@ -49,7 +49,7 @@ Mohtashim
 
 Nofel
 
-> text
+My contribution in this phase was mostly focused on the backend. My first task was to test the compute method in the Expression class and extend it with more basic operands. So far, we have implemented addition, subtraction, muliplication, divition, and preforming exponent operations. My second task in this phase was to implement trignomerty. A separate class was made for trignomeerty, and I implemented all trignomeerty operations in it. The same goes for sin, cos, tan, sec, and so on.Another task I was working on in this phase was the inverse of a matrix. In the RREF handler file, I was working on implementing an inverse of a given matrix. Because my inverse method relied on the RREF methosd being implemented correctly, I had to collaborate with one of my group members who was working on it.
 
 Achraf
 
