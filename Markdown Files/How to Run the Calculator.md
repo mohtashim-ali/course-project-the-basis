@@ -1,6 +1,6 @@
 # How to use the Calculator
 
-Begin by navigating to the "WalkthroughCustomInput" class!
+Begin by navigating to the "Input.WalkthroughCustomInput" class!
 
 ## Note
 

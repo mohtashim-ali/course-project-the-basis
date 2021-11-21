@@ -1,6 +1,8 @@
+package Math;
+
 import java.util.ArrayList;
 
-public class Matrix extends MatrixHandler{
+public class Matrix extends MatrixHandler {
     /**
      Creates a matrix.
      */

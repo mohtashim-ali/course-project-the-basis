@@ -1,9 +1,14 @@
+package Input;
+
+import Expression.Expression;
+import Expression.ExpressionException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class InputProcessor{
     /**
-    Takes a string input and converts it to either an Expression or an Equation.
+    Takes a string input and converts it to either an Expression.Expression or an Math.Equation.
      */
     public ArrayList<String> input;
 
@@ -18,7 +23,7 @@ public class InputProcessor{
         return this.input.contains("=");
     }
     /*
-    Converts a string to an Expression.
+    Converts a string to an Expression.Expression.
      */
 
     /**
@@ -50,7 +55,7 @@ public class InputProcessor{
     }
 
     /**
-     * @return Expression
+     * @return Expression.Expression
      */
     public Expression processInput() throws ExpressionException {
         /**

@@ -1,3 +1,5 @@
+package Math;
+
 public class Fraction {
     /**
     Creates a fraction
