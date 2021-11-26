@@ -3,3 +3,7 @@ moh,moh
 moh,moh
 moh,moh
 ,moh
+k,k
+moh,moh
+ok,ok
+hamza,hamza

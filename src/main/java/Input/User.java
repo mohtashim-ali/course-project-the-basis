@@ -12,8 +12,8 @@ public class User {
      */
 
 
-    private final String username;
-    private final String password;
+    public final String username;
+    public final String password;
     private final ConnectionManager users = new ConnectionManager("users.txt");
     private final ConnectionManager history = new ConnectionManager("history.txt");
 
@@ -59,4 +59,5 @@ public class User {
         return this.username;
     }
 }
+
 
