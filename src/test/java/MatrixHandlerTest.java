@@ -1,4 +1,5 @@
 import junit.framework.TestCase;
+import Math.*;
 
 import java.util.ArrayList;
 import java.util.Objects;
