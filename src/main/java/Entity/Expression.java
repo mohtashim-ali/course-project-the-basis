@@ -1,9 +1,11 @@
-package Expression;
+package Entity;
+
+import UseCase.ExpressionHandler;
 
 /**
- * Expression.Expression Object.
+ * Entity.Expression Object.
  */
-public class Expression extends ExpressionHandler{
+public class Expression extends ExpressionHandler {
     /**
      Takes in 2 numeric values, and evaluates them with the given operator.
      */

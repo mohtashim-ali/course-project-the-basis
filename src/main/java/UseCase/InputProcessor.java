@@ -1,14 +1,14 @@
-package Input;
+package UseCase;
 
-import Expression.Expression;
-import Expression.ExpressionException;
+import Entity.Expression;
+import Entity.ExpressionException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class InputProcessor{
     /**
-    Takes a string input and converts it to either an Expression.Expression or an Math.Equation.
+    Takes a string input and converts it to either an Entity.Expression or an Entity.Equation.
      */
     public ArrayList<String> input;
 
@@ -23,7 +23,7 @@ public class InputProcessor{
         return this.input.contains("=");
     }
     /*
-    Converts a string to an Expression.Expression.
+    Converts a string to an Entity.Expression.
      */
 
     /**
@@ -55,7 +55,7 @@ public class InputProcessor{
     }
 
     /**
-     * @return Expression.Expression
+     * @return Entity.Expression
      */
     public Expression processInput() throws ExpressionException {
         /**

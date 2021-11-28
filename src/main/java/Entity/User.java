@@ -1,6 +1,6 @@
-package Input;
+package Entity;
 
-import History.ConnectionManager;
+import UseCase.ConnectionManager;
 
 import java.io.IOException;
 import java.util.ArrayList;

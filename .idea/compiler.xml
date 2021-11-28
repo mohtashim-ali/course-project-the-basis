@@ -17,6 +17,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Website" options="-parameters" />
+      <module name="course-project-the-basis" options="--add-exports java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED" />
     </option>
   </component>
 </project>

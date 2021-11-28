@@ -1,4 +1,4 @@
-package History;
+package Entity;
 
 public class History {
 }
