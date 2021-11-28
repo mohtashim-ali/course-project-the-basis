@@ -27,7 +27,7 @@
   {
     "name": "CalculusMode (Entity)",
     "superclasses": "BasicCalculator",
-    "subclasses": "Expression, Equation",
+    "subclasses": "Expression.Expression, Math.Equation",
     "type": 1,
     "responsibilities": [
       "Determines if the user selects calculus mode and gives access to all methods under the CalculusMode class."
@@ -49,9 +49,9 @@
     ]
   },
   {
-    "name": "Equation",
+    "name": "Math.Equation",
     "superclasses": "CalculusMode",
-    "subclasses": "Expression",
+    "subclasses": "Expression.Expression",
     "type": 1,
     "responsibilities": [
       "Solves multiples variables and polynomial equations."
@@ -61,8 +61,8 @@
     ]
   },
   {
-    "name": "Expression",
-    "superclasses": "Equation",
+    "name": "Expression.Expression",
+    "superclasses": "Math.Equation",
     "subclasses": "",
     "type": 1,
     "responsibilities": [

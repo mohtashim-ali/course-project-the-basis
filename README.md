@@ -8,7 +8,7 @@ The domain of our project is a mathematical calculator which is hosted on the we
 
 ## Phase 0
 
-The classes worked on and used in Phase 0 are: [WalkthroughCustomInput](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/WalkthroughCustomInput.java), [InputProcessor](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/InputProcessor.java), [Expression](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/Expression.java), [ExpressionHandler](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/ExpressionHandler.java), and [CalculatorTest](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/test/java/CalculatorTest.java). These classes stem from the specification.
+The classes worked on and used in Phase 0 are: [Input.WalkthroughCustomInput](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/WalkthroughCustomInput.java), [Input.InputProcessor](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/InputProcessor.java), [Expression.Expression](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/Expression.java), [Expression.ExpressionHandler](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/ExpressionHandler.java), and [CalculatorTest](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/test/java/CalculatorTest.java). These classes stem from the specification.
 
 ### Components
 

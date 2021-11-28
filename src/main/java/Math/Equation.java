@@ -1,3 +1,7 @@
+package Math;
+
+import Expression.Expression;
+
 public class Equation {
     /**
     Takes 2 expressions, and compares both sides of the equation.
