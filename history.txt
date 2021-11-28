@@ -1,5 +1,1 @@
-13:51,moh,5 + 5
-13:52,moh,5 + 5
-13:52,moh,3 + 3
-14:04,moh,5 + 5
-14:28,moh,5 + 5 / 2
+username,date,calculation
