@@ -1,5 +1,6 @@
+import Entity.Fraction;
+import Entity.Matrix;
 import junit.framework.TestCase;
-import Math.*;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -47,121 +48,121 @@ public class MatrixHandlerTest extends TestCase {
         assert Objects.equals(temp.determinant().toString(), "-3/1");
     }
 //    public void testDeterminant3() {
-//        ArrayList<Math.Fraction> m1 = new ArrayList<>() {{
-//            add(new Math.Fraction(2, 1));
-//            add(new Math.Fraction(2, 1));
-//            add(new Math.Fraction(3, 1));
+//        ArrayList<Entity.Fraction> m1 = new ArrayList<>() {{
+//            add(new Entity.Fraction(2, 1));
+//            add(new Entity.Fraction(2, 1));
+//            add(new Entity.Fraction(3, 1));
 //        }};
-//        ArrayList<Math.Fraction> m2 = new ArrayList<>() {{
-//            add(new Math.Fraction(4, 1));
-//            add(new Math.Fraction(5, 1));
-//            add(new Math.Fraction(6, 1));
+//        ArrayList<Entity.Fraction> m2 = new ArrayList<>() {{
+//            add(new Entity.Fraction(4, 1));
+//            add(new Entity.Fraction(5, 1));
+//            add(new Entity.Fraction(6, 1));
 //        }};
-//        ArrayList<Math.Fraction> m3 = new ArrayList<>() {{
-//            add(new Math.Fraction(7, 1));
-//            add(new Math.Fraction(8, 1));
-//            add(new Math.Fraction(9, 1));
+//        ArrayList<Entity.Fraction> m3 = new ArrayList<>() {{
+//            add(new Entity.Fraction(7, 1));
+//            add(new Entity.Fraction(8, 1));
+//            add(new Entity.Fraction(9, 1));
 //        }};
-//        ArrayList<ArrayList<Math.Fraction>> new_matrix = new ArrayList<>() {{
+//        ArrayList<ArrayList<Entity.Fraction>> new_matrix = new ArrayList<>() {{
 //            add(m1);
 //            add(m2);
 //            add(m3);
 //        }};
-//        Math.Matrix temp = new Math.Matrix(new_matrix);
+//        Entity.Matrix temp = new Entity.Matrix(new_matrix);
 //        System.out.println(temp.determinant().toString());
 //        assert Objects.equals(temp.determinant().toString(), "-3/1");
 //    }
 //    public void testDeterminant4() {
-//        ArrayList<Math.Fraction> m1 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m1 = new ArrayList<>() {{
 //            add(2.0);
 //            add(2.0);
 //            add(3.0);
 //        }};
-//        ArrayList<Math.Fraction> m2 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m2 = new ArrayList<>() {{
 //            add(4.0);
 //            add(3.0);
 //            add(6.0);
 //        }};
-//        ArrayList<Math.Fraction> m3 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m3 = new ArrayList<>() {{
 //            add(7.0);
 //            add(8.0);
 //            add(9.0);
 //        }};
-//        ArrayList<ArrayList<Math.Fraction>> new_matrix = new ArrayList<>() {{
+//        ArrayList<ArrayList<Entity.Fraction>> new_matrix = new ArrayList<>() {{
 //            add(m1);
 //            add(m2);
 //            add(m3);
 //        }};
-//        Math.Matrix temp = new Math.Matrix(new_matrix);
+//        Entity.Matrix temp = new Entity.Matrix(new_matrix);
 //        assert temp.determinant() == 3;
 //    }
 //    public void testDeterminant5() {
-//        ArrayList<Math.Fraction> m1 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m1 = new ArrayList<>() {{
 //            add(4.0);
 //            add(5.0);
 //            add(6.0);
 //            add(3.0);
 //        }};
-//        ArrayList<Math.Fraction> m2 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m2 = new ArrayList<>() {{
 //            add(2.0);
 //            add(3.0);
 //            add(4.0);
 //            add(5.0);
 //        }};
-//        ArrayList<Math.Fraction> m3 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m3 = new ArrayList<>() {{
 //            add(1.0);
 //            add(0.0);
 //            add(9.0);
 //            add(1.0);
 //        }};
-//        ArrayList<Math.Fraction> m4 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m4 = new ArrayList<>() {{
 //            add(7.0);
 //            add(5.0);
 //            add(9.0);
 //            add(8.0);
 //        }};
-//        ArrayList<ArrayList<Math.Fraction>> new_matrix = new ArrayList<>() {{
+//        ArrayList<ArrayList<Entity.Fraction>> new_matrix = new ArrayList<>() {{
 //            add(m1);
 //            add(m2);
 //            add(m3);
 //            add(m4);
 //        }};
-//        Math.Matrix temp = new Math.Matrix(new_matrix);
+//        Entity.Matrix temp = new Entity.Matrix(new_matrix);
 //        assert temp.determinant() == 472;
 //    }
 //
 //    public void testDeterminant6() {
-//        ArrayList<Math.Fraction> m1 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m1 = new ArrayList<>() {{
 //            add(0.0);
 //            add(1.0);
 //            add(-1.0);
 //            add(0.0);
 //        }};
-//        ArrayList<Math.Fraction> m2 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m2 = new ArrayList<>() {{
 //            add(3.0);
 //            add(0.0);
 //            add(0.0);
 //            add(2.0);
 //        }};
-//        ArrayList<Math.Fraction> m3 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m3 = new ArrayList<>() {{
 //            add(0.0);
 //            add(1.0);
 //            add(2.0);
 //            add(1.0);
 //        }};
-//        ArrayList<Math.Fraction> m4 = new ArrayList<>() {{
+//        ArrayList<Entity.Fraction> m4 = new ArrayList<>() {{
 //            add(5.0);
 //            add(0.0);
 //            add(0.0);
 //            add(7.0);
 //        }};
-//        ArrayList<ArrayList<Math.Fraction>> new_matrix = new ArrayList<>() {{
+//        ArrayList<ArrayList<Entity.Fraction>> new_matrix = new ArrayList<>() {{
 //            add(m1);
 //            add(m2);
 //            add(m3);
 //            add(m4);
 //        }};
-//        Math.Matrix temp = new Math.Matrix(new_matrix);
+//        Entity.Matrix temp = new Entity.Matrix(new_matrix);
 //        assert temp.determinant() == -33;
 //    }
 

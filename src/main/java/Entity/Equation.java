@@ -1,6 +1,6 @@
-package Math;
+package Entity;
 
-import Expression.Expression;
+import Entity.Expression;
 
 public class Equation {
     /**

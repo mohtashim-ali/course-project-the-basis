@@ -1,4 +1,6 @@
-package Math;
+package Entity;
+
+import UseCase.MatrixHandler;
 
 import java.util.ArrayList;
 
@@ -7,7 +9,7 @@ public class Matrix extends MatrixHandler {
      Creates a matrix.
      */
 
-    ArrayList<ArrayList<Fraction>> matrix;
+    public ArrayList<ArrayList<Fraction>> matrix;
 
     /**
      *

@@ -1,11 +1,14 @@
-package Expression;
+package UseCase;
+
+import Entity.Expression;
+import Entity.ExpressionException;
 
 import java.util.List;
 import java.util.Objects;
 import java.lang.Math;
 
 /**
- * Expression.ExpressionHandler Class that handles all operations done to an Expression.Expression.
+ * UseCase.ExpressionHandler Class that handles all operations done to an Entity.Expression.
  */
 public abstract class ExpressionHandler {
     public double operand1;
@@ -64,7 +67,7 @@ public abstract class ExpressionHandler {
     }
 
     /**
-     * @return Expression.Expression
+     * @return Entity.Expression
      */
     public Expression simplify() throws ExpressionException {
         /*

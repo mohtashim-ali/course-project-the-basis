@@ -1,4 +1,4 @@
-package Math;
+package Entity;
 
 public class Fraction {
     /**
@@ -6,8 +6,8 @@ public class Fraction {
     @param numerator int
      @param denominator int
      **/
-    int numerator;
-    int denominator;
+    public int numerator;
+    public int denominator;
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;

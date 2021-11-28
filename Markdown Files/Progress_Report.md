@@ -11,15 +11,15 @@ In short, our goal for phase 0 was to narrow down onto a specific goal so that w
 
 #### Entity Classes
 
-1. Input.User - Input user data and sends to other classes
-2. History.History - Stores user inputs
-3. Expression.Expression - Defines an expression
-4. Math.Equation - Defines an equation
+1. Entity.User - Input user data and sends to other classes
+2. Entity.History - Stores user inputs
+3. Entity.Expression - Defines an expression
+4. Entity.Equation - Defines an equation
 
 #### Use Case Classes
 
-1. Input.InputProcessor - Process input
-2. Expression.ExpressionHandler - Error handling
+1. UseCase.InputProcessor - Process input
+2. UseCase.ExpressionHandler - Error handling
 3. EquationHandler - Error handling for equations
 4. LinIndepHandler (Future Goal)
 5. RREFHandler (Future Goal)
@@ -27,16 +27,16 @@ In short, our goal for phase 0 was to narrow down onto a specific goal so that w
 #### Controller Classes
 
 1. UserHandler - Handles user information such as their input
-2. Input.WalkthroughCustomInput - Accepts custom user input and outputs the answer
+2. UI.WalkthroughCustomInput - Accepts custom user input and outputs the answer
 
 #### Basic Command Line
 
-1. Input.WalkthroughCustomInput Class - Allows users to type in the console, and the output will be printed in the console
+1. UI.WalkthroughCustomInput Class - Allows users to type in the console, and the output will be printed in the console
 2. Calculator HTML (Future Goal)
 
 ## Scenario Walk-through
 
-To keep it simple, first the user types in a mathematical expression, such as ```2 + 2```. Then, the input is processed to make sure it is in the valid form, sent to the Input.InputProcessor class where it is split up, checked for any errors, and computed. Finally, the Input.WalkthroughCustomInput class prints the computed answer.
+To keep it simple, first the user types in a mathematical expression, such as ```2 + 2```. Then, the input is processed to make sure it is in the valid form, sent to the UseCase.InputProcessor class where it is split up, checked for any errors, and computed. Finally, the UI.WalkthroughCustomInput class prints the computed answer.
 
 
 
@@ -69,13 +69,13 @@ Kyle
 >* Input Processor
 >    * processInput()
 >    * listInput()
->* Expression.ExpressionHandler
->* Expression.Expression
+>* UseCase.ExpressionHandler
+>* Entity.Expression
 >* Several tests in CalculatorTest
 
 Achraf
 
-> My contributions mainly came from the implementations of the code, as well as some design choices. I also constructed the Math.Fraction class which is responsible for creating the fractions in our calculator. To the overall project i made changes which improved functionality of the calculator.
+> My contributions mainly came from the implementations of the code, as well as some design choices. I also constructed the Entity.Fraction class which is responsible for creating the fractions in our calculator. To the overall project i made changes which improved functionality of the calculator.
 
 Hamza
 

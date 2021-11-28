@@ -1,4 +1,6 @@
-package Input;
+package Controller;
+import Entity.User;
+
 import java.io.IOException;
 
 public class UserInputController {
@@ -6,6 +8,7 @@ public class UserInputController {
     private int choice;
     private String user;
     private String pass;
+
 
     public void setStatus(int input) {
         this.choice = input;

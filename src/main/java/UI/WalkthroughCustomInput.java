@@ -1,7 +1,9 @@
-package Input;
+package UI;
 
-import Expression.ExpressionException;
-import History.ConnectionManager;
+import Entity.ExpressionException;
+import UseCase.ConnectionManager;
+import UseCase.InputProcessor;
+import Entity.User;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -40,7 +42,7 @@ public class WalkthroughCustomInput {
         do {
             ConnectionManager history = new ConnectionManager("history.txt");
             System.out.println("1. Compute");
-            System.out.println("2. History.History");
+            System.out.println("2. Entity.History");
             System.out.println("3. Power Off");
             int input1 = input.nextInt();
             if (input1 == 1) {
