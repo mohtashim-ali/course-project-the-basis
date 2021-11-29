@@ -1,1 +1,5 @@
-username,date,calculation
+Achraf,2+2,12:30
+Achraf,2+3,12:35
+Moh,2+3,12:39
+Achraf,2+2,12:30
+Kyle,3+22,12:35

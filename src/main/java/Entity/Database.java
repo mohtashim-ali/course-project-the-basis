@@ -1,8 +1,9 @@
 package Entity;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public interface Database {
-    void writeToFile(String filepath) throws IOException;
-    void readFromFile(String filepath, String username) throws IOException, ClassNotFoundException;
+    void writeToFile(String newLine) throws IOException;
+    ArrayList<String> readWithUsername(String username) throws IOException, ClassNotFoundException;
 }
