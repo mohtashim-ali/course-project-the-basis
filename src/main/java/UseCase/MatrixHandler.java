@@ -1,3 +1,8 @@
+package UseCase;
+
+import Entity.Fraction;
+import Entity.Matrix;
+
 import java.util.ArrayList;
 
 public class MatrixHandler {

@@ -1,11 +1,13 @@
+package Entity;
+
 public class Fraction {
     /**
     Creates a fraction
     @param numerator int
      @param denominator int
      **/
-    int numerator;
-    int denominator;
+    public int numerator;
+    public int denominator;
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;

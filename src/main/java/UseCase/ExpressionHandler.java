@@ -1,21 +1,14 @@
-import java.math.BigDecimal;
+package UseCase;
+
+import Entity.Expression;
+import Entity.ExpressionException;
+
 import java.util.List;
 import java.util.Objects;
 import java.lang.Math;
 
 /**
- * ExpressionException Class that allows for custom exceptions of creating invalid expressions.
- */
-class ExpressionException extends Exception {
-    /**
-     * @param errorMessage String
-     */
-    public ExpressionException(String errorMessage) {
-        super(errorMessage);
-    }
-}
-/**
- * ExpressionHandler Class that handles all operations done to an Expression.
+ * UseCase.ExpressionHandler Class that handles all operations done to an Entity.Expression.
  */
 public abstract class ExpressionHandler {
     public double operand1;
@@ -74,7 +67,7 @@ public abstract class ExpressionHandler {
     }
 
     /**
-     * @return Expression
+     * @return Entity.Expression
      */
     public Expression simplify() throws ExpressionException {
         /*
