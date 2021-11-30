@@ -1,28 +1,24 @@
 package Entity;
-import java.io.*;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Should we also pass in the username/calculations...?
- */
+public class UserList implements Database{
 
-public class History implements Database {
-
-    final String filepath = "history.txt";
-
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        UserList newLine = new UserList();
-        newLine.writeToFile("Achraf,password");
-        System.out.println(newLine.readWithUsername("Moh"));
-    }
+    final String filepath = "users.txt";
 
     /**
-     * Writes to history.txt in the format "USERNAME,CALCULATION,DATE".
+     * Writes to users.txt in the format "USERNAME,PASSWORD"
      * @param newLine
+     * @throws IOException
      */
+
     @Override
-    public void writeToFile(String newLine) {
+    public void writeToFile(String newLine) throws IOException {
         try {
             FileWriter myWriter = new FileWriter(filepath, true);
             PrintWriter printWriter = new PrintWriter(myWriter);
@@ -38,12 +34,12 @@ public class History implements Database {
     /**
      *
      * @param username
+     * @return The password associated with that username or an empty list if the account doesn't exist.
      * @throws IOException
      * @throws ClassNotFoundException
-     * return every date/time + calculations associated with that username in the format calculation;date
      */
     @Override
-    public ArrayList<String> readWithUsername(String username) throws IOException {
+    public ArrayList<String> readWithUsername(String username) throws IOException, ClassNotFoundException {
         ArrayList<String> final_result = new ArrayList<>();
         File myObj = new File(filepath);
         Scanner myReader = new Scanner(myObj);
@@ -51,7 +47,7 @@ public class History implements Database {
             String data = myReader.nextLine();
             String[] split = data.split(",");
             if (split[0].equals(username)) {
-                final_result.add(split[1] + ";" + split[2]);
+                final_result.add(split[1]);
             }
         }
         myReader.close();
