@@ -1,8 +1,9 @@
-import Expression.Expression;
-import Input.InputProcessor;
+import Entity.Expression;
+import Entity.Trigonometry;
+import UseCase.InputProcessor;
 import org.junit.Test;
-import Expression.ExpressionException;
-import Math.*;
+import Entity.ExpressionException;
+
 
 public class CalculatorTest {
 
