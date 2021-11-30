@@ -22,7 +22,7 @@ public class UserList implements Database{
         try {
             FileWriter myWriter = new FileWriter(filepath, true);
             PrintWriter printWriter = new PrintWriter(myWriter);
-            printWriter.println(newLine);
+            printWriter.print(newLine + "\n");
             printWriter.close();
             System.out.println("Successfully wrote to the file.");
         } catch (IOException e) {

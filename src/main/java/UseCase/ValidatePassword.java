@@ -17,17 +17,14 @@ public class ValidatePassword {
 
     }
 
-    public boolean valid() throws IOException, ClassNotFoundException {
-        while (list.readWithUsername(user.getUsername()).isEmpty()) {
-
+    public String valid() throws IOException, ClassNotFoundException {
+        while (!(list.readWithUsername(user.getUsername()).get(0).equals(this.user.getPassword()))) {
             System.out.println("Incorrect password, please try again: ");
             Scanner pass = new Scanner(System.in);
             String password = pass.nextLine();
             user.setPassword(password);
-
         }
-        return true;
-
+        return user.getPassword();
     }
 }
 

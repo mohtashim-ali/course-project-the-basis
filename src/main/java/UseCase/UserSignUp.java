@@ -14,10 +14,12 @@ public class UserSignUp {
     private String user;
     private String pass;
 
-    public void signUp() throws IOException {
+    public void signUp() throws IOException, ClassNotFoundException {
         Scanner info = new Scanner(System.in);
         System.out.println("Username: ");
         this.user = info.nextLine();
+        ValidateUsername potUser = new ValidateUsername(this.user, list);
+        this.user = potUser.isTaken();
         System.out.println("Password: ");
         this.pass = info.nextLine();
 
@@ -28,4 +30,6 @@ public class UserSignUp {
 //        UserList list = new UserList();
         list.writeToFile(newuser.getUserInfo());
     }
+
+
 }

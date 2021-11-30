@@ -20,16 +20,12 @@ public class UserLogIn implements LogIn{
         Scanner info = new Scanner(System.in);
         System.out.println("Username: ");
         this.user = info.nextLine();
+        ValidateUsername validuser = new ValidateUsername(this.user, list);
+        oldUser.setUsername(validuser.valid());
         System.out.println("Password: ");
         this.pass = info.nextLine();
-
-        oldUser.setUsername(user);
-        oldUser.setPassword(pass);
-
-        ValidatePassword valid = new ValidatePassword(oldUser, list);
-
-        valid.valid();
-
+        ValidatePassword validpass = new ValidatePassword(oldUser, list);
+        oldUser.setPassword(validpass.valid());
 
         return true;
     }
