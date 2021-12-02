@@ -11,21 +11,18 @@ public class UserSignUp {
     private final UserEntity newuser = new UserEntity();
     private final UserList list = new UserList();
 
-    private String user;
-    private String pass;
-
-    public void signUp() throws IOException {
+    public void signUp() throws IOException, ClassNotFoundException {
+        ValidateSignup validateSignup = new ValidateSignup(newuser, list);
         Scanner info = new Scanner(System.in);
         System.out.println("Username: ");
-        this.user = info.nextLine();
+        newuser.setUsername(info.nextLine());
+        newuser.setUsername(validateSignup.isTaken());
         System.out.println("Password: ");
-        this.pass = info.nextLine();
-
-        newuser.setUsername(user);
-        newuser.setPassword(pass);
+        newuser.setPassword(info.nextLine());
 
 
-//        UserList list = new UserList();
         list.writeToFile(newuser.getUserInfo());
     }
+
+
 }
