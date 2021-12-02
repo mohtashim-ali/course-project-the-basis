@@ -8,25 +8,20 @@ import java.util.*;
 
 public class UserLogIn implements LogIn{
 
-    private final UserEntity oldUser = new UserEntity();
+    private final UserEntity user = new UserEntity();
     private final UserList list = new UserList();
-
-    private String user;
-    private String pass;
 
     @Override
     public boolean logIn() throws IOException, ClassNotFoundException {
+        ValidateLogin validateLogin = new ValidateLogin(user, list);
 
         Scanner info = new Scanner(System.in);
         System.out.println("Username: ");
-        this.user = info.nextLine();
-        ValidateUsername validuser = new ValidateUsername(this.user, list);
-        oldUser.setUsername(validuser.valid());
+        user.setUsername(info.nextLine());
+        user.setUsername(validateLogin.validateUsername());
         System.out.println("Password: ");
-        this.pass = info.nextLine();
-        ValidatePassword validpass = new ValidatePassword(oldUser, list);
-        oldUser.setPassword(validpass.valid());
-
+        user.setPassword(info.nextLine());
+        user.setPassword(validateLogin.validatePassword());
         return true;
     }
 }
