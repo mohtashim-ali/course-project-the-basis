@@ -10,7 +10,7 @@ import java.lang.Math;
 /**
  * UseCase.ExpressionHandler Class that handles all operations done to an Entity.Expression.
  */
-public abstract class ExpressionHandler {
+public abstract class ExpressionHandler{
     public double operand1;
     public double operand2;
     public String operator;
@@ -26,16 +26,15 @@ public abstract class ExpressionHandler {
         this.operand2 = operand2;
         this.operator = operator;
         boolean valid_operator = false;
-        for (String op : this.operations)
-        {
+        for (String op : this.operations) {
             if (Objects.equals(op, this.operator)) {
                 valid_operator = true;
                 break;
             }
 
         }
-        if (!valid_operator){
-            if (!Objects.equals(this.operator, "")){
+        if (!valid_operator) {
+            if (!Objects.equals(this.operator, "")) {
                 throw new ExpressionException("Invalid Operator");
             }
         }
@@ -44,27 +43,27 @@ public abstract class ExpressionHandler {
     /**
      * @return Double
      */
-    public Double compute() throws ExpressionException {
-        switch (this.operator) {
-            case "+":
-                return this.operand1 + this.operand2;
-            case "-":
-                return this.operand1 - this.operand2;
-            case "*":
-                return this.operand1 * this.operand2;
-            case "^":
-                return Math.pow(this.operand1, this.operand2);
-
-        }
-
-        if (this.operator.equals("")){
-            return this.operand1;
-        }
-        if (this.operand2 == 0){
-            throw new ExpressionException("Undefined");
-        }
-        return this.operand1 / this.operand2;
-    }
+//    public Double compute() throws ExpressionException {
+//        switch (this.operator) {
+//            case "+":
+//                return this.operand1 + this.operand2;
+//            case "-":
+//                return this.operand1 - this.operand2;
+//            case "*":
+//                return this.operand1 * this.operand2;
+//            case "^":
+//                return Math.pow(this.operand1, this.operand2);
+//
+//        }
+//
+//        if (this.operator.equals("")){
+//            return this.operand1;
+//        }
+//        if (this.operand2 == 0){
+//            throw new ExpressionException("Undefined");
+//        }
+//        return this.operand1 / this.operand2;
+//    }
 
     /**
      * @return Entity.Expression
@@ -77,7 +76,34 @@ public abstract class ExpressionHandler {
         //TO DO
         return new Expression(1, "+", 2);
     }
-    public void print(){
+
+    public void print() {
         System.out.println(this.operand1 + " " + this.operator + " " + this.operand2);
     }
 }
+
+
+
+//    @Override
+//    public double compute() throws ExpressionException {
+//        switch (this.operator) {
+//            case "+":
+//                return this.operand1 + this.operand2;
+//            case "-":
+//                return this.operand1 - this.operand2;
+//            case "*":
+//                return this.operand1 * this.operand2;
+//            case "^":
+//                return Math.pow(this.operand1, this.operand2);
+//
+//        }
+//
+//        if (this.operator.equals("")) {
+//            return this.operand1;
+//        }
+//        if (this.operand2 == 0) {
+//            throw new ExpressionException("Undefined");
+//        }
+//        return this.operand1 / this.operand2;
+//    }
+//}

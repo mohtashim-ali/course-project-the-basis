@@ -64,7 +64,7 @@ public class WalkthroughCustomInput {
                 InputProcessor user = new InputProcessor(final_string.toString());
                 history.addToFile(sdf.format(date) + "," + new_user.getUsername() + "," + final_string);
                 System.out.println(final_string);
-                System.out.println(user.processInput().compute());
+//              System.out.println(user.processInput().compute());
 
             }
             else if (input1 == 2) {
