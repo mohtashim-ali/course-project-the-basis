@@ -1,8 +1,9 @@
 package Controller;
 
-import UseCase.UserLogIn;
-import UseCase.UserSignUp;
+import Entity.ExpressionException;
+import UseCase.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.io.IOException;
 
 public class CalculatorController {
@@ -13,14 +14,24 @@ public class CalculatorController {
         this.choice = choice;
     }
 
-    public void handleUser() throws IOException, ClassNotFoundException {
+    public void handleUser() throws IOException, ClassNotFoundException, ExpressionException {
         if (choice == 1){
             UserLogIn login = new UserLogIn();
             login.logIn();
         }
-        else{
+        else if (choice == 2){
             UserSignUp signup = new UserSignUp();
             signup.signUp();
         }
+        else if(choice - 2 == 1){
+            BuildExpression expr = new BuildExpression();
+            StringBuilder expression = expr.makeExpression();
+            InputProcessor process = new InputProcessor(expression.toString());
+            System.out.println(process.processInput().compute());
+        }
+    }
+
+    public void handleUserHistory(){
+        UserHistory history = new UserHistory();
     }
 }

@@ -30,6 +30,7 @@ public class ValidateLogin {
             String password = pass.nextLine();
             user.setPassword(password);
         }
+        System.out.println("Correct Password!");
         return user.getPassword();
     }
 
