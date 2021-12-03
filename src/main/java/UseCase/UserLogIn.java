@@ -10,6 +10,8 @@ public class UserLogIn implements LogIn{
 
     private final UserEntity user = new UserEntity();
     private final UserList list = new UserList();
+    private final CurrentUser curr = new CurrentUser();
+    private UserHistory hist = new UserHistory();
 
     @Override
     public boolean logIn() throws IOException, ClassNotFoundException {
