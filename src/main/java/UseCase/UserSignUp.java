@@ -1,7 +1,7 @@
 package UseCase;
 
 import Entity.UserEntity;
-import Entity.UserList;
+import Gateway.UserList;
 
 import java.io.IOException;
 import java.util.*;

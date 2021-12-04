@@ -29,6 +29,10 @@ public class CalculatorController {
             InputProcessor process = new InputProcessor(expression.toString());
             System.out.println(process.processInput().compute());
         }
+        else if (choice - 3 == 1){
+            BuildMatrix matrix = new BuildMatrix();
+            matrix.buildMatrix();
+        }
     }
 
     public void handleUserHistory(){

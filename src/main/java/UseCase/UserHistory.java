@@ -1,7 +1,6 @@
 package UseCase;
 
-import Entity.History;
-import Entity.UserEntity;
+import Gateway.History;
 
 import java.io.IOException;
 
