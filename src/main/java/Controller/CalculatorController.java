@@ -29,9 +29,9 @@ public class CalculatorController {
             InputProcessor process = new InputProcessor(expression.toString());
             System.out.println(process.processInput().compute());
         }
-        else if (choice - 3 == 1){
-            BuildMatrix matrix = new BuildMatrix();
-            matrix.buildMatrix();
+        else if (choice - 5 == 0){
+            ComputeMatrix matrix = new ComputeMatrix();
+            matrix.computeMatrix();
         }
     }
 

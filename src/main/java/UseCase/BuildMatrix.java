@@ -42,7 +42,7 @@ public class BuildMatrix {
         for( int i = 0;i<rows;i++){
             ArrayList<Fraction> t = new ArrayList<>();
             for(int j=0;j<cols;j++){
-                System.out.println("The value at row" + i + "and column" + j);
+                System.out.println("The value at row " + i + " and column " + j);
                 System.out.println("Please enter the numerator followed by the denominator");
                 Fraction frac = new Fraction(input.nextInt(), input.nextInt());
                 t.add(frac);
