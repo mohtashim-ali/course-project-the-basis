@@ -2,8 +2,10 @@ package Controller;
 
 import Entity.ExpressionException;
 import UseCase.*;
+import UseCase.Accounts.UserHistory;
+import UseCase.Accounts.UserLogIn;
+import UseCase.Accounts.UserSignUp;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.IOException;
 
 public class CalculatorController {

@@ -1,4 +1,4 @@
-package UseCase;
+package UseCase.Accounts;
 
 import Entity.UserEntity;
 import Gateway.UserList;
