@@ -1,5 +1,6 @@
 package UseCase;
 
+import Entity.Fraction;
 import Entity.Matrix;
 
 import java.util.*;
@@ -26,7 +27,7 @@ public class BuildMatrix {
         this.cols = cols;
     }
 
-    public int[][] buildMatrix(){
+    public ArrayList<ArrayList<Fraction>> buildMatrix(){
         Scanner input = new Scanner(System.in);
 
 
@@ -36,18 +37,24 @@ public class BuildMatrix {
         int cols = input.nextInt();
         System.out.println("Your matrix size is " + rows + " x " + cols);
 
-        int[][] matrix = new int[rows][cols];
+        ArrayList<ArrayList<Fraction>> matrix = new ArrayList<>();
 
-        for (int x = 0; x < rows; x ++){
-            for (int y = 0; y < cols; y ++){
-                System.out.println("Please enter the value of your matrix at row" + x + "and column" + y);
-                matrix[x][y] = input.nextInt();
+        for( int i = 0;i<rows;i++){
+            ArrayList<Fraction> t = new ArrayList<>();
+            for(int j=0;j<cols;j++){
+                System.out.println("The value at row" + i + "and column" + j);
+                System.out.println("Please enter the numerator followed by the denominator");
+                Fraction frac = new Fraction(input.nextInt(), input.nextInt());
+                t.add(frac);
             }
+            matrix.add(t);
         }
         return matrix;
     }
 
     public static void main(String[] args) {
         BuildMatrix m = new BuildMatrix();
+        Matrix ma = new Matrix(m.buildMatrix());
+        System.out.println(ma.RREF());
     }
 }
