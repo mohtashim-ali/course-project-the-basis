@@ -80,30 +80,31 @@ public abstract class ExpressionHandler{
     public void print() {
         System.out.println(this.operand1 + " " + this.operator + " " + this.operand2);
     }
-}
+
+
 
 
 
 //    @Override
-//    public double compute() throws ExpressionException {
-//        switch (this.operator) {
-//            case "+":
-//                return this.operand1 + this.operand2;
-//            case "-":
-//                return this.operand1 - this.operand2;
-//            case "*":
-//                return this.operand1 * this.operand2;
-//            case "^":
-//                return Math.pow(this.operand1, this.operand2);
-//
-//        }
-//
-//        if (this.operator.equals("")) {
-//            return this.operand1;
-//        }
-//        if (this.operand2 == 0) {
-//            throw new ExpressionException("Undefined");
-//        }
-//        return this.operand1 / this.operand2;
-//    }
-//}
+    public double compute() throws ExpressionException {
+        switch (this.operator) {
+            case "+":
+                return this.operand1 + this.operand2;
+            case "-":
+                return this.operand1 - this.operand2;
+            case "*":
+                return this.operand1 * this.operand2;
+            case "^":
+                return Math.pow(this.operand1, this.operand2);
+
+        }
+
+        if (this.operator.equals("")) {
+            return this.operand1;
+        }
+        if (this.operand2 == 0) {
+            throw new ExpressionException("Undefined");
+        }
+        return this.operand1 / this.operand2;
+    }
+}
