@@ -27,8 +27,44 @@ public class BuildMatrix {
         this.cols = cols;
     }
 
+    public ArrayList<ArrayList<Fraction>> convert(List<String> splitmatrix){
+        int x = 0;
+        ArrayList<ArrayList<Fraction>> matrix = new ArrayList<>();
+        while (x < splitmatrix.size()){
+            ArrayList<Fraction> n = new ArrayList<>();
+            if (splitmatrix.get(x).equals("[")){
+                x ++;
+                matrix = convert(splitmatrix.subList(x, splitmatrix.size() - 1));
+            }
+            else if (splitmatrix.get(x).equals("]")){
+                matrix.add(n);
+                return matrix;
+            }
+            else{
+                x++;
+                Fraction frac = new Fraction(5, 5);
+                n.add(frac);
+            }
+        }
+        return matrix;
+
+    }
     public ArrayList<ArrayList<Fraction>> buildMatrix(){
         Scanner input = new Scanner(System.in);
+//
+//        System.out.println("Please type in your matrix in format [row], ..., [row]: ");
+//        String S_matrix = input.nextLine();
+//
+//        List<String> splitmatrix = List.of(S_matrix.split(","));
+//
+//        ArrayList<ArrayList<Fraction>> matrix = new ArrayList<>();
+//        for (String s: splitmatrix){
+//            String n = s.substring(1, s.length() - 1);
+//            System.out.println(n);
+//            }
+//        }
+
+
 
 
         System.out.println("Please enter the number of rows: ");
@@ -54,7 +90,16 @@ public class BuildMatrix {
 
     public static void main(String[] args) {
         BuildMatrix m = new BuildMatrix();
-        Matrix ma = new Matrix(m.buildMatrix());
-        System.out.println(ma.RREF());
+//        Matrix ma = new Matrix(m.buildMatrix());
+//        System.out.println(ma.RREF());
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Please type in your matrix in format [[row], ..., [row]]: ");
+        String S_matrix = input.nextLine();
+
+        List<String> splitmatrix = List.of(S_matrix.split(","));
+
+        System.out.println(m.convert(splitmatrix));
     }
 }
