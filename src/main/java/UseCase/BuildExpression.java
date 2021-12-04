@@ -5,11 +5,11 @@ import java.util.*;
 
 public class BuildExpression {
 
-    private String expression;
-
-    public void setExpression(String expression){
-        this.expression = expression;
-    }
+//    private String expression;
+//
+//    public void setExpression(String expression){
+//        this.expression = expression;
+//    }
 
     public StringBuilder makeExpression(){
         Scanner input2 = new Scanner(System.in);

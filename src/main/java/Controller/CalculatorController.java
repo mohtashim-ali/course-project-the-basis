@@ -2,8 +2,10 @@ package Controller;
 
 import Entity.ExpressionException;
 import UseCase.*;
+import UseCase.Accounts.UserHistory;
+import UseCase.Accounts.UserLogIn;
+import UseCase.Accounts.UserSignUp;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.IOException;
 
 public class CalculatorController {
@@ -28,6 +30,10 @@ public class CalculatorController {
             StringBuilder expression = expr.makeExpression();
             InputProcessor process = new InputProcessor(expression.toString());
             System.out.println(process.processInput().compute());
+        }
+        else if (choice - 5 == 0){
+            ComputeMatrix matrix = new ComputeMatrix();
+            matrix.computeMatrix();
         }
     }
 

@@ -42,7 +42,7 @@ public class WalkthroughCustomInput {
         do {
             ConnectionManager history = new ConnectionManager("history.txt");
             System.out.println("1. Compute");
-            System.out.println("2. Entity.History");
+            System.out.println("2. Gateway.History");
             System.out.println("3. Power Off");
             int input1 = input.nextInt();
             if (input1 == 1) {

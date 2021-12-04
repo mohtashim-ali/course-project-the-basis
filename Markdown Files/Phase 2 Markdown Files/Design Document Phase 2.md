@@ -16,7 +16,26 @@ Splitting WalkthroughCustomInput
 > Our project adheres to Clean Architecture by ensuring we follow the dependency rule. First, there are Entity classes for Users, and defining any mathematical property such as expressions, matrix, and equations. Next, our use cases use entities to provide functionality to our code. For example, there are use cases for logging in and signing up the user, building and computing an expression, alongside accessing the database through a gateway. Controllers are present and use the use cases to process user input from the UI and send back results from presenters. The UI calls the controller, and does not know about any other layers. Thus, adhering to the dependency rule.
 ## SOLID
 
-> Clean architecture is a set of rules that define how programs can run efficiently, looking at our program we utilize and take advantage of a multitude of these concepts. SRP or Single Responsibility Principle is used numerous times throughout our program from Entity.Matrix determinants to RREF, basic operations and processing inputs. Our code follows this principle logically as it is divided up such that each function accomplishes solely their task. Another huge concept we utilize is the Dependency Inversion Principle which allows us to split our objects from their handlers. The handler acts as an abstraction to the object since it is not constructed anywhere and each object inherits the functions and properties of it. Through this principle we create architectural boundaries between objects and their manipulators enabling the formation of abstract Factories. Evidently, we send information from our front-end, to our Java File Handlers and our InputHandlers to create concrete representations of data that can be computed. Moreover, the Open/Closed principle is used in each of our handlers to allow objects to contain functions and operations extensively. Extensionality is a key aspect of our program because the field of mathematics is vast, meaning functionality can always be added on, because of this, it is essential that we use this principle. Violations are something my team and I looked out for, we made sure to closely follow these SOLID principles so that our ideas can guide themselves through design. One of the violations we wanted to keep an eye out for was the LSP Violation or Liskov Substitution Principle. Thankfully since we use handlers for our objects that are purely abstract even when substituting one class for the other we lose no functionality of our program.
+### Single Responsibility:
+
+> We followed SR by ensuring a class does not have more than one responsibility. This was done by creating many classes to separate features from each other. For example, before we had log-in and sign-up in one use case class, but this violated SR, so it was split into two use case classes. More examples include different classes for adding to history to users list and  to history of calculations done by the user. There are also many entity classes to separate the types of math we have in our code including: Matrix, Trig, Expression, Equation, Fraction.
+
+### Open/Closed:
+
+> We followed O/C by making interfaces for features which could be expanded. For example, we created an interface for the ReadWrite class since there could be more databases in our code. But, will include the same methods. This shows that it is Open for adding new databases, but closed for changing the structure of databases. Another example is the Operations interface. Since a calculator can have many operations, we do not want to limit the number of possible operations. The methods used by operations are always the same format, so it is closed for modification. 
+
+### Liskov Substitution:
+
+> Liskov was followed by ensuring input parameters for objects of the same type are the same. In the History and UserList classes, both methods overridden input the same parameters. This ensures if the class were to be replaced by one another, then no exceptions would occur.
+
+### Interface Segregation:
+
+> Interface Segregation was followed by having Interfaces just for computation errors. For example, addition and subtraction do not have errors when adding any two numbers.  But, division by zero is something that is unique to dividing. So, by creating a new interface which the division will implement, we follow interface segregation. Another way IS is satisfied is how all of our interfaces are short.
+
+### Dependency Inversion:
+
+> Directly calling a gateway in a use case violates DIP. So to fix this, we made an interface for the gateways which read and write to our text files. Thus, by implementing the interface in the History and UserList classes, we can call them in the use cases and adhere to DIP.
+
 
 ## Packaging Strategies
 

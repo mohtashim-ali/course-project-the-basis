@@ -12,7 +12,7 @@ In short, our goal for phase 0 was to narrow down onto a specific goal so that w
 #### Entity Classes
 
 1. Entity.User - Input user data and sends to other classes
-2. Entity.History - Stores user inputs
+2. Gateway.History - Stores user inputs
 3. Entity.Expression - Defines an expression
 4. Entity.Equation - Defines an equation
 
