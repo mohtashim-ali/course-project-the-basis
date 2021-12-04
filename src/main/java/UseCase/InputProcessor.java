@@ -52,39 +52,39 @@ public class InputProcessor {
         }
 
     }
-}
+
 
     /**
      * @return Entity.Expression
      */
-//    public Expression processInput() throws ExpressionException {
-//        /**
-//         *
-//         * Function that processes input by Array of operands and operators.
-//         *
-//         */
-//        if (this.input.size() == 1){
-//            double operand1 = Double.parseDouble(this.input.get(0));
-//            return new Expression(operand1, "", 0);
-//        }
-//        if (this.input.size() == 3){
-//            double operand1 = Double.parseDouble(this.input.get(0));
-//            double operand2 = Double.parseDouble(this.input.get(2));
-//            return new Expression(operand1, this.input.get(1), operand2);
-//        }
-//        else{
-//            int highest_order_op = 1;
-//            for (int i = 2; i<=this.input.size()-1; i++){
-//                if (this.compareOperators(this.input.get(highest_order_op), this.input.get(i))){
-//                    highest_order_op = i;
-//                }
-//            }
-//            Expression expr1 = (new InputProcessor(this.input.get(highest_order_op-1) + " "
-//                    + this.input.get(highest_order_op) + " " + this.input.get(highest_order_op+1))).processInput();
-//            double operand2 = expr1.compute();
-//            this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1);
-//            this.input.add(highest_order_op-1, Double.toString(operand2));
-//            return this.processInput();
-//        }
-//    }
-//}
+    public Expression processInput() throws ExpressionException {
+        /**
+         *
+         * Function that processes input by Array of operands and operators.
+         *
+         */
+        if (this.input.size() == 1){
+            double operand1 = Double.parseDouble(this.input.get(0));
+            return new Expression(operand1, "", 0);
+        }
+        if (this.input.size() == 3){
+            double operand1 = Double.parseDouble(this.input.get(0));
+            double operand2 = Double.parseDouble(this.input.get(2));
+            return new Expression(operand1, this.input.get(1), operand2);
+        }
+        else{
+            int highest_order_op = 1;
+            for (int i = 2; i<=this.input.size()-1; i++){
+                if (this.compareOperators(this.input.get(highest_order_op), this.input.get(i))){
+                    highest_order_op = i;
+                }
+            }
+            Expression expr1 = (new InputProcessor(this.input.get(highest_order_op-1) + " "
+                    + this.input.get(highest_order_op) + " " + this.input.get(highest_order_op+1))).processInput();
+            double operand2 = expr1.compute();
+            this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1);
+            this.input.add(highest_order_op-1, Double.toString(operand2));
+            return this.processInput();
+        }
+    }
+}

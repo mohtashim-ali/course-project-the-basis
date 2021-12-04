@@ -1,6 +1,6 @@
 package UseCase;
 
-public class Mulitplication implements Computation{
+public class Multiplication implements Computation{
 
     @Override
     public double compute(double a, double b) {
