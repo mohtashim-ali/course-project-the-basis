@@ -29,5 +29,5 @@ Splitting WalkthroughCustomInput
 > Facade: Our controller uses the Facade design pattern by contatning the use cases and calling the correct one depending on the user input. The facade class is called in our UI. Implementing the facade pattern helps us make sure the UI is not directly communicating with our use cases.
 
 
-Observer: The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files.
+> Observer: The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files.
 > (will add more later)
