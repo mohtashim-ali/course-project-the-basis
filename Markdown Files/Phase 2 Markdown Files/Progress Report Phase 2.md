@@ -11,6 +11,8 @@
 
 Mohtashim
 > For Phase 2, my main responsibility was converting our code to follow SOLID, Clean Architecture and use Design Patterns. In Phase 1 we did not pay attention to this as much as we should have, so I took the responsibility of implementing these into our code and guiding our group in implementing these properties. For example, I split up the WalkThroughCustomInput into use cases, made a controller for our calculator, and implemented design patterns. I also packaged our code as mentioned in the Design Report. I also completed the design report, and created the layout for the Phase 2 homepage section on our Github page.
+
+
 Nofel
 
 > text
