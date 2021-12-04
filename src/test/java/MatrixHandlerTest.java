@@ -239,13 +239,12 @@ public class MatrixHandlerTest extends TestCase {
             add(m3);
         }};
         Matrix temp = new Matrix(new_matrix);
-        System.out.println(temp.RREF().toString());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1], [0/1, 1/1, 0/1], [0/1, 0/1, 1/1]]");
     }
 
     public void testRREF3() {
         ArrayList<Fraction> m1 = new ArrayList<>() {{
-            add(new Fraction(3, 1));
+            add(new Fraction(0, 1));
             add(new Fraction(4, 1));
             add(new Fraction(1, 1));
         }};
@@ -265,7 +264,6 @@ public class MatrixHandlerTest extends TestCase {
             add(m3);
         }};
         Matrix temp = new Matrix(new_matrix);
-        System.out.println(temp.RREF().toString());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1], [0/1, 1/1, 0/1], [0/1, 0/1, 1/1]]");
 
     }
@@ -292,7 +290,6 @@ public class MatrixHandlerTest extends TestCase {
             add(m3);
         }};
         Matrix temp = new Matrix(new_matrix);
-        System.out.println(temp.RREF().toString());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, -1/1], [0/1, 1/1, 1/1], [0/1, 0/1, 0/1]]");
 
     }
@@ -319,7 +316,6 @@ public class MatrixHandlerTest extends TestCase {
             add(m3);
         }};
         Matrix temp = new Matrix(new_matrix);
-        System.out.println(temp.RREF().toString());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, -9/5], [0/1, 1/1, 4/5], [0/1, 0/1, 0/1]]");
 
     }
@@ -346,10 +342,119 @@ public class MatrixHandlerTest extends TestCase {
             add(m3);
         }};
         Matrix temp = new Matrix(new_matrix);
-        System.out.println(temp.RREF().toString());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 1/1], [0/1, 1/1, -1/1], [0/1, 0/1, 0/1]]");
 
     }
+
+    public void testRREF7() {
+        ArrayList<Fraction> m1 = new ArrayList<>() {{
+            add(new Fraction(2, 3));
+            add(new Fraction(7, 2));
+            add(new Fraction(1, 2));
+        }};
+        ArrayList<Fraction> m2 = new ArrayList<>() {{
+            add(new Fraction(14, 3));
+            add(new Fraction(5, 2));
+            add(new Fraction(0, 1));
+        }};
+        ArrayList<Fraction> m3 = new ArrayList<>() {{
+            add(new Fraction(76, 3));
+            add(new Fraction(98, 2));
+            add(new Fraction(-13, 2));
+        }};
+        ArrayList<ArrayList<Fraction>> new_matrix = new ArrayList<>() {{
+            add(m1);
+            add(m2);
+            add(m3);
+        }};
+        Matrix temp = new Matrix(new_matrix);
+        assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1], [0/1, 1/1, 0/1], [0/1, 0/1, 1/1]]");
+
+    }
+
+    public void testRREF8() {
+        ArrayList<Fraction> m1 = new ArrayList<>() {{
+            add(new Fraction(0, 1));
+            add(new Fraction(2, 1));
+            add(new Fraction(-1, 1));
+        }};
+        ArrayList<Fraction> m2 = new ArrayList<>() {{
+            add(new Fraction(2, 1));
+            add(new Fraction(5, 1));
+            add(new Fraction(-3, 1));
+        }};
+        ArrayList<Fraction> m3 = new ArrayList<>() {{
+            add(new Fraction(1, 1));
+            add(new Fraction(4, 1));
+            add(new Fraction(-3, 1));
+        }};
+        ArrayList<ArrayList<Fraction>> new_matrix = new ArrayList<>() {{
+            add(m1);
+            add(m2);
+            add(m3);
+        }};
+        Matrix temp = new Matrix(new_matrix);
+        assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1], [0/1, 1/1, 0/1], [0/1, 0/1, 1/1]]");
+
+    }
+
+    public void testRREF_nonsquare1() {
+        ArrayList<Fraction> m1 = new ArrayList<>() {{
+            add(new Fraction(0, 1));
+            add(new Fraction(2, 1));
+            add(new Fraction(-1, 1));
+            add(new Fraction(0, 1));
+            add(new Fraction(2, 1));
+            add(new Fraction(-1, 1));
+        }};
+        ArrayList<Fraction> m2 = new ArrayList<>() {{
+            add(new Fraction(2, 1));
+            add(new Fraction(5, 1));
+            add(new Fraction(-3, 1));
+            add(new Fraction(0, 1));
+            add(new Fraction(2, 1));
+            add(new Fraction(-1, 1));
+        }};
+        ArrayList<Fraction> m3 = new ArrayList<>() {{
+            add(new Fraction(1, 1));
+            add(new Fraction(4, 1));
+            add(new Fraction(-3, 1));
+            add(new Fraction(0, 1));
+            add(new Fraction(2, 1));
+            add(new Fraction(-1, 1));
+        }};
+        ArrayList<ArrayList<Fraction>> new_matrix = new ArrayList<>() {{
+            add(m1);
+            add(m2);
+            add(m3);
+        }};
+        Matrix temp = new Matrix(new_matrix);
+        assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1, 0/1, -4/3, 2/3],\n" +
+                "[0/1, 1/1, 0/1, 0/1, 4/3, -2/3],\n" +
+                "[0/1, 0/1, 1/1, 0/1, 2/3, -1/3]]\n");
+
+    }
+
+    public void testRREF_nonsquare2() {
+        ArrayList<Fraction> m1 = new ArrayList<>() {{
+            add(new Fraction(2, 1));
+            add(new Fraction(1, 1));
+            add(new Fraction(-1, 1));
+        }};
+        ArrayList<Fraction> m2 = new ArrayList<>() {{
+            add(new Fraction(3, 1));
+            add(new Fraction(5, 1));
+            add(new Fraction(-3, 1));
+        }};
+        ArrayList<ArrayList<Fraction>> new_matrix = new ArrayList<>() {{
+            add(m1);
+            add(m2);
+        }};
+        Matrix temp = new Matrix(new_matrix);
+        assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, -2/7], [0/1, 1/1, -3/7]]");
+
+    }
+
 
     public void testMoveZerosToBottom() {
     }
