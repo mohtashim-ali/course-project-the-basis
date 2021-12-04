@@ -30,4 +30,6 @@ Splitting WalkthroughCustomInput
 
 
 > Observer: The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files.
+
+
 > (will add more later)
