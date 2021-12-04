@@ -28,4 +28,10 @@ The classes worked on and used in Phase 0 are: [UI.WalkthroughCustomInput](https
 
 ## Phase 2
 
+1. [Specification](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Phase%202%20Markdown%20Files/specification%20phase%202.md)
+2. [Design Document](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Phase%202%20Markdown%20Files/Design%20Document%20Phase%202.md)
+3. [Progress Report](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Phase%202%20Markdown%20Files/Progress%20Report%20Phase%202.md)
+4. [Accessibility Report](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Phase%202%20Markdown%20Files/accessibility.md)
+5. [How to run the Calculator](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Phase%202%20Markdown%20Files/How%20to%20Run%20Calculator%20Phase%202.md)
+
 
