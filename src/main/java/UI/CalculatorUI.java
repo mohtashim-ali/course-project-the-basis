@@ -13,6 +13,7 @@ public class CalculatorUI {
         System.out.println("1. Log In");
         System.out.println("2. Sign Up");
         System.out.println("3. Compute");
+        System.out.println("5. Linear Algebra");
         int log = read.nextInt();
         CalculatorController control = new CalculatorController();
         control.setChoice(log);

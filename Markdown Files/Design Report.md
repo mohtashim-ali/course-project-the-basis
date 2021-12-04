@@ -3,7 +3,7 @@
 Additonal Functionality between Phase 0 and Phase 1
 
 > 1. Users
-> 2. Entity.History
+> 2. Gateway.History
 > 3. RREF
 > 4. Inverse
 > 5. Determinants
@@ -24,7 +24,7 @@ Users
 
 ## Clean Architecture
 
-> Our project adheres to Clean Architecture by ensuring Entities do not know about outside classes such as controllers. For example, the Entity.User class is an Entity class and to ensure using it does not violate clean architecture we called Entity.User in UI.WalkthroughCustomInput. This ensures the Entity.User class is not calling UI.WalkthroughCustomInput. Another idea we had was implementing a database for Entity.History using MySQL. However, doing this would break Clean Architecture since we were taking the user input and storing it into a database at the same time. To fix this, we could make a interface for the history part of our program. But, we decided on using a text file approach which does not break clean architecture.
+> Our project adheres to Clean Architecture by ensuring Entities do not know about outside classes such as controllers. For example, the Entity.User class is an Entity class and to ensure using it does not violate clean architecture we called Entity.User in UI.WalkthroughCustomInput. This ensures the Entity.User class is not calling UI.WalkthroughCustomInput. Another idea we had was implementing a database for Gateway.History using MySQL. However, doing this would break Clean Architecture since we were taking the user input and storing it into a database at the same time. To fix this, we could make a interface for the history part of our program. But, we decided on using a text file approach which does not break clean architecture.
 
 ## SOLID
 

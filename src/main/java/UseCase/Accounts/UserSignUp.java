@@ -1,7 +1,7 @@
-package UseCase;
+package UseCase.Accounts;
 
 import Entity.UserEntity;
-import Entity.UserList;
+import Gateway.UserList;
 
 import java.io.IOException;
 import java.util.*;
