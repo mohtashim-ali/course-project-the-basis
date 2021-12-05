@@ -1,7 +1,6 @@
 package Controller;
 
 import Entity.ExpressionException;
-import Entity.UserEntity;
 import UseCase.*;
 import UseCase.InputProcessor;
 import UseCase.Accounts.CurrentUser;
@@ -10,6 +9,8 @@ import UseCase.Accounts.UserLogIn;
 import UseCase.Accounts.UserSignUp;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class CalculatorController {
 
@@ -22,7 +23,7 @@ public class CalculatorController {
         this.choice = choice;
     }
 
-    public boolean handleUser() throws IOException, ClassNotFoundException, ExpressionException {
+    public boolean handleUser() throws IOException, ClassNotFoundException {
         if (choice == 1){
             UserLogIn login = new UserLogIn();
             curr.setCurrentUser(login.logIn());
@@ -38,12 +39,14 @@ public class CalculatorController {
         return false;
     }
 
-    public void handleOperations(String input) throws ExpressionException, IOException {
+    public void handleOperations(String input) throws IOException, ExpressionException {
         if(this.choice == 1) {
+            Date date = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");
             BuildExpression buildExpression = new BuildExpression();
             buildExpression.setInput(input);
             StringBuilder fixed_input = buildExpression.makeExpression();
-            userHistory.addToHistory(fixed_input.toString(), "2:00"); // Temporary time
+            userHistory.addToHistory(fixed_input.toString(), formatter.format(date)); // Temporary time
             InputProcessor inputProcessor = new InputProcessor(fixed_input.toString());
             System.out.println(inputProcessor.processInput().compute());
         } else if (this.choice == 2) {

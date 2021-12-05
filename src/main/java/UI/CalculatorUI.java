@@ -30,7 +30,6 @@ public class CalculatorUI {
             Scanner expression = new Scanner(System.in);
             String input = expression.nextLine();
             control.handleOperations(input);
-
         }
     }
 }

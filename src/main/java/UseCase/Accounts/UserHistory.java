@@ -15,7 +15,7 @@ public class UserHistory {
 
 
     public void addToHistory(String operation, String time){
-        list.writeToFile(curr.getCurrentUser().getUsername() + "," + operation + time);
+        list.writeToFile(curr.getCurrentUser().getUsername() + "," + operation + "," + time);
     }
 
     public ArrayList<String> readFromHistory() throws IOException {
