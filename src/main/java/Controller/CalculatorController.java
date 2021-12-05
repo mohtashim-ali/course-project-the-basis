@@ -42,7 +42,7 @@ public class CalculatorController {
     public void handleOperations(String input) throws IOException, ExpressionException {
         if(this.choice == 1) {
             Date date = new Date();
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+            SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
             BuildExpression buildExpression = new BuildExpression();
             buildExpression.setInput(input);
             StringBuilder fixed_input = buildExpression.makeExpression();
@@ -52,11 +52,7 @@ public class CalculatorController {
         } else if (this.choice == 2) {
             // Matrix stuff goes in here, I didn't add it since it's not finalized yet
         } else if (this.choice == 3) {
-            System.out.println(userHistory.readFromHistory());
+            userHistory.readFromHistory();
         }
-    }
-
-    public void handleUserHistory(){
-        UserHistory history = new UserHistory();
     }
 }

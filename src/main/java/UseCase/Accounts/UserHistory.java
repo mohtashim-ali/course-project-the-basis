@@ -18,7 +18,25 @@ public class UserHistory {
         list.writeToFile(curr.getCurrentUser().getUsername() + "," + operation + "," + time);
     }
 
-    public ArrayList<String> readFromHistory() throws IOException {
-        return list.readWithUsername(curr.getCurrentUser().getUsername());
+    public void readFromHistory() throws IOException {
+        toTable(list.readWithUsername(curr.getCurrentUser().getUsername()));
+    }
+
+    /**
+     * Helper for readFromHistory
+     * @return History in a table form
+     */
+    public void toTable(ArrayList<String> history) {
+        System.out.println("-----------------------------------------------------------------------------");
+        System.out.printf("%10s %20s", "CALC", "TIME");
+        System.out.println();
+        System.out.println("-----------------------------------------------------------------------------");
+        for(String info: history){
+            String[] splitList = info.split(";");
+            System.out.format("%10s %20s",
+                    splitList[0], splitList[1]);
+            System.out.println();
+        }
+        System.out.println("-----------------------------------------------------------------------------");
     }
 }
