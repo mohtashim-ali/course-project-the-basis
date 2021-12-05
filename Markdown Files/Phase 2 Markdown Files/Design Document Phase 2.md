@@ -22,23 +22,23 @@ Spliiting and improving ExpressionHandler
 
 ## SOLID
 
-##### Single Responsibility:
+#### Single Responsibility:
 
 > We followed SR by ensuring a class does not have more than one responsibility. This was done by creating many classes to separate features from each other. For example, before we had log-in and sign-up in one use case class, but this violated SR, so it was split into two use case classes. More examples include different classes for adding to history to users list and  to history of calculations done by the user. There are also many entity classes to separate the types of math we have in our code including: Matrix, Trig, Expression, Equation, Fraction.
 
-##### Open/Closed:
+#### Open/Closed:
 
 > We followed O/C by making interfaces for features which could be expanded. For example, we created an interface for the ReadWrite class since there could be more databases in our code. But, will include the same methods. This shows that it is Open for adding new databases, but closed for changing the structure of databases. Another example is the Operations interface. Since a calculator can have many operations, we do not want to limit the number of possible operations. The methods used by operations are always the same format, so it is closed for modification. 
 
-##### Liskov Substitution:
+#### Liskov Substitution:
 
 > Liskov was followed by ensuring input parameters for objects of the same type are the same. In the History and UserList classes, both methods overridden input the same parameters. This ensures if the class were to be replaced by one another, then no exceptions would occur.
 
-##### Interface Segregation:
+#### Interface Segregation:
 
 > Interface Segregation was followed by having Interfaces just for computation errors. For example, addition and subtraction do not have errors when adding any two numbers.  But, division by zero is something that is unique to dividing. So, by creating a new interface which the division will implement, we follow interface segregation. Another way Interface Segregation is satisfied is how all of our interfaces are short.
 
-##### Dependency Inversion:
+#### Dependency Inversion:
 
 > Directly calling a gateway in a use case violates DIP. So to fix this, we made an interface for the gateways which read and write to our text files. Thus, by implementing the interface in the History and UserList classes, we can call them in the use cases and adhere to DIP.
 
