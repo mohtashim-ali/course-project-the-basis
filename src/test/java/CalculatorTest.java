@@ -9,34 +9,34 @@ public class CalculatorTest {
 
     @Test
     public void addition() throws ExpressionException {
-        Calculator oprt = new Calculator(new Addition());
-        assert oprt.resultant(20, 1) == 21.0;
+        Main oprt = new Main();
+        assert oprt.resultant(1,"+",2) == 3;
     }
-    @Test
-    public void subtraction() throws ExpressionException {
-        Calculator oprt = new Calculator(new Subtraction());
-        assert oprt.resultant(10, 1) == 9.0;
-    }
-    @Test
-    public void multiplication() throws ExpressionException {
-        Calculator oprt = new Calculator(new Multiplication());
-        assert oprt.resultant(20, 10) == 200.0;
-    }
-    @Test
-    public void division() throws ExpressionException {
-        Calculator oprt = new Calculator(new Division());
-        assert oprt.resultant(20, 2) == 10.0;
-    }
-    @Test (expected = ExpressionException.class)
-    public void divisionByZero() throws ExpressionException {
-        Calculator oprt = new Calculator(new Division());
-        oprt.resultant(200, 0);
-    }
-    @Test
-    public void multiplicationByNegative() throws ExpressionException {
-        Calculator oprt = new Calculator(new Multiplication());
-        assert oprt.resultant(20, -2) == -40.0;;
-    }
+//    }
+//    @Test
+//    public void subtraction() throws ExpressionException {
+//        Calculator oprt = new Calculator(new Subtraction());
+//        assert oprt.resultant(10, 1) == 9.0;
+//    }
+//    @Test
+//    public void multiplication() throws ExpressionException {
+//        Calculator oprt = new Calculator(new Multiplication());
+//        assert oprt.resultant(20, 10) == 200.0;
+//    }
+//    @Test
+//    public void division() throws ExpressionException {
+//        Calculator oprt = new Calculator(new Division());
+//        assert oprt.resultant(20, 2) == 10.0;
+//    }
+//    @Test (expected = ExpressionException.class)
+//    public void divisionByZero() throws ExpressionException {
+//        Calculator oprt = new Calculator(new Division());
+//        oprt.resultant(200, 0);
+//    }
+//    @Test
+//    public void multiplicationByNegative() throws ExpressionException {
+//        Calculator oprt = new Calculator(new Multiplication());
+//        assert oprt.resultant(20, -2) == -40.0;;
     @Test
     public void additionMultiplePositiveNumbers() throws ExpressionException {
         InputProcessor input = new InputProcessor("5 + 3 + 4");

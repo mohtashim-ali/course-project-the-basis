@@ -2,14 +2,17 @@ package UseCase;
 
 import Entity.ExpressionException;
 
-public class Calculator {
-    private final Computation _operation;
+import java.util.Objects;
 
-    public Calculator(Computation operand){
+public class Calculator {
+    private Computation _operation;
+
+    public void setStrategy(Computation operand) {
         this._operation = operand;
     }
-    public double resultant (double a, double b) throws ExpressionException {
-         return this._operation.compute(a, b);
-    }
 
+    public double getStrategy(double a, double b) throws ExpressionException {
+        return this._operation.compute(a,b);
+    }
 }
+
