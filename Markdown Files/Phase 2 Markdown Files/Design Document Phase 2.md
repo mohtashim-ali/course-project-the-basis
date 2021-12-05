@@ -18,6 +18,8 @@ Spliiting and improving ExpressionHandler
 ## Clean Architecture
 
 > Our project adheres to Clean Architecture by ensuring we follow the dependency rule. First, there are Entity classes for Users, and defining any mathematical property such as expressions, matrix, and equations. Next, our use cases use entities to provide functionality to our code. For example, there are use cases for logging in and signing up the user, building and computing an expression, alongside accessing the database through a gateway. Controllers are present and use the use cases to process user input from the UI and send back results from presenters. The UI calls the controller, and does not know about any other layers. Thus, adhering to the dependency rule.
+
+
 ## SOLID
 
 ### Single Responsibility:
@@ -34,11 +36,12 @@ Spliiting and improving ExpressionHandler
 
 ### Interface Segregation:
 
-> Interface Segregation was followed by having Interfaces just for computation errors. For example, addition and subtraction do not have errors when adding any two numbers.  But, division by zero is something that is unique to dividing. So, by creating a new interface which the division will implement, we follow interface segregation. Another way IS is satisfied is how all of our interfaces are short.
+> Interface Segregation was followed by having Interfaces just for computation errors. For example, addition and subtraction do not have errors when adding any two numbers.  But, division by zero is something that is unique to dividing. So, by creating a new interface which the division will implement, we follow interface segregation. Another way Interface Segregation is satisfied is how all of our interfaces are short.
 
 ### Dependency Inversion:
 
 > Directly calling a gateway in a use case violates DIP. So to fix this, we made an interface for the gateways which read and write to our text files. Thus, by implementing the interface in the History and UserList classes, we can call them in the use cases and adhere to DIP.
+
 
 
 ## Packaging Strategies
