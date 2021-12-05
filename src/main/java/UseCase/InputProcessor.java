@@ -81,6 +81,7 @@ public class InputProcessor {
             }
             Expression expr1 = (new InputProcessor(this.input.get(highest_order_op-1) + " "
                     + this.input.get(highest_order_op) + " " + this.input.get(highest_order_op+1))).processInput();
+
             double operand2 = expr1.compute();
             this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1);
             this.input.add(highest_order_op-1, Double.toString(operand2));
