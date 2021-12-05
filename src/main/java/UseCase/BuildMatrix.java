@@ -12,7 +12,7 @@ public class BuildMatrix {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please type a square matrix using brackets: ");
+        System.out.println("Please type in a square matrix using brackets: ");
 
         String clean = input.nextLine().replaceAll(" ", "");
 
@@ -28,16 +28,16 @@ public class BuildMatrix {
         int x  = 1;
         ArrayList<ArrayList<Fraction>> matri = new ArrayList<>();
         while (x < matrix.length){
-            if (Objects.equals(matrix[x].toString(), "[")){
+            if (Objects.equals(matrix[x], "[")){
                 x++;
                 ArrayList<Fraction> inner = new ArrayList<>();
-                while (!matrix[x].toString().equals("]")){
-                    if (!matrix[x].toString().equals(",") && !matrix[x].toString().equals("]")){
-                        Fraction test = new Fraction(Integer.parseInt(matrix[x]), Integer.parseInt(matrix[x+2]));
+                while (!matrix[x].equals("]")){
+                    if (!matrix[x].equals(",") && !matrix[x].equals("]")){
+                        int first = Integer.parseInt(matrix[x]);
+                        int second = Integer.parseInt(matrix[x+2]);
+                        Fraction test = new Fraction(first, second);
                         inner.add(test);
-                        x++;
-                        x++;
-                        x++;
+                        x+= 3;
                     }
                     else{
                         x++;
