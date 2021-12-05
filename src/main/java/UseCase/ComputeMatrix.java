@@ -17,7 +17,7 @@ public class ComputeMatrix {
         BuildMatrix m = new BuildMatrix();
 
 
-        Matrix matrix = new Matrix(m.buildMatrix());
+        Matrix matrix = m.createMatrix();
 
         Scanner choice = new Scanner(System.in);
 
