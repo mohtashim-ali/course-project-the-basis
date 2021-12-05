@@ -7,54 +7,52 @@ import java.util.*;
 
 public class BuildMatrix {
 
-    private int rows;
-    private int cols;
+    public Matrix createMatrix(){
 
 
-    public int getRows() {
-        return rows;
-    }
-
-    public void setRows(int rows) {
-        this.rows = rows;
-    }
-
-    public int getCols() {
-        return cols;
-    }
-
-    public void setCols(int cols) {
-        this.cols = cols;
-    }
-
-    public ArrayList<ArrayList<Fraction>> buildMatrix(){
         Scanner input = new Scanner(System.in);
 
+        System.out.println("Please type in a square matrix using brackets: ");
 
-        System.out.println("Please enter the number of rows: ");
-        int rows = input.nextInt();
-        System.out.println("Please enter the number of columns: ");
-        int cols = input.nextInt();
-        System.out.println("Your matrix size is " + rows + " x " + cols);
+        String clean = input.nextLine().replaceAll(" ", "");
 
-        ArrayList<ArrayList<Fraction>> matrix = new ArrayList<>();
+        String[] matrix = clean.split("");
 
-        for( int i = 0;i<rows;i++){
-            ArrayList<Fraction> t = new ArrayList<>();
-            for(int j=0;j<cols;j++){
-                System.out.println("The value at row " + i + " and column " + j);
-                System.out.println("Please enter the numerator followed by the denominator");
-                Fraction frac = new Fraction(input.nextInt(), input.nextInt());
-                t.add(frac);
+        return new Matrix(helper(matrix));
+
+
+    }
+
+    public ArrayList<ArrayList<Fraction>> helper(String[] matrix){
+
+        int x  = 1;
+        ArrayList<ArrayList<Fraction>> matri = new ArrayList<>();
+        while (x < matrix.length){
+            if (Objects.equals(matrix[x], "[")){
+                x++;
+                ArrayList<Fraction> inner = new ArrayList<>();
+                while (!matrix[x].equals("]")){
+                    if (!matrix[x].equals(",") && !matrix[x].equals("]")){
+                        int first = Integer.parseInt(matrix[x]);
+                        int second = Integer.parseInt(matrix[x+2]);
+                        Fraction test = new Fraction(first, second);
+                        inner.add(test);
+                        x+= 3;
+                    }
+                    else{
+                        x++;
+                    }
+
+                }
+                matri.add(inner);
+
             }
-            matrix.add(t);
+            else{
+                x++;
+            }
         }
-        return matrix;
+        return matri;
+
     }
 
-    public static void main(String[] args) {
-        BuildMatrix m = new BuildMatrix();
-        Matrix ma = new Matrix(m.buildMatrix());
-        System.out.println(ma.RREF());
-    }
 }
