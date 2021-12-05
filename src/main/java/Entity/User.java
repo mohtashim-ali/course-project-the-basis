@@ -25,7 +25,7 @@ public class User {
     public User(String username, String password) throws IOException {
         this.username = username;
         this.password = password;
-    }
+
 
     /**
      * Adds this user to the database
