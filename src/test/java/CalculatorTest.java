@@ -9,10 +9,12 @@ public class CalculatorTest {
 
     @Test
     public void addition() throws ExpressionException {
-        Calculator oprt = new Calculator(new Exponent());
-        oprt.resultant(20, 10);
-        assert oprt.resultant(20, 1) == 20.0;
+        Calculator op = new Calculator(new Exponent());
+        op.resultant(20, 10);
+        assert op.resultant(20, 1) == 20.0;
     }
+
+
 //    @Test
 //    public void subtraction() throws ExpressionException {
 //        InputProcessor input = new InputProcessor("5 - 4");

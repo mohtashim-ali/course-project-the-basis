@@ -58,10 +58,8 @@ public class InputProcessor {
      * @return Entity.Expression
      */
     public Expression processInput() throws ExpressionException {
-        /**
-         *
+        /*
          * Function that processes input by Array of operands and operators.
-         *
          */
         if (this.input.size() == 1){
             double operand1 = Double.parseDouble(this.input.get(0));

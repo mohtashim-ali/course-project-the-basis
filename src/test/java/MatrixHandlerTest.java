@@ -429,9 +429,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m3);
         }};
         Matrix temp = new Matrix(new_matrix);
-        assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1, 0/1, -4/3, 2/3],\n" +
-                "[0/1, 1/1, 0/1, 0/1, 4/3, -2/3],\n" +
-                "[0/1, 0/1, 1/1, 0/1, 2/3, -1/3]]\n");
+        assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1, 0/1, -4/3, 2/3], " +
+                "[0/1, 1/1, 0/1, 0/1, 4/3, -2/3], " +
+                "[0/1, 0/1, 1/1, 0/1, 2/3, -1/3]]");
 
     }
 
