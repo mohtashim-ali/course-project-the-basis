@@ -29,7 +29,7 @@ public class CalculatorController {
             BuildExpression expr = new BuildExpression();
             StringBuilder expression = expr.makeExpression();
             InputProcessor process = new InputProcessor(expression.toString());
-            System.out.println(process.processInput().compute());
+            //System.out.println(process.processInput().compute());
         }
         else if (choice - 5 == 0){
             ComputeMatrix matrix = new ComputeMatrix();
