@@ -16,31 +16,25 @@ public class Fraction {
         }
     }
 
-    public static void main(String[] args) {
-        Fraction f1 = new Fraction(15, 7);
-        Fraction f2 = new Fraction (6, 7);
-        Fraction f3 = f1.add(f2);
-        System.out.println(f3.numerator);
-    }
-
     /**
      * Simplifies the fraction.
      * @return The simplified version of the fraction.
      */
     public Fraction simplify() {
         int gcd = 1;
-        for(int i = 1; i <= this.numerator && i <= this.denominator; i++)
+        Fraction n = new Fraction(Math.abs(this.numerator), Math.abs(this.denominator));
+        for(int i = 1; i <= n.getNumerator() && i <= n.getDenominator(); i++)
         {
-            if(this.numerator % i == 0 && this.denominator % i ==0 )
+            if(n.getNumerator() % i == 0 && n.getDenominator() % i == 0)
                 gcd = i;
         }
-        if (Math.abs(this.numerator) == Math.abs(this.denominator)) {
-            return new Fraction(this.numerator/this.denominator, 1);
+        if (n.getNumerator() == n.getDenominator()) {
+            return new Fraction(this.getNumerator()/this.getDenominator(), 1);
         }
-        if (this.numerator == 0) {
+        if (n.getNumerator() == 0) {
             return new Fraction(0, 1);
         }
-        return new Fraction(this.numerator / gcd, this.denominator / gcd);
+        return new Fraction(this.getNumerator() / gcd, this.getDenominator() / gcd);
     }
     /**
      *
@@ -102,6 +96,22 @@ public class Fraction {
 
     public String toString(){
         return this.numerator + "/" + this.denominator;
+    }
+
+    public int getNumerator() {
+        return numerator;
+    }
+
+    public void setNumerator(int numerator) {
+        this.numerator = numerator;
+    }
+
+    public int getDenominator() {
+        return denominator;
+    }
+
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
     }
 }
 

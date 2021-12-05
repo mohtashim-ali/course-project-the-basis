@@ -4,6 +4,8 @@ import Entity.Fraction;
 import Entity.Matrix;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class MatrixHandler {
     /**
@@ -138,6 +140,13 @@ public class MatrixHandler {
         return true;
     }
 
+    public boolean startsWithZero(ArrayList<Fraction> row) {
+        if (row.get(0).getNumerator() == 0){
+            return true;
+        }
+        return false;
+    }
+
     /**
      * Returns the RREF of this matrix.
      *
@@ -158,7 +167,18 @@ public class MatrixHandler {
             ArrayList<Fraction> curr_row = this.matrix.get(k);
             if (!rowOfZeros(curr_row)) {
                 Fraction value = curr_row.get(k);
-                curr_row = scalMult(curr_row, (new Fraction(value.denominator, value.numerator)));
+                if (this.startsWithZero(curr_row)) {
+                    for (int j = k; j < this.matrix.size() - k - 1; j++) {
+                        rowSwap(j, j + 1);
+                    }
+                }
+                curr_row = this.matrix.get(k);
+                value = curr_row.get(k);
+                List<Fraction> sublist = curr_row.subList(k, curr_row.size());
+                if (this.startsWithZero(new ArrayList<>(sublist))){
+                    continue;
+                }
+                curr_row = scalMult(curr_row, new Fraction(value.getDenominator(), value.getNumerator()));
                 this.matrix.set(k, curr_row);
                 for (int j = 0; j < this.matrix.size(); j++) {
                     if (j != k) {
@@ -172,12 +192,6 @@ public class MatrixHandler {
                 }
             }
         }
-        for (int i=0; i<this.matrix.size(); i++) {
-            for (int j=0; j<this.matrix.get(i).size(); j++) {
-                this.matrix.get(i).set(j, this.matrix.get(i).get(j).simplify());
-            }
-        }
-
         return this.matrix;
     }
 

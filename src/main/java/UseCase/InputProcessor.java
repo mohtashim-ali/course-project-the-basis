@@ -58,10 +58,8 @@ public class InputProcessor {
      * @return Entity.Expression
      */
     public Expression processInput() throws ExpressionException {
-        /**
-         *
+        /*
          * Function that processes input by Array of operands and operators.
-         *
          */
         if (this.input.size() == 1){
             double operand1 = Double.parseDouble(this.input.get(0));
@@ -81,6 +79,7 @@ public class InputProcessor {
             }
             Expression expr1 = (new InputProcessor(this.input.get(highest_order_op-1) + " "
                     + this.input.get(highest_order_op) + " " + this.input.get(highest_order_op+1))).processInput();
+
             double operand2 = expr1.compute();
             this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1); this.input.remove(highest_order_op-1);
             this.input.add(highest_order_op-1, Double.toString(operand2));
