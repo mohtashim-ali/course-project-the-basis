@@ -5,17 +5,18 @@ import java.util.*;
 
 public class BuildExpression {
 
-//    private String expression;
-//
-//    public void setExpression(String expression){
-//        this.expression = expression;
-//    }
+    private String input;
+
+    public String getInput() {
+        return input;
+    }
+
+    public void setInput(String other) {
+        input = other;
+    }
 
     public StringBuilder makeExpression(){
-        Scanner input2 = new Scanner(System.in);
-        System.out.println("Please type in a mathematical expression:");
-        String string_input = input2.nextLine();
-        String expression = string_input.replaceAll(" ", "");
+        String expression = input.replaceAll(" ", "");
         StringBuilder final_string = new StringBuilder();
         int j = 0;
         for (int i = 0; i < expression.length(); i++) {

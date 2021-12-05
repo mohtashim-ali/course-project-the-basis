@@ -12,12 +12,26 @@ public class CalculatorUI {
         Scanner read = new Scanner(System.in);
         System.out.println("1. Log In");
         System.out.println("2. Sign Up");
-        System.out.println("3. Compute");
-        System.out.println("5. Linear Algebra");
         int log = read.nextInt();
         CalculatorController control = new CalculatorController();
         control.setChoice(log);
-        control.handleUser();
+        if (control.handleUser()) {
+            Scanner math = new Scanner(System.in);
+            System.out.println("1. Compute");
+            System.out.println("2. Matrix");
+            System.out.println("3. My history");
+            int choice = math.nextInt();
+            control.setChoice(choice);
+            if (choice == 1) {
+                System.out.println("Please enter your mathematical expression");
+            } else if (choice == 2) {
+                System.out.println("Please enter your matrix");
+            }
+            Scanner expression = new Scanner(System.in);
+            String input = expression.nextLine();
+            control.handleOperations(input);
+
         }
     }
+}
 

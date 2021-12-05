@@ -1,18 +1,13 @@
 package UseCase.Accounts;
 
 import Gateway.History;
-
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class UserHistory {
 
-    private History list;
-    private CurrentUser curr;
-
-
-    public void setList(History list){
-        this.list = list;
-    }
+    private History list = new History();
+    private CurrentUser curr = new CurrentUser();
 
     public void setCurr(CurrentUser curr){
         this.curr = curr;
@@ -23,7 +18,7 @@ public class UserHistory {
         list.writeToFile(curr.getCurrentUser().getUsername() + "," + operation + time);
     }
 
-    public void readFromHistory() throws IOException {
-        list.readWithUsername(curr.getCurrentUser().getUsername());
+    public ArrayList<String> readFromHistory() throws IOException {
+        return list.readWithUsername(curr.getCurrentUser().getUsername());
     }
 }
