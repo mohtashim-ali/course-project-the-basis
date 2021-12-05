@@ -7,6 +7,11 @@ import java.util.*;
 
 public class BuildMatrix {
 
+    /**
+     * This method created a matrix with the help of the helper method
+     * @return Matrix
+     */
+
     public Matrix createMatrix(){
 
 
@@ -23,6 +28,12 @@ public class BuildMatrix {
 
     }
 
+    /**
+     * This method takes in the users matrix split, reads the matrix and places
+     * it into a nested ArrayList which will be used to create a matrix.
+     * @param matrix - Contains the input matrix split into an array
+     * @return ArrayList<ArrayList<Fraction>> - returns the input for Matrix entity
+     */
     public ArrayList<ArrayList<Fraction>> helper(String[] matrix){
 
         int x  = 1;
