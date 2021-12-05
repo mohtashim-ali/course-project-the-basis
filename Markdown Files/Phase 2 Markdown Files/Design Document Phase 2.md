@@ -11,6 +11,10 @@ Splitting WalkthroughCustomInput
 
 > In Phase 1, we had a class which was far too large. It contained many responities which did not adhere to SOLID and Clean Architecture. As a team, and with the provided feedback we were able to split this class into three separate layers. First, there is a UI which takes in the user input. Then, the input is sent to a controller where use cases are called upon to complete any necessary operations. This was a large step in changing our design as it allowed for making changes to our code easy to make.
 
+Spliiting and improving ExpressionHandler
+
+> In Phase 0 and 1, our computations in our program was done by a single method in expressionhandler called compute. This method uses if-statements to check the operand of type string then convert it into an actual expression. Although there was no issue with the method itself, the design of the code, however, was not particularly friendly to adding new features as it required a lot of the code to be changed. So in this Phase, we deiced to implement the strategy pattern design to fix this design issue. After implementing it, the Strategy pattern lets you indirectly alter the object’s behaviour at runtime by associating it with different sub-objects which can perform specific sub-tasks in different ways. To add on You can replace inheritance with composition. It also composes Open/Closed Principle. You can introduce new strategies without having to change the context.
+
 ## Clean Architecture
 
 > Our project adheres to Clean Architecture by ensuring we follow the dependency rule. First, there are Entity classes for Users, and defining any mathematical property such as expressions, matrix, and equations. Next, our use cases use entities to provide functionality to our code. For example, there are use cases for logging in and signing up the user, building and computing an expression, alongside accessing the database through a gateway. Controllers are present and use the use cases to process user input from the UI and send back results from presenters. The UI calls the controller, and does not know about any other layers. Thus, adhering to the dependency rule.
