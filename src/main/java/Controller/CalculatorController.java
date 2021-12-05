@@ -50,7 +50,8 @@ public class CalculatorController {
             InputProcessor inputProcessor = new InputProcessor(fixed_input.toString());
             System.out.println(inputProcessor.processInput().compute());
         } else if (this.choice == 2) {
-            // Matrix stuff goes in here, I didn't add it since it's not finalized yet
+            ComputeMatrix computeMatrix = new ComputeMatrix();
+            computeMatrix.computeMatrix();
         } else if (this.choice == 3) {
             userHistory.readFromHistory();
         }
