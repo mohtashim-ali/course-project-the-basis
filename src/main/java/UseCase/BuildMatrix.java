@@ -17,8 +17,6 @@ public class BuildMatrix {
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please type in a square matrix using brackets: ");
-
         String clean = input.nextLine().replaceAll(" ", "");
 
         String[] matrix = clean.split("");
