@@ -11,7 +11,7 @@ public class UserSignUp {
     private final UserEntity newuser = new UserEntity();
     private final UserList list = new UserList();
 
-    public void signUp() throws IOException, ClassNotFoundException {
+    public UserEntity signUp() throws IOException, ClassNotFoundException {
         ValidateSignup validateSignup = new ValidateSignup(newuser, list);
         Scanner info = new Scanner(System.in);
         System.out.println("Username: ");
@@ -22,6 +22,7 @@ public class UserSignUp {
 
 
         list.writeToFile(newuser.getUserInfo());
+        return this.newuser;
     }
 
 
