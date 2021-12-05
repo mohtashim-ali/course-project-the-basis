@@ -33,8 +33,9 @@ public class CalculatorUI {
                 control.handleOperations(input);
                 System.out.println("Press enter to return to the main menu, or Q to quit");
                 Scanner temp = new Scanner(System.in);
-                if (temp.nextLine() == "Q") {
+                if (Objects.equals(temp.nextLine(), "Q")) {
                     quit = true;
+                    System.exit(0);
                 }
             } while (!quit);
         }

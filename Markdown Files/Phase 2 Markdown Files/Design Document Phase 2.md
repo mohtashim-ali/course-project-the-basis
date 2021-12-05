@@ -36,7 +36,7 @@ Spliiting and improving ExpressionHandler
 
 #### Interface Segregation:
 
-> Interface Segregation was followed by having Interfaces just for computation errors. For example, addition and subtraction do not have errors when adding any two numbers.  But, division by zero is something that is unique to dividing. So, by creating a new interface which the division will implement, we follow interface segregation. Another way Interface Segregation is satisfied is how all of our interfaces are short.
+> Interface Segregation was followed by having Interfaces just for computation errors. For example, addition and subtraction do not have errors when adding any two numbers.  But, division by zero is something that is unique to dividing. So, by creating a new interface which the division will implement, we follow interface segregation. We also decided to formulate an interface for the history part of your program, which could then be implemented either using files or a database. We did this because with this design, if we wanted to change the way we store our information, we wouldn't need to modify anything in the code that we already have. Instead, we could just use the interface we created. On top of this, all of our interfaces are short which also aligns with the principles of interface segregation
 
 #### Dependency Inversion:
 
