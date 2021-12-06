@@ -30,4 +30,4 @@ Hamza
 
 Kyle
 
-> text
+> In Phase 2 I brought about lots of code changes, I worked alongside team member to bring about proper computation to our program. Nearly all functionality of our program relies heavily on the algorithms and methods that I created. Several design features of Operators and Parser classes have been created to allow for computations. In particular, the commit https://github.com/CSC207-UofT/course-project-the-basis/commit/30d1fdde95994c227015bf755ad9c51daa53a323 contains lots of important additions to our project which fundamentally enables our project to operate.
