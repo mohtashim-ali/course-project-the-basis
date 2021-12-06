@@ -1,9 +1,11 @@
 package UseCase;
 
 import Entity.ExpressionException;
+import UseCase.BasicOperations.Operator;
+import UseCase.BasicOperations.Parser;
+import UseCase.BasicOperations.ParserException;
 import junit.framework.TestCase;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ParserTest extends TestCase {

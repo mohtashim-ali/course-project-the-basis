@@ -1,5 +1,6 @@
-package UseCase;
+package UseCase.BasicOperations;
 import Entity.ExpressionException;
+
 import java.util.HashMap;
 import java.util.Objects;
 

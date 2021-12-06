@@ -1,11 +1,10 @@
-package UseCase;
-import java.lang.Math;
+package UseCase.BasicOperations;
+
 import Entity.ExpressionException;
 
-public class Exponent implements Computation {
+public class Addition implements Computation {
     @Override
     public double compute(double a, double b) throws ExpressionException {
-        return Math.pow(a, b);
+        return a + b;
     }
 }
-

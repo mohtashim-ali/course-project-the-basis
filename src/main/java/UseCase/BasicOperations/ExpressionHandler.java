@@ -1,4 +1,4 @@
-package UseCase;
+package UseCase.BasicOperations;
 
 import Entity.Expression;
 import Entity.ExpressionException;
@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.lang.Math;
 
 /**
-// * UseCase.ExpressionHandler Class that handles all operations done to an Entity.Expression.
+// * UseCase.BasicOperations.ExpressionHandler Class that handles all operations done to an Entity.Expression.
 // */
 public abstract class ExpressionHandler{
     public double operand1;
