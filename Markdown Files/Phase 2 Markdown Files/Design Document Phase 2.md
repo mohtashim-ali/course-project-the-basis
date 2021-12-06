@@ -1,8 +1,11 @@
 ## Updated Specification
 
-Additonal Functionality between Phase 1 and Phase 2
+> [Click Here](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Phase%202%20Markdown%20Files/specification%20phase%202.md)
 
-> Blank
+## Additonal Functionality between Phase 1 and Phase 2
+
+> Users can now compute Linear Algebra operations with square matrices.
+> History can be viewed for both Basic Operations and Linear Algebra Operations.
 
 
 ## Major Design Decisions
@@ -41,7 +44,6 @@ Spliiting and improving ExpressionHandler
 #### Dependency Inversion:
 
 > Directly calling a gateway in a use case violates DIP. So to fix this, we made an interface for the gateways which read and write to our text files. Thus, by implementing the interface in the History and UserList classes, we can call them in the use cases and adhere to DIP.
-
 
 
 ## Packaging Strategies
