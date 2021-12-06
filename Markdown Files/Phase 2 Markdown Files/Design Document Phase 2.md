@@ -1,8 +1,16 @@
+# Design Report
+
+This is our design report for Phase 2!
+
 ## Updated Specification
 
-Additonal Functionality between Phase 1 and Phase 2
+> [Click Here](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Phase%202%20Markdown%20Files/specification%20phase%202.md)
 
-> Blank
+## Additonal Functionality between Phase 1 and Phase 2
+
+- Users can now compute Linear Algebra operations with square matrices.
+
+- History can be viewed for both Basic Operations and Linear Algebra Operations.
 
 
 ## Major Design Decisions
@@ -43,19 +51,45 @@ Spliiting and improving ExpressionHandler
 > Directly calling a gateway in a use case violates DIP. So to fix this, we made an interface for the gateways which read and write to our text files. Thus, by implementing the interface in the History and UserList classes, we can call them in the use cases and adhere to DIP.
 
 
-
 ## Packaging Strategies
 
 > The packaging strategy used is “By Layers”. This approach allowed us to make adding features to our code much easier. It also makes it easy to see how the dependency rule is implemented in our project. Another strategy we considered is by feature, however there were far too many classes in one folder for storing the math related classes, so packaging by layers was the best one for us.
 ## Design Patterns
 
-> Strategy: We used the strategy pattern to implement operations. Since computing an operation is very similar, the strategy pattern allows for two input numbers to be computing according to the operand. This helps clean up calling operations as new "strategies'' can be called.
+#### Strategy:
 
+> We used the strategy pattern to implement operations. Since computing an operation is very similar, the strategy pattern allows for two input numbers to be computing according to the operand. This helps clean up calling operations as new "strategies'' can be called.
 
-> Facade: Our controller uses the Facade design pattern by contatning the use cases and calling the correct one depending on the user input. The facade class is called in our UI. Implementing the facade pattern helps us make sure the UI is not directly communicating with our use cases.
+#### Facade:
 
+> Our controller uses the Facade design pattern by contatning the use cases and calling the correct one depending on the user input. The facade class is called in our UI. Implementing the facade pattern helps us make sure the UI is not directly communicating with our use cases.
 
-> Observer: The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files.
+#### Observer:
 
+> The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files.
 
 > (will add more later)
+
+## GitHub Features
+
+#### Pull Requests
+
+> We have extensively used Pull Requests throughout development to ensure any new changes are reviewed by all group members. This allows other members to potentially catch any errors, or simply provide feedback. Pull Requests also prevent any code from being overwritten and allows members to test changes before they make a pull request.
+
+#### Issues
+
+> We used Issues to keep track of any major changes that needed to be made. For example, we had an issue with being able to log in with any password, so it helped us ensure we got to resolving it.
+
+
+## Refactoring
+
+- A major refractor done was splitting up WalkThroughCustomInput. This really helped in conforming to SOLID and Clean Architecture properties. As a result, it was also easier to see any design pattern we implemented, or can implement.
+- Creating Packages helped clean up file organization.
+- Renaming classes to help understand the responsibility of each class.
+- Implementing the Strategy Pattern to clean up executing operations.
+
+## Testing
+
+> Text
+
+

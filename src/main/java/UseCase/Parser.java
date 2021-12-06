@@ -4,18 +4,6 @@ import java.lang.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * Entity.ExpressionException Class that allows for custom exceptions of creating invalid expressions.
- */
-class ParserException extends Exception {
-    /**
-     * @param errorMessage String
-     */
-    public ParserException(String errorMessage) {
-        super(errorMessage);
-    }
-}
-
 public class Parser {
 
     private String strExpr;
@@ -60,40 +48,52 @@ public class Parser {
 
     public boolean checker() {
         int count = 0;
-        for (int i=0; i<this.strExpr.length(); i++) {
-            if (this.operators.contains(strExpr.charAt(i))) {
+        for (int i = 0; i<this.strExpr.length(); i++) {
+            if (this.operators.contains(this.strExpr.charAt(i))) {
                 count += 1;
             }
         }
         return count == 1;
     }
 
-    public boolean stringToExpression() throws ParserException {
-       if (!this.validity()) {
-           throw new ParserException("Invalid Input");
-       }
-       if (Character.isDigit(Integer.parseInt(this.strExpr))) {
-            return new Operator(Integer.parseInt(this.strExpr), "+", 0);
+    public boolean contains_onlyDigits(String s)
+    {
+        for (int i = 0; i < s.length(); i++){
+            if (!Character.isDigit(s.charAt(i))){
+                return false;
+            }
         }
-       if (Character.isDigit(this.strExpr.charAt(0)) ||
-               Character.isDigit(this.strExpr.charAt(this.strExpr.length()-1)) && this.checker()) {
-           int firstCount = 0;
-           int i = 0;
-           while (Character.isDigit(this.strExpr.charAt(i))) {
-               firstCount += 1;
-               i++;
-           }
-           return new Operator(Integer.parseInt(this.strExpr.substring(0, firstCount+1)),
-                   Character.toString(this.strExpr.charAt(1)),
-                   Integer.parseInt(this.strExpr.substring(firstCount + 2)));
-       }
-       ArrayList<Integer> listOfOpIndexes = this.findOps();
-       int mainOp = listOfOpIndexes.get(listOfOpIndexes.size() - 1);
-       Parser left = new Parser(this.strExpr.substring(0, mainOp));
-       Parser right = new Parser(this.strExpr.substring(mainOp+1));
-       Object leftOp = left.stringToExpression();
-       Object rightOp = right.stringToExpression();
-       return new Operator(leftOp, Character.toString(this.strExpr.charAt(mainOp)), rightOp);
+        return true;
+    }
+
+    public Operator stringToExpression() throws ParserException {
+        if (!this.validity()) {
+            throw new ParserException("Invalid Input");
+        }
+        if (this.contains_onlyDigits(this.strExpr)) {
+            return new Operator(Double.parseDouble(this.strExpr), "+", 0.0);
+        }
+        if ((Character.isDigit(this.strExpr.charAt(0)) ||
+                Character.isDigit(this.strExpr.charAt(this.strExpr.length()-1))) && this.checker()) {
+            int firstCount = 0;
+            int i = 0;
+            while (Character.isDigit(this.strExpr.charAt(i))) {
+                firstCount += 1;
+                i++;
+            }
+            return new Operator(Double.parseDouble(this.strExpr.substring(0, firstCount)),
+                    Character.toString(this.strExpr.charAt(1)),
+                    Double.parseDouble(this.strExpr.substring(firstCount+1)));
+        }
+        else{
+            ArrayList<Integer> listOfOpIndexes = this.findOps();
+            int mainOp = listOfOpIndexes.get(listOfOpIndexes.size() - 1);
+            Parser left = new Parser(this.strExpr.substring(0, mainOp));
+            Parser right = new Parser(this.strExpr.substring(mainOp+1));
+            Object leftOp = left.stringToExpression();
+            Object rightOp = right.stringToExpression();
+            return new Operator(leftOp, Character.toString(this.strExpr.charAt(mainOp)), rightOp);
+        }
     }
 
     public boolean validity() {
