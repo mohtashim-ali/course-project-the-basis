@@ -15,7 +15,7 @@ Mohtashim
 
 Nofel
 
-> text
+> In this Phase, I looked at the feedback given form phase 1 and implemented the stratgey pattern for our comupte method in our program. Making an interface then implementing it in each operation with its own class such as additon, subtraction, muliplication, etc. I then made a class that checks the operand then assign's its functionaily based on the operand that was given. Esenitally, this is the backbone of our program as everything else needs it in order for our program to work so the deign must be very friendly. I also made modifed test cases to fit our new design as the old cases did not cover this. I also designed and did some of the accessibilty report.
 
 
 Achraf
