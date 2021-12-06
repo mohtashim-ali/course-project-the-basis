@@ -225,20 +225,20 @@ public class MatrixHandler {
     }
 
 
-    @Override
-    public String toString() {
-        StringBuilder final_string = new StringBuilder("[[");
-        for (int i = 0; i < this.matrix.size(); i++) {
-            for (int j = 0; j < this.matrix.get(i).size(); j++) {
-                if (j != this.matrix.get(i).size() - 1) {
-                    final_string.append(this.matrix.get(i).get(j).toString()).append(", ");
-                } else {
-                    final_string.append(this.matrix.get(i).get(j).toString()).append("],").append("\n").append("[");
-                }
-            }
-        }
-        return final_string.toString().substring(0, final_string.length() - 3) + "]";
-    }
+//    @Override
+//    public String toString() {
+//        StringBuilder final_string = new StringBuilder("[[");
+//        for (int i = 0; i < this.matrix.size(); i++) {
+//            for (int j = 0; j < this.matrix.get(i).size(); j++) {
+//                if (j != this.matrix.get(i).size() - 1) {
+//                    final_string.append(this.matrix.get(i).get(j).toString()).append(", ");
+//                } else {
+//                    final_string.append(this.matrix.get(i).get(j).toString()).append("],").append("\n").append("[");
+//                }
+//            }
+//        }
+//        return final_string.toString().substring(0, final_string.length() - 3) + "]";
+//    }
 
 
     public Fraction determinant() {

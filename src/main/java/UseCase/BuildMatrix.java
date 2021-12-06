@@ -7,12 +7,16 @@ import java.util.*;
 
 public class BuildMatrix {
 
-    public Matrix createMatrix(){
+    /**
+     * This method created a matrix with the help of the helper method
+     *
+     * @return Matrix
+     */
+
+    public Matrix createMatrix() {
 
 
         Scanner input = new Scanner(System.in);
-
-        System.out.println("Please type in a square matrix using brackets: ");
 
         String clean = input.nextLine().replaceAll(" ", "");
 
@@ -23,36 +27,50 @@ public class BuildMatrix {
 
     }
 
-    public ArrayList<ArrayList<Fraction>> helper(String[] matrix){
+    /**
+     * This method takes in the users matrix split, reads the matrix and places
+     * it into a nested ArrayList which will be used to create a matrix.
+     *
+     * @param matrix - Contains the input matrix split into an array
+     * @return ArrayList<ArrayList < Fraction>> - returns the input for Matrix entity
+     */
+    public ArrayList<ArrayList<Fraction>> helper(String[] matrix) {
 
-        int x  = 1;
+        int x = 1;
         ArrayList<ArrayList<Fraction>> matri = new ArrayList<>();
-        while (x < matrix.length){
-            if (Objects.equals(matrix[x], "[")){
+        while (x < matrix.length - 1) {
+            if (Objects.equals(matrix[x], "[")) {
                 x++;
                 ArrayList<Fraction> inner = new ArrayList<>();
-                while (!matrix[x].equals("]")){
-                    if (!matrix[x].equals(",") && !matrix[x].equals("]")){
+                while (!matrix[x].equals("]")) {
+                    if (matrix[x].equals(",")) {
+                        x++;
+                    } else if (matrix[x + 1].equals(",") || matrix[x + 1].equals("]") ) {
                         int first = Integer.parseInt(matrix[x]);
-                        int second = Integer.parseInt(matrix[x+2]);
+                        Fraction input = new Fraction(first, 1);
+                        inner.add(input);
+                        x++;
+                    } else if (matrix[x + 1].equals("/")){
+                        int first = Integer.parseInt(matrix[x]);
+                        int second = Integer.parseInt(matrix[x + 2]);
                         Fraction test = new Fraction(first, second);
                         inner.add(test);
-                        x+= 3;
-                    }
-                    else{
+                        x++;
+                        x++;
                         x++;
                     }
-
                 }
                 matri.add(inner);
-
             }
             else{
                 x++;
             }
         }
         return matri;
-
     }
 
+    public static void main(String[] args) {
+        BuildMatrix n = new BuildMatrix();
+        System.out.println(n.createMatrix().RREF());
+    }
 }

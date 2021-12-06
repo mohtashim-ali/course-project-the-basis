@@ -2,7 +2,7 @@ package UseCase;
 
 import Entity.ExpressionException;
 
-public class Division implements Computation{
+public class Division implements Computation {
     @Override
     public double compute(double a, double b) throws ExpressionException
     {

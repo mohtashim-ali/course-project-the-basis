@@ -1,35 +1,44 @@
 package UseCase;
 
+import Entity.Fraction;
 import Entity.Matrix;
 import java.util.*;
 
 public class ComputeMatrix {
 
-//    private Matrix matrix;
-//    private BuildMatrix m;
-//
-//    public void setMatrix(Matrix matrix){
-//        this.matrix = matrix;
-//    }
 
-    public void computeMatrix(){
+    public ArrayList<ArrayList<Fraction>> computeMatrix(){
 
         BuildMatrix m = new BuildMatrix();
 
+        System.out.println("Please type in a square matrix using brackets: ");
 
         Matrix matrix = m.createMatrix();
-
         Scanner choice = new Scanner(System.in);
 
         System.out.println("Please select a matrix operation: ");
         System.out.println("1. RREF");
-        System.out.println("2. Temp");
+        System.out.println("2. Add a matrix");
+        System.out.println("3. Substract a matrix");
 
         int input = choice.nextInt();
         if (input == 1){
             System.out.println(matrix.RREF());
+            return matrix.RREF();
+        } else if (input == 2) {
+            BuildMatrix other = new BuildMatrix();
+            System.out.println("Please type in a second matrix");
+            Matrix matrix2 = other.createMatrix();
+            System.out.println(matrix.addMatrix(matrix2));
+            return matrix.addMatrix(matrix2);
+        } else if (input == 3) {
+            BuildMatrix other = new BuildMatrix();
+            System.out.println("Please type in a second matrix");
+            Matrix matrix2 = other.createMatrix();
+            return matrix.substractMatrix(matrix2);
         }
 
+        return null;
     }
 
 
