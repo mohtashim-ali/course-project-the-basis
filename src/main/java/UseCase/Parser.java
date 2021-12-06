@@ -1,5 +1,7 @@
 package UseCase;
 
+import UseCase.BasicOperations.Operator;
+
 import java.lang.*;
 import java.util.*;
 import java.util.stream.Collectors;

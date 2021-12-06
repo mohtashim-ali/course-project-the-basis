@@ -1,6 +1,7 @@
 package UseCase;
 
 import Entity.ExpressionException;
+import UseCase.BasicOperations.Operator;
 import junit.framework.TestCase;
 
 import java.lang.reflect.Array;
