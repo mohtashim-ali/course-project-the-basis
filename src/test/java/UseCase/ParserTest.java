@@ -1,5 +1,6 @@
 package UseCase;
 
+import Entity.ExpressionException;
 import junit.framework.TestCase;
 
 import java.lang.reflect.Array;
@@ -51,10 +52,26 @@ public class ParserTest extends TestCase {
         assertEquals(p.findOps(), lst1);
     }
 
-    public void testStringToExpression() throws ParserException {
-        Parser p = new Parser("1+2");
-        System.out.println(p.stringToExpression());
-        //assertEquals(p.stringToExpression().getOperand1(), 1);
-        //assertEquals(p.stringToExpression().getOperand2(), 2);
+    public void testStringToExpression() throws ParserException, ExpressionException {
+        Parser p = new Parser("1+2+3*4");
+        Operator expression = p.stringToExpression();
+        assertEquals(expression.compute(), 15.0);
     }
+
+    public void testStringToExpression2() throws ParserException, ExpressionException {
+        Parser p = new Parser("7+4/5+4*5");
+        Operator expression = p.stringToExpression();
+        assertEquals(expression.compute(), 27.8);
+    }
+    public void testStringToExpression3() throws ParserException, ExpressionException {
+        Parser p = new Parser("4 + 6 / 3 * 6 - 6*6*7*5*5");
+        Operator expression = p.stringToExpression();
+        assertEquals(expression.compute(), -6284.0);
+    }
+    public void testStringToExpression4() throws ParserException, ExpressionException {
+        Parser p = new Parser("3^2^2");
+        Operator expression = p.stringToExpression();
+        assertEquals(expression.compute(), 81.0);
+    }
+
 }

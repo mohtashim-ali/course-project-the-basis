@@ -40,7 +40,7 @@ public class CalculatorController {
         return false;
     }
 
-    public void handleOperations(String input) throws IOException, ExpressionException {
+    public void handleOperations(String input) throws IOException, ExpressionException, ParserException {
         if(this.choice == 1) {
             Date date = new Date();
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
@@ -48,8 +48,8 @@ public class CalculatorController {
             buildExpression.setInput(input);
             StringBuilder fixed_input = buildExpression.makeExpression();
             userHistory.addToHistory(fixed_input.toString(), formatter.format(date)); // Temporary time
-            InputProcessor inputProcessor = new InputProcessor(fixed_input.toString());
-            //System.out.println(inputProcessor.processInput().compute());
+            Parser p = new Parser(fixed_input.toString());
+            System.out.println(p.stringToExpression().compute());
         } else if (this.choice == 2) {
             Date date = new Date();
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
