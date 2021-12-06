@@ -79,7 +79,10 @@ Spliiting and improving ExpressionHandler
 
 ## Refactoring
 
-> Text
+- A major refractor done was splitting up WalkThroughCustomInput. This really helped in conforming to SOLID and Clean Architecture properties. As a result, it was also easier to see any design pattern we implemented, or can implement.
+- Creating Packages helped clean up file organization.
+- Renaming classes to help understand the responsibility of each class.
+- Implementing the Strategy Pattern to clean up executing operations.
 
 ## Testing
 
