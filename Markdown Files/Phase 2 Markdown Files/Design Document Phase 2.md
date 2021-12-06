@@ -53,18 +53,37 @@ Spliiting and improving ExpressionHandler
 > The packaging strategy used is “By Layers”. This approach allowed us to make adding features to our code much easier. It also makes it easy to see how the dependency rule is implemented in our project. Another strategy we considered is by feature, however there were far too many classes in one folder for storing the math related classes, so packaging by layers was the best one for us.
 ## Design Patterns
 
-> Strategy: We used the strategy pattern to implement operations. Since computing an operation is very similar, the strategy pattern allows for two input numbers to be computing according to the operand. This helps clean up calling operations as new "strategies'' can be called.
+#### Strategy:
 
+> We used the strategy pattern to implement operations. Since computing an operation is very similar, the strategy pattern allows for two input numbers to be computing according to the operand. This helps clean up calling operations as new "strategies'' can be called.
 
-> Facade: Our controller uses the Facade design pattern by contatning the use cases and calling the correct one depending on the user input. The facade class is called in our UI. Implementing the facade pattern helps us make sure the UI is not directly communicating with our use cases.
+#### Facade:
 
+> Our controller uses the Facade design pattern by contatning the use cases and calling the correct one depending on the user input. The facade class is called in our UI. Implementing the facade pattern helps us make sure the UI is not directly communicating with our use cases.
 
-> Observer: The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files.
+#### Observer:
 
+> The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files.
 
 > (will add more later)
 
 ## GitHub Features
 
+#### Pull Requests
+
+> Text
+
+#### Issues
+
+> Text
+
+
 ## Refactoring
+
+> Text
+
+## Testing
+
+> Text
+
 
