@@ -1,6 +1,6 @@
 package Entity;
 
-import UseCase.ExpressionHandler;
+import UseCase.BasicOperations.ExpressionHandler;
 
 /**
  * Entity.Expression Object.

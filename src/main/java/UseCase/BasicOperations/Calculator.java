@@ -1,8 +1,7 @@
-package UseCase;
+package UseCase.BasicOperations;
 
 import Entity.ExpressionException;
-
-import java.util.Objects;
+import UseCase.BasicOperations.Computation;
 
 public class Calculator {
     private Computation _operation;

@@ -1,7 +1,9 @@
-package UseCase;
+package UseCase.LinAlg;
 
 import Entity.Fraction;
 import Entity.Matrix;
+import UseCase.LinAlg.BuildMatrix;
+
 import java.util.*;
 
 public class ComputeMatrix {
@@ -19,7 +21,7 @@ public class ComputeMatrix {
         System.out.println("Please select a matrix operation: ");
         System.out.println("1. RREF");
         System.out.println("2. Add a matrix");
-        System.out.println("3. Substract a matrix");
+        System.out.println("3. Subtract a matrix");
 
         int input = choice.nextInt();
         if (input == 1){

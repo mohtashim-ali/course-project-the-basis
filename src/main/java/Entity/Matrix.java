@@ -1,6 +1,6 @@
 package Entity;
 
-import UseCase.MatrixHandler;
+import UseCase.LinAlg.MatrixHandler;
 
 import java.util.ArrayList;
 

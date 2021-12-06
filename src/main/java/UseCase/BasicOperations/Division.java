@@ -1,4 +1,4 @@
-package UseCase;
+package UseCase.BasicOperations;
 
 import Entity.ExpressionException;
 

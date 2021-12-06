@@ -1,4 +1,4 @@
-package UseCase;
+package UseCase.LinAlg;
 
 import Entity.Expression;
 import java.util.*;
