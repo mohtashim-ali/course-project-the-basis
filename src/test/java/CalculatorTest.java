@@ -1,39 +1,39 @@
-import UseCase.*;
-import org.junit.Test;
-import Entity.ExpressionException;
-
-
-public class CalculatorTest {
-
-    @Test
-    public void addition() throws ExpressionException {
-        Operator op = new Operator(1, "+", 2);
-        assert op.resultant() == 3;
-    }
-
-    @Test
-    public void subtraction() throws ExpressionException {
-        Operator op = new Operator(1, "-", 2);
-        assert op.resultant() == -1;
-    }
-
-    @Test
-    public void multiply() throws ExpressionException {
-        Operator op = new Operator(6, "*", 2);
-        assert op.resultant() == 12;
-    }
-
-    @Test
-    public void divide() throws ExpressionException {
-        Operator op = new Operator(1, "/", 2);
-        assert op.resultant() == 0.5;
-    }
-
-    @Test
-    public void exponent() throws ExpressionException {
-        Operator op = new Operator(2, "^", 2);
-        assert op.resultant() == 4;
-    }
+//import UseCase.*;
+//import org.junit.Test;
+//import Entity.ExpressionException;
+//
+//
+//public class CalculatorTest {
+//
+//    @Test
+//    public void addition() throws ExpressionException {
+//        Operator op = new Operator(1, "+", 2);
+//        assert op.resultant() == 3;
+//    }
+//
+//    @Test
+//    public void subtraction() throws ExpressionException {
+//        Operator op = new Operator(1, "-", 2);
+//        assert op.resultant() == -1;
+//    }
+//
+//    @Test
+//    public void multiply() throws ExpressionException {
+//        Operator op = new Operator(6, "*", 2);
+//        assert op.resultant() == 12;
+//    }
+//
+//    @Test
+//    public void divide() throws ExpressionException {
+//        Operator op = new Operator(1, "/", 2);
+//        assert op.resultant() == 0.5;
+//    }
+//
+//    @Test
+//    public void exponent() throws ExpressionException {
+//        Operator op = new Operator(2, "^", 2);
+//        assert op.resultant() == 4;
+//    }
 
 //    }
 //    @Test
@@ -178,5 +178,5 @@ public class CalculatorTest {
 //        assert input == -0.2959;
 //    }
 
-}
+//}
 

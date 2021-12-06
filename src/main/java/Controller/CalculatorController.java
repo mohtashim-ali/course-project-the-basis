@@ -48,7 +48,7 @@ public class CalculatorController {
             StringBuilder fixed_input = buildExpression.makeExpression();
             userHistory.addToHistory(fixed_input.toString(), formatter.format(date)); // Temporary time
             InputProcessor inputProcessor = new InputProcessor(fixed_input.toString());
-            System.out.println(inputProcessor.processInput().compute());
+            //System.out.println(inputProcessor.processInput().compute());
         } else if (this.choice == 2) {
             // Matrix stuff goes in here, I didn't add it since it's not finalized yet
         } else if (this.choice == 3) {

@@ -7,17 +7,17 @@ import java.util.Objects;
 
 public class Operator {
 
-    private double operand1;
-    private double operand2;
+    private Object operand1;
+    private Object operand2;
     private String operator;
 
-    public Operator(double operand1, String operator, double operand2){
+    public Operator(Object operand1, String operator, Object operand2){
         this.operand1 = operand1;
         this.operand2 = operand2;
         this.operator = operator;
     }
 
-    public double getOperand1() {
+    public Object getOperand1() {
         return operand1;
     }
 
@@ -25,7 +25,7 @@ public class Operator {
         this.operand1 = operand1;
     }
 
-    public double getOperand2() {
+    public Object getOperand2() {
         return operand2;
     }
 
@@ -41,21 +41,21 @@ public class Operator {
         this.operator = operator;
     }
 
-    public double resultant() throws ExpressionException {
-        HashMap<String, Object> hashMap = new HashMap<>()
-        {{
-            put("+", new Addition());
-            put("-", new Subtraction());
-            put("*", new Multiplication());
-            put("/", new Division());
-            put("^", new Exponent());
-        }};
-        Calculator context = new Calculator();
-        for (String key : hashMap.keySet()) {
-            if (Objects.equals(this.operator, key)) {
-                context.setStrategy((Computation) hashMap.get(key));
-            }
-        }
-        return context.getStrategy(this.operand1, this.operand2);
-    }
+//    public Object resultant() throws ExpressionException {
+//        HashMap<String, Object> hashMap = new HashMap<>()
+//        {{
+//            put("+", new Addition());
+//            put("-", new Subtraction());
+//            put("*", new Multiplication());
+//            put("/", new Division());
+//            put("^", new Exponent());
+//        }};
+//        Calculator context = new Calculator();
+//        for (String key : hashMap.keySet()) {
+//            if (Objects.equals(this.operator, key)) {
+//                context.setStrategy((Computation) hashMap.get(key));
+//            }
+//        }
+//        return context.getStrategy(this.operand1, this.operand2);
+//    }
 }
