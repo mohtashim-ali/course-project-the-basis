@@ -14,7 +14,7 @@
 ### Tolerance for Error
 > TODO
 ### Low Physical Effort
-> TODO
+> Our program does not have most aspects in this principle because they are physical principles. However, our program does have Minimizing repetitive actions. Our program at the moment does not apply to this feature because our UI is a repetitive prompt for the user's input. We could overcome this in the future by implementing our website so that the user would not have to repeatedly answer prompts.
 ### Size and Space for Approach and Use
 > TODO
 
