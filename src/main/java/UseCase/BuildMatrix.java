@@ -38,34 +38,39 @@ public class BuildMatrix {
 
         int x = 1;
         ArrayList<ArrayList<Fraction>> matri = new ArrayList<>();
-        while (x < matrix.length) {
+        while (x < matrix.length - 1) {
             if (Objects.equals(matrix[x], "[")) {
                 x++;
                 ArrayList<Fraction> inner = new ArrayList<>();
                 while (!matrix[x].equals("]")) {
-                    if (!matrix[x].equals(",") && !matrix[x].equals("]")) {
-                        if ((matrix[x + 1].equals(","))) {
-                            int first = Integer.parseInt(matrix[x]);
-                            Fraction test = new Fraction(first, 1);
-                            inner.add(test);
-                            x += 1;
-
-                        } else {
-                            int first = Integer.parseInt(matrix[x]);
-                            int second = Integer.parseInt(matrix[x + 2]);
-                            Fraction test = new Fraction(first, second);
-                            inner.add(test);
-                            x += 3;
-                        }
-                        matri.add(inner);
-                    } else {
+                    if (matrix[x].equals(",")) {
+                        x++;
+                    } else if (matrix[x + 1].equals(",") || matrix[x + 1].equals("]") ) {
+                        int first = Integer.parseInt(matrix[x]);
+                        Fraction input = new Fraction(first, 1);
+                        inner.add(input);
+                        x++;
+                    } else if (matrix[x + 1].equals("/")){
+                        int first = Integer.parseInt(matrix[x]);
+                        int second = Integer.parseInt(matrix[x + 2]);
+                        Fraction test = new Fraction(first, second);
+                        inner.add(test);
+                        x++;
+                        x++;
                         x++;
                     }
                 }
-                return matri;
-
+                matri.add(inner);
+            }
+            else{
+                x++;
             }
         }
         return matri;
+    }
+
+    public static void main(String[] args) {
+        BuildMatrix n = new BuildMatrix();
+        System.out.println(n.createMatrix().RREF());
     }
 }
