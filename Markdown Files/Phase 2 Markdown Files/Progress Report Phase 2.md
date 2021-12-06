@@ -8,7 +8,10 @@ This is our progress report for Phase 2!
 ## Summary of what each group member is working on and plans on working on next
 
 Mohtashim
-> For Phase 2, my main responsibility was converting our code to follow SOLID, Clean Architecture and use Design Patterns. In Phase 1 we did not pay attention to this as much as we should have, so I took the responsibility of implementing these into our code and guiding our group in implementing these properties. For example, I split up the WalkThroughCustomInput into use cases, made a controller for our calculator, and implemented design patterns. I also packaged our code as mentioned in the Design Report. I also completed the design report, and created the layout for the Phase 2 homepage section on our Github page.
+
+Design: 
+
+> For Phase 2, my main responsibility was converting our code to follow SOLID, Clean Architecture and use Design Patterns. In Phase 1 we did not pay attention to this as much as we should have, so I took the responsibility of implementing these into our code and guiding our group in implementing these properties. For example, I split up the WalkThroughCustomInput into use cases, made a controller for our calculator, and implemented design patterns. I also packaged our code as mentioned in the Design Report. I also completed the design report, and created the layout for the Phase 2 homepage section on our Github page. A change I made which was very impactful was [allowing the user to type in a matrix](https://github.com/CSC207-UofT/course-project-the-basis/pull/66/files). This change was difficult to do at first but once it was completed it made computing operations with matrices a lot easier and made it faster to input a matrix.
 
 
 Nofel
