@@ -19,7 +19,7 @@ Nofel
 Achraf
 
 > The bulk of my work came from implementing the new UI as well as the controller of our program. I also implemented the login and signup features and fixed the issues we had with implementation of our database (how we saved a user's calculation, as well as they're username/password).
-> https://github.com/CSC207-UofT/course-project-the-basis/commit/43b457b91c2ee54c493684c51a950dc770df02f4 : This is where I created a database for the history part of our program and implemented it. This helped us resolve some of the big issues we were having in phase 1 when trying to set up a proper database without breaking any clean architecture principles.  
+>[This](https://github.com/CSC207-UofT/course-project-the-basis/commit/43b457b91c2ee54c493684c51a950dc770df02f4) is where I created a database for the history part of our program and implemented it. This helped us resolve some of the big issues we were having in phase 1 when trying to set up a proper database without breaking any clean architecture principles.  
 
 
 Hamza
