@@ -90,6 +90,6 @@ Spliiting and improving ExpressionHandler
 
 ## Testing
 
-> Text
+> Every member of our group made various test cases for most, if not all, of the aspects we implemented in our project. We made effective test cases by having the maker of a given method get other group members to give him edge cases so that we could ensure that our test cases weren't just made from the creators mindset. We tried our best to make sure that the test cases for each method covered as many edge cases as possible to ensure our code's validity.
 
 
