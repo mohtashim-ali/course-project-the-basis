@@ -1,3 +1,7 @@
+# Design Report
+
+This is our design report for Phase 2!
+
 ## Updated Specification
 
 > [Click Here](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Phase%202%20Markdown%20Files/specification%20phase%202.md)
