@@ -22,6 +22,6 @@ public class UserEntity {
     }
 
     public String getUserInfo(){
-        return username + "," + password;
+        return username + ";" + password;
     }
 }
