@@ -1,4 +1,4 @@
-package UseCase;
+package UseCase.BasicOperations;
 
 /**
  * Entity.ExpressionException Class that allows for custom exceptions of creating invalid expressions.

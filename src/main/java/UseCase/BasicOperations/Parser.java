@@ -1,6 +1,4 @@
-package UseCase;
-
-import UseCase.BasicOperations.Operator;
+package UseCase.BasicOperations;
 
 import java.lang.*;
 import java.util.*;
