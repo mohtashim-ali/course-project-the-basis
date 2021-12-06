@@ -1,7 +1,6 @@
 package UseCase;
 
 import java.lang.*;
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -69,7 +68,7 @@ public class Parser {
         return count == 1;
     }
 
-    public Operator stringToExpression() throws ParserException {
+    public boolean stringToExpression() throws ParserException {
        if (!this.validity()) {
            throw new ParserException("Invalid Input");
        }
