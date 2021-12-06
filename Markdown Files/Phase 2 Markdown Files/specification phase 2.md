@@ -21,4 +21,4 @@ Overall, our calculator is simple to use, and will be helpful for students inter
 
 ### Future Ideas
 
-For the future, we would have connected the Front End to our Back End, however due to time contractions this was not possible. However, the Front End was completed and supports LaTeX!
+For the future, we would have connected the Front End to our Back End, however due to time costraints this was not possible. However, the Front End was completed and supports LaTeX!
