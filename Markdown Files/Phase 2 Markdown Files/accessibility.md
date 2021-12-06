@@ -20,11 +20,8 @@
 
 ## Question 2
 
-Write a paragraph about who you would market your program towards, if you were to sell or license your program to customers. This could be a specific category such as "students" or more vague, such as "people who like games". Try to give a bit more detail along with the category.
-
 > We would market our program towards students taking math courses. Since our program is a calculator, it makes sense to target students in school enrolled in math courses since they can use our Calculator for their homework, assignments, and even just to double check any small calculations. Another target audience is students enrolled in Linear Algebra courses. Since our calculator has a Linear Algebra option which allows operations with matrices, it would be a perfect program since you can check your RREF matrix, or add/subtract two matrices.
-
-It is important to note that we are not targeting linear algebra students only, but having Linear Algebra Operations in our calculator allows us to invite them to use our program!
+>It is important to note that we are not targeting linear algebra students only, but having Linear Algebra Operations in our calculator allows us to invite them to use our program!
 
 ## Question 3
 
