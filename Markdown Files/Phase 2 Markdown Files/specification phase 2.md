@@ -10,7 +10,7 @@ For Phase 2, our code is able to compute basic operations using addition, subtra
 
 1. User will be prompted to Sign Up or Log In
 2. Once Step 1 is completed, the User will have the option to compute a basic operation, linear algebra operation, or view their history.
-3. If basic, then the code will process an operation such as "2 + 2", save this operation to the user's history, and print the final value, in this case "4".
+3. If basic, then the code will process an operation such as "2 + 2", save this operation to the user's history, and output the final value. So in this case, "4".
 4. If linear algebra, then the user will be able to type in a matrix, and select from a few operations such as RREF, adding matrices, and subtracting matrices.
 5. If history, the users history will be displayed.
 6. After Step 3, 4 or 5, the user will have the option to go back to the main menu, or to close the calculator.
