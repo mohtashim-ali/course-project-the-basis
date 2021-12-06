@@ -70,11 +70,11 @@ Spliiting and improving ExpressionHandler
 
 #### Pull Requests
 
-> Text
+> We have extensively used Pull Requests throughout development to ensure any new changes are reviewed by all group members. This allows other members to potentially catch any errors, or simply provide feedback. Pull Requests also prevent any code from being overwritten and allows members to test changes before they make a pull request.
 
 #### Issues
 
-> Text
+> We used Issues to keep track of any major changes that needed to be made. For example, we had an issue with being able to log in with any password, so it helped us ensure we got to resolving it.
 
 
 ## Refactoring
