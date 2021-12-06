@@ -15,7 +15,7 @@ public class UserHistory {
 
 
     public void addToHistory(String operation, String time){
-        list.writeToFile(curr.getCurrentUser().getUsername() + "," + operation + "," + time);
+        list.writeToFile(curr.getCurrentUser().getUsername() + ";" + operation + ";" + time);
     }
 
     public void readFromHistory() throws IOException {
@@ -28,12 +28,13 @@ public class UserHistory {
      */
     public void toTable(ArrayList<String> history) {
         System.out.println("-----------------------------------------------------------------------------");
-        System.out.printf("%10s %20s", "CALC", "TIME");
+        System.out.printf("%1s", "CALCULATION + TIME");
         System.out.println();
         System.out.println("-----------------------------------------------------------------------------");
         for(String info: history){
             String[] splitList = info.split(";");
-            System.out.format("%10s %20s",
+            //int padding = splitList[0].length()
+            System.out.format("%1s %7s",
                     splitList[0], splitList[1]);
             System.out.println();
         }

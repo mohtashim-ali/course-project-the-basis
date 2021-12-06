@@ -18,7 +18,7 @@ public class History implements Database {
     }
 
     /**
-     * Writes to history.txt in the format "USERNAME,CALCULATION,DATE".
+     * Writes to history.txt in the format "USERNAME;CALCULATION;DATE".
      * @param newLine
      */
     @Override
@@ -49,7 +49,7 @@ public class History implements Database {
         Scanner myReader = new Scanner(myObj);
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();
-            String[] split = data.split(",");
+            String[] split = data.split(";");
             if (split[0].equals(username)) {
                 final_result.add(split[1] + ";" + split[2]);
             }

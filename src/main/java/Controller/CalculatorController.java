@@ -10,6 +10,7 @@ import UseCase.Accounts.UserSignUp;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class CalculatorController {
@@ -50,8 +51,10 @@ public class CalculatorController {
             InputProcessor inputProcessor = new InputProcessor(fixed_input.toString());
             //System.out.println(inputProcessor.processInput().compute());
         } else if (this.choice == 2) {
+            Date date = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
             ComputeMatrix computeMatrix = new ComputeMatrix();
-            computeMatrix.computeMatrix();
+            userHistory.addToHistory(String.valueOf(computeMatrix.computeMatrix()), formatter.format(date));
         } else if (this.choice == 3) {
             userHistory.readFromHistory();
         }

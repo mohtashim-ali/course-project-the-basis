@@ -12,7 +12,7 @@ public class UserList implements Database{
     final String filepath = "users.txt";
 
     /**
-     * Writes to users.txt in the format "USERNAME,PASSWORD"
+     * Writes to users.txt in the format "USERNAME;PASSWORD"
      * @param newLine
      * @throws IOException
      */
@@ -45,7 +45,7 @@ public class UserList implements Database{
         Scanner myReader = new Scanner(myObj);
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();
-            String[] split = data.split(",");
+            String[] split = data.split(";");
             if (split[0].equals(username)) {
                 final_result.add(split[1]);
             }
