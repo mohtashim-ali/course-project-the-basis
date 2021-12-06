@@ -4,10 +4,9 @@
 
 ## Additonal Functionality between Phase 1 and Phase 2
 
-> Users can now compute Linear Algebra operations with square matrices.
+- Users can now compute Linear Algebra operations with square matrices.
 
-
-> History can be viewed for both Basic Operations and Linear Algebra Operations.
+- History can be viewed for both Basic Operations and Linear Algebra Operations.
 
 
 ## Major Design Decisions
