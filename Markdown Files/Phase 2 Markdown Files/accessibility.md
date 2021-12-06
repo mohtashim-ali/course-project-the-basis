@@ -12,7 +12,9 @@
 ### Perceptible Information
 > TODO
 ### Tolerance for Error
-> TODO
+>  Our code provides warnings errors when the user types in an incorrect password, or existing username. However, for the future we could add a checker which would prevent the code from crashing for any incorrect input, such as a character for a number. This would adhere to tolerance for error since it would provide feedback to the user so they know how to type in a valid input, and would not discourage the user from trying again since the program would not crash. 
+
+
 ### Low Physical Effort
 > Our program does not have most aspects in this principle because they are physical principles. However, our program does have Minimizing repetitive actions. Our program at the moment does not apply to this feature because our UI is a repetitive prompt for the user's input. We could overcome this in the future by implementing our website so that the user would not have to repeatedly answer prompts.
 ### Size and Space for Approach and Use
