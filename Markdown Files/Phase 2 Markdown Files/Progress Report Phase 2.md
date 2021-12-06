@@ -15,12 +15,13 @@ Mohtashim
 
 Nofel
 
-> text
+> In this Phase, I looked at the feedback given form phase 1 and implemented the stratgey pattern for our comupte method in our program. Making an interface then implementing it in each operation with its own class such as additon, subtraction, muliplication, etc. I then made a class that checks the operand then assign's its functionaily based on the operand that was given. Esenitally, this is the backbone of our program as everything else needs it in order for our program to work so the deign must be very friendly. I also made modifed test cases to fit our new design as the old cases did not cover this. I also designed and did some of the accessibilty report.
 
 
 Achraf
 
-> text
+> The bulk of my work came from implementing the new UI as well as the controller of our program. I also implemented the login and signup features and fixed the issues we had with implementation of our database (how we saved a user's calculation, as well as they're username/password).
+> https://github.com/CSC207-UofT/course-project-the-basis/commit/43b457b91c2ee54c493684c51a950dc770df02f4 : This is where I created a database for the history part of our program and implemented it. This helped us resolve some of the big issues we were having in phase 1 when trying to set up a proper database without breaking any clean architecture principles.  
 
 
 Hamza
