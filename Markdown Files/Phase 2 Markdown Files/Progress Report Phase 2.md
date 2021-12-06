@@ -14,7 +14,7 @@ Mohtashim
 
 Nofel
 
-> In this Phase, I looked at the feedback given form phase 1 and implemented the stratgey pattern for our comupte method in our program. Making an interface then implementing it in each operation with its own class such as additon, subtraction, muliplication, etc. I then made a class that checks the operand then assign's its functionaily based on the operand that was given. Esenitally, this is the backbone of our program as everything else needs it in order for our program to work so the deign must be very friendly. I also made modifed test cases to fit our new design as the old cases did not cover this. I also designed and did some of the accessibilty report.
+> In this Phase, I looked at the feedback given form phase 1 and implemented the stratgey [pattern](https://github.com/CSC207-UofT/course-project-the-basis/commit/6f621052451fbc362c7a0a851cc63381ba9ba202) for our comupte method in our program. Making an interface then implementing it in each operation with its own class such as additon, subtraction, muliplication, etc. I then made a class that checks the operand then assign's its functionaily based on the operand that was given. Esenitally, this is the backbone of our program as everything else needs it in order for our program to work so the deign must be very friendly. I also made modifed test cases to fit our new design as the old cases did not cover this. I also designed and did some of the accessibilty report.
 
 
 Achraf
