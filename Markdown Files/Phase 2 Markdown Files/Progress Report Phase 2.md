@@ -1,8 +1,6 @@
 # Progress Report
 
-## Questions
-
-> text
+This is our progress report for Phase 2!
 
 ## What has worked well for your design?
 
