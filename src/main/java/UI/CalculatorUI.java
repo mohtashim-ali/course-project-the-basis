@@ -9,14 +9,17 @@ import java.util.*;
 public class CalculatorUI {
 
     public static boolean quit = false;
+    public CalculatorController control;
+    public void setControl(CalculatorController control){
+        this.control = control;
+    }
 
-    public static void main() throws IOException, ClassNotFoundException, ExpressionException, ParserException {
+    public void main() throws IOException, ClassNotFoundException, ExpressionException, ParserException {
 
         Scanner read = new Scanner(System.in);
         System.out.println("1. Log In");
         System.out.println("2. Sign Up");
         int log = read.nextInt();
-        CalculatorController control = new CalculatorController();
         control.setChoice(log);
         if (control.handleUser()) {
             do {

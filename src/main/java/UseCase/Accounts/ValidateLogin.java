@@ -1,6 +1,6 @@
 package UseCase.Accounts;
 
-import Entity.UserEntity;
+import Entity.User;
 import Gateway.UserList;
 
 import java.io.IOException;
@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 public class ValidateLogin {
 
-    private final UserEntity user;
+    private final User user;
     private final UserList list;
 
-    public ValidateLogin(UserEntity user1, UserList list1){
+    public ValidateLogin(User user1, UserList list1){
         this.user = user1;
         this.list = list1;
 

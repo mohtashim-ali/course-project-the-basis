@@ -1,16 +1,16 @@
 package UseCase.Accounts;
 
-import Entity.UserEntity;
+import Entity.User;
 
 public class CurrentUser {
 
-    public UserEntity user;
+    public User user;
 
-    public void setCurrentUser(UserEntity user2){
+    public void setCurrentUser(User user2){
         this.user = user2;
 
     }
-    public UserEntity getCurrentUser(){
+    public User getCurrentUser(){
         return user;
     }
 
