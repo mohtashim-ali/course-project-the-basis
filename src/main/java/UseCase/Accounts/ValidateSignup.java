@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ValidateSignup {
 
-    private UserEntity user;
+    private final UserEntity user;
     private final UserList list;
 
     public ValidateSignup(UserEntity user, UserList list1) throws IOException, ClassNotFoundException {

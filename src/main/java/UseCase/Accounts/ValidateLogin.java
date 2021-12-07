@@ -11,7 +11,7 @@ public class ValidateLogin {
     private final UserEntity user;
     private final UserList list;
 
-    public ValidateLogin(UserEntity user1, UserList list1) throws IOException, ClassNotFoundException {
+    public ValidateLogin(UserEntity user1, UserList list1){
         this.user = user1;
         this.list = list1;
 
