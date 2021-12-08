@@ -1,6 +1,5 @@
 package UseCase.BasicOperations;
 import java.lang.Math;
-import Entity.ExpressionException;
 
 public class Exponent implements Computation {
     @Override

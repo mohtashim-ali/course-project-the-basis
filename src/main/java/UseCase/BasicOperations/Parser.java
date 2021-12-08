@@ -66,12 +66,12 @@ public class Parser {
         return true;
     }
 
-    public Operator stringToExpression() throws ParserException {
+    public Expression stringToExpression() throws ParserException {
         if (!this.validity()) {
             throw new ParserException("Invalid Input");
         }
         if (this.contains_onlyDigits(this.strExpr)) {
-            return new Operator(Double.parseDouble(this.strExpr), "+", 0.0);
+            return new SingleExpression(Double.parseDouble(this.strExpr), "+", 0.0);
         }
         if ((Character.isDigit(this.strExpr.charAt(0)) ||
                 Character.isDigit(this.strExpr.charAt(this.strExpr.length()-1))) && this.checker()) {
@@ -81,7 +81,7 @@ public class Parser {
                 firstCount += 1;
                 i++;
             }
-            return new Operator(Double.parseDouble(this.strExpr.substring(0, firstCount)),
+            return new SingleExpression(Double.parseDouble(this.strExpr.substring(0, firstCount)),
                     Character.toString(this.strExpr.charAt(1)),
                     Double.parseDouble(this.strExpr.substring(firstCount+1)));
         }
@@ -90,9 +90,9 @@ public class Parser {
             int mainOp = listOfOpIndexes.get(listOfOpIndexes.size() - 1);
             Parser left = new Parser(this.strExpr.substring(0, mainOp));
             Parser right = new Parser(this.strExpr.substring(mainOp+1));
-            Object leftOp = left.stringToExpression();
-            Object rightOp = right.stringToExpression();
-            return new Operator(leftOp, Character.toString(this.strExpr.charAt(mainOp)), rightOp);
+            Expression leftOp = left.stringToExpression();
+            Expression rightOp = right.stringToExpression();
+            return new MultiExpression(leftOp, Character.toString(this.strExpr.charAt(mainOp)), rightOp);
         }
     }
 
