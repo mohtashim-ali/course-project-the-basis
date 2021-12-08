@@ -1,6 +1,6 @@
 package Controller;
 
-import Entity.ExpressionException;
+import UseCase.BasicOperations.ExpressionException;
 import UseCase.Accounts.*;
 import UseCase.BasicOperations.Parser;
 import UseCase.BasicOperations.ParserException;
