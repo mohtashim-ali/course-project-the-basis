@@ -19,7 +19,7 @@ In short, our goal for phase 0 was to narrow down onto a specific goal so that w
 #### Use Case Classes
 
 1. UseCase.InputProcessor - Process input
-2. UseCase.ExpressionHandler - Error handling
+2. UseCase.BasicOperations.ExpressionHandler - Error handling
 3. EquationHandler - Error handling for equations
 4. LinIndepHandler (Future Goal)
 5. RREFHandler (Future Goal)
@@ -69,7 +69,7 @@ Kyle
 >* Input Processor
 >    * processInput()
 >    * listInput()
->* UseCase.ExpressionHandler
+>* UseCase.BasicOperations.ExpressionHandler
 >* Entity.Expression
 >* Several tests in CalculatorTest
 

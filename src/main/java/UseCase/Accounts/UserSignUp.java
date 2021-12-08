@@ -1,6 +1,6 @@
 package UseCase.Accounts;
 
-import Entity.UserEntity;
+import Entity.User;
 import Gateway.UserList;
 
 import java.io.IOException;
@@ -8,21 +8,21 @@ import java.util.*;
 
 public class UserSignUp {
 
-    private final UserEntity newuser = new UserEntity();
+    private final User newer = new User();
     private final UserList list = new UserList();
 
-    public UserEntity signUp() throws IOException, ClassNotFoundException {
-        ValidateSignup validateSignup = new ValidateSignup(newuser, list);
+    public User signUp() throws IOException, ClassNotFoundException {
+        ValidateSignup validateSignup = new ValidateSignup(newer, list);
         Scanner info = new Scanner(System.in);
         System.out.println("Username: ");
-        newuser.setUsername(info.nextLine());
-        newuser.setUsername(validateSignup.isTaken());
+        newer.setUsername(info.nextLine());
+        newer.setUsername(validateSignup.isTaken());
         System.out.println("Password: ");
-        newuser.setPassword(info.nextLine());
+        newer.setPassword(info.nextLine());
 
 
-        list.writeToFile(newuser.getUserInfo());
-        return this.newuser;
+        list.writeToFile(newer.getUserInfo());
+        return this.newer;
     }
 
 

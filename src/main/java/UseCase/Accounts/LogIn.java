@@ -1,10 +1,10 @@
 package UseCase.Accounts;
 
-import Entity.UserEntity;
+import Entity.User;
 
 import java.io.IOException;
 
 public interface LogIn {
 
-    UserEntity logIn() throws IOException, ClassNotFoundException;
+    User logIn() throws IOException, ClassNotFoundException;
 }

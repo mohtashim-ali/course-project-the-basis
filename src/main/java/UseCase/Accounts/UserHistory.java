@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class UserHistory {
 
-    private History list = new History();
+    private final History list = new History();
     private CurrentUser curr = new CurrentUser();
 
     public void setCurr(CurrentUser curr){

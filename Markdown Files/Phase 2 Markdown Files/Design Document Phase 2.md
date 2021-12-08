@@ -1,3 +1,7 @@
+# Design Report
+
+This is our design report for Phase 2!
+
 ## Updated Specification
 
 > [Click Here](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/Markdown%20Files/Phase%202%20Markdown%20Files/specification%20phase%202.md)
@@ -70,19 +74,22 @@ Spliiting and improving ExpressionHandler
 
 #### Pull Requests
 
-> Text
+> We have extensively used Pull Requests throughout development to ensure any new changes are reviewed by all group members. This allows other members to potentially catch any errors, or simply provide feedback. Pull Requests also prevent any code from being overwritten and allows members to test changes before they make a pull request.
 
 #### Issues
 
-> Text
+> We used Issues to keep track of any major changes that needed to be made. For example, we had an issue with being able to log in with any password, so it helped us ensure we got to resolving it.
 
 
 ## Refactoring
 
-> Text
+- A major refractor done was splitting up WalkThroughCustomInput. This really helped in conforming to SOLID and Clean Architecture properties. As a result, it was also easier to see any design pattern we implemented, or can implement.
+- Creating Packages helped clean up file organization.
+- Renaming classes to help understand the responsibility of each class.
+- Implementing the Strategy Pattern to clean up executing operations.
 
 ## Testing
 
-> Text
+> Every member of our group made various test cases for most, if not all, of the aspects we implemented in our project. We made effective test cases by having the maker of a given method get other group members to give him edge cases so that we could ensure that our test cases weren't just made from the creators mindset. We tried our best to make sure that the test cases for each method covered as many edge cases as possible to ensure our code's validity.
 
 
