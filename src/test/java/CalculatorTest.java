@@ -34,7 +34,6 @@
 //        Operator op = new Operator(2, "^", 2);
 //        assert op.resultant() == 4;
 //    }
-
 //    }
 //    @Test
 //    public void subtraction() throws ExpressionException {
@@ -177,6 +176,4 @@
 //        System.out.println(input);
 //        assert input == -0.2959;
 //    }
-
 //}
-
