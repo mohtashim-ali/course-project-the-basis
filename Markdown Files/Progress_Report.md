@@ -71,7 +71,7 @@ Kyle
 >    * listInput()
 >* UseCase.BasicOperations.ExpressionHandler
 >* Entity.Expression
->* Several tests in CalculatorTest
+>* Several tests in TrigonometryTest
 
 Achraf
 
