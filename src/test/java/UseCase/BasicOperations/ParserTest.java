@@ -1,6 +1,4 @@
-package UseCase;
-
-import UseCase.BasicOperations.*;
+package UseCase.BasicOperations;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
@@ -51,7 +49,7 @@ public class ParserTest extends TestCase {
         assertEquals(p.findOps(), lst1);
     }
 
-    public void testStringToExpression() throws ParserException, ExpressionException {
+    public void teststringToExpression() throws ParserException, ExpressionException {
         Parser p = new Parser("1+2+3*4");
         Expression expression = p.stringToExpression();
         assertEquals(expression.compute(), 15.0);
@@ -73,4 +71,23 @@ public class ParserTest extends TestCase {
         assertEquals(expression.compute(), 81.0);
     }
 
+    public void testChecker1() {
+        Parser p = new Parser("3+5");
+        assertTrue(p.checker());
+    }
+
+    public void testChecker2() {
+        Parser p = new Parser("3+5+6");
+        assertFalse(p.checker());
+    }
+
+    public void testContains_onlyDigits1() {
+        Parser p = new Parser("3+5");
+        assertFalse(p.contains_onlyDigits());
+    }
+
+    public void testContains_onlyDigits2() {
+        Parser p = new Parser("35");
+        assertTrue(p.contains_onlyDigits());
+    }
 }

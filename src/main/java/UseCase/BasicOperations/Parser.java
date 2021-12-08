@@ -4,6 +4,9 @@ import java.lang.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * Parser Class that turns Strings into Expressions
+ */
 public class Parser {
 
     private String strExpr;
@@ -15,11 +18,20 @@ public class Parser {
         add('+');
     }};
 
+    /**
+     * @param strExpr String object
+     */
     public Parser(String strExpr) {
         this.strExpr = strExpr;
     }
 
+    /**
+     * @return ArrayList<Integer>
+     */
     public ArrayList<Integer> findOps() {
+        /*
+         * Function that finds the indices of operators of the Parser's string in order of precedence
+         */
         ArrayList<ArrayList<Integer>> listOfOpIndexes = new ArrayList<>();
         for (Character operator : this.operators) {
             ArrayList<Integer> nest = new ArrayList<>();
@@ -46,7 +58,13 @@ public class Parser {
                 .flatMap(List::stream).collect(Collectors.toCollection(ArrayList::new));
     }
 
+    /**
+     * @return boolean
+     */
     public boolean checker() {
+        /*
+         * Function that checks if the Parser's string only contains a single operator
+         */
         int count = 0;
         for (int i = 0; i<this.strExpr.length(); i++) {
             if (this.operators.contains(this.strExpr.charAt(i))) {
@@ -56,21 +74,34 @@ public class Parser {
         return count == 1;
     }
 
-    public boolean contains_onlyDigits(String s)
-    {
-        for (int i = 0; i < s.length(); i++){
-            if (!Character.isDigit(s.charAt(i))){
+    /**
+     * @return boolean
+     */
+    public boolean contains_onlyDigits() {
+        /*
+         * Function that checks if the Parser's string contains only digits.
+         */
+        for (int i = 0; i < this.strExpr.length(); i++){
+            if (!Character.isDigit(this.strExpr.charAt(i))){
                 return false;
             }
         }
         return true;
     }
 
+    /**
+     * @return Expression
+     * @throws ParserException
+     * If the expression is invalid throws Parser Exception
+     */
     public Expression stringToExpression() throws ParserException {
+        /*
+         * Function that converts the Parser's string into an Expression object
+         */
         if (!this.validity()) {
             throw new ParserException("Invalid Input");
         }
-        if (this.contains_onlyDigits(this.strExpr)) {
+        if (this.contains_onlyDigits()) {
             return new SingleExpression(Double.parseDouble(this.strExpr), "+", 0.0);
         }
         if ((Character.isDigit(this.strExpr.charAt(0)) ||
@@ -96,7 +127,13 @@ public class Parser {
         }
     }
 
+    /**
+     * @return boolean
+     */
     public boolean validity() {
+        /*
+         * Function that checks if the Parser's string is valid (can be turned into an expression)
+         */
         this.strExpr = this.strExpr.replaceAll(" ", "");
         if (!Character.isDigit(this.strExpr.charAt(0)) ||
                 !Character.isDigit(this.strExpr.charAt(this.strExpr.length()-1))) {
@@ -114,13 +151,5 @@ public class Parser {
             }
         }
         return true;
-    }
-
-    public String getStrExpr() {
-        return strExpr;
-    }
-
-    public void setStrExpr(String strExpr) {
-        this.strExpr = strExpr;
     }
 }
