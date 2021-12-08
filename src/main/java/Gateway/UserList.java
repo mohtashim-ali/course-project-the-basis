@@ -24,7 +24,7 @@ public class UserList implements Database{
             PrintWriter printWriter = new PrintWriter(myWriter);
             printWriter.print(newLine + "\n");
             printWriter.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("You have successfully signed up!");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

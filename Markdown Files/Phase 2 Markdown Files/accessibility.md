@@ -5,18 +5,21 @@
 ### Equitable Use
 > Our program does implement the principle of equitable use. All users for the program have a unique username with a unique password. So privacy, security, and safety should be equally available to all users without segregating. Usernames are attained by first-come first-served basis.
 ###  Flexibility in Use
-> TODO
+> As our program is now, there is only one language option for users to pick from. To accommodate and give more flexiblity to the user in the future we will implement an option which gives the user multiple languages to choose from. This allows more flexibility to the user and is a useful feature to add.  
 ### Simple and Intuitive Use
 > Our program adheres to the Simple and intuitive principle. The program design is very simplistic and easy to use. The user after logging in will be prompted to either choose to compute a mathematical expression or apply operation to a matrix. There is no unnecessary complexity and it is very user-friendly for people with any level of literacy and language skills
 
 ### Perceptible Information
-> TODO
+> Our UI is kept pretty simple which means all the information that we have can be communicated effectively to the user. One example of this is that each of our options are clearly numbered which makes it easy to give instructions to the user. 
 ### Tolerance for Error
-> TODO
+>  Our code provides warnings errors when the user types in an incorrect password, or existing username. However, for the future we could add a checker which would prevent the code from crashing for any incorrect input, such as a character for a number. This would adhere to tolerance for error since it would provide feedback to the user so they know how to type in a valid input, and would not discourage the user from trying again since the program would not crash. 
+
+
 ### Low Physical Effort
-> TODO
+> Our program does not have most aspects in this principle because they are physical principles. However, our program does have Minimizing repetitive actions. Our program at the moment does not apply to this feature because our UI is a repetitive prompt for the user's input. We could overcome this in the future by implementing our website so that the user would not have to repeatedly answer prompts.
 ### Size and Space for Approach and Use
-> TODO
+>Our program provides a clear line of sight to the important elements of our program through the user interface. Furthermore, components are comfortably reachable using a keyboard by only typing numbers. Variations in hand and grip size depend on the user’s keyboard which does not affect this principle and assistive devices can be used by compiling our code into an executable to run on multiple devices alongside the personal assistance being the code itself which can be changed.
+
 
 ## Question 2
 
