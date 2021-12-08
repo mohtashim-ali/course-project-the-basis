@@ -1,20 +1,13 @@
 package UI;
 import Controller.CalculatorController;
-import Entity.ExpressionException;
-import UseCase.BasicOperations.ParserException;
-
-import java.io.IOException;
 import java.util.*;
 
 public class CalculatorUI {
 
     public static boolean quit = false;
-    public CalculatorController control;
-    public void setControl(CalculatorController control){
-        this.control = control;
-    }
+    public CalculatorController control = new CalculatorController();
 
-    public void main() throws IOException, ClassNotFoundException, ExpressionException, ParserException {
+    public void main() {
 
         Scanner read = new Scanner(System.in);
         System.out.println("1. Log In");
@@ -41,4 +34,3 @@ public class CalculatorUI {
     }
 
 }
-
