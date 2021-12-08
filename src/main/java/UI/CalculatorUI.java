@@ -1,9 +1,5 @@
 package UI;
 import Controller.CalculatorController;
-import Entity.ExpressionException;
-import UseCase.BasicOperations.ParserException;
-
-import java.io.IOException;
 import java.util.*;
 
 public class CalculatorUI {
