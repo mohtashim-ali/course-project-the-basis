@@ -1,11 +1,15 @@
 package UI;
-import Controller.CalculatorController;
+import Controller.CalculationController;
+import Controller.UserController;
+
 import java.util.*;
 
 public class CalculatorUI {
 
     public static boolean quit = false;
-    public CalculatorController control = new CalculatorController();
+    //public CalculatorController control = new CalculatorController();
+    private final UserController userController = new UserController();
+    private final CalculationController calculationController = new CalculationController();
 
     public void main() {
 
@@ -13,8 +17,8 @@ public class CalculatorUI {
         System.out.println("1. Log In");
         System.out.println("2. Sign Up");
         int log = read.nextInt();
-        control.setChoice(log);
-        if (control.handleUser()) {
+        userController.setChoice(log);
+        if (userController.handleUser()) {
             do {
                 System.out.println("1. Compute");
                 System.out.println("2. Matrix");
@@ -23,8 +27,9 @@ public class CalculatorUI {
                 System.out.println("5. Power Off");
                 Scanner math = new Scanner(System.in);
                 int choice = math.nextInt();
-                control.setChoice(choice);
-                control.handleOperations();
+                calculationController.setChoice(choice);
+                calculationController.setCurr(userController.getCurr());
+                calculationController.handleOperations();
             } while (!quit); // allows the menu options to keep on running
         }
         else{
