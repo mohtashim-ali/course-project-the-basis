@@ -28,7 +28,7 @@ public class History implements Database {
             PrintWriter printWriter = new PrintWriter(myWriter);
             printWriter.println(newLine);
             printWriter.close();
-            System.out.println("Successfully wrote to the file.");
+            System.out.println("This has been added to your history!");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

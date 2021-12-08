@@ -1,6 +1,6 @@
 package UseCase.Accounts;
 
-import Entity.UserEntity;
+import Entity.User;
 import Gateway.UserList;
 
 import java.io.IOException;
@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 public class ValidateSignup {
 
-    private UserEntity user;
+    private final User user;
     private final UserList list;
 
-    public ValidateSignup(UserEntity user, UserList list1) throws IOException, ClassNotFoundException {
+    public ValidateSignup(User user, UserList list1) throws IOException, ClassNotFoundException {
         this.user = user;
         this.list = list1;
     }

@@ -6,9 +6,9 @@ import java.util.Objects;
 
 public class Operator {
 
-    private Object operand1;
-    private Object operand2;
-    private String operator;
+    private final Object operand1;
+    private final Object operand2;
+    private final String operator;
 
     public Operator(Object operand1, String operator, Object operand2){
         this.operand1 = operand1;

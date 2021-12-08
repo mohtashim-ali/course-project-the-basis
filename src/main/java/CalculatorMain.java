@@ -1,14 +1,12 @@
-import Entity.ExpressionException;
-import UseCase.BasicOperations.ParserException;
+import UI.CalculatorUI;
 
-import java.io.IOException;
 
 public class CalculatorMain {
 
-    public static void main(String[] args) throws ParserException, IOException, ClassNotFoundException, ExpressionException {
+    public static void main(String[] args) {
 
-        UI.CalculatorUI.main();
-
+        System.out.println("Welcome to The Basis Calculator!");
+        CalculatorUI calc = new CalculatorUI();
+        calc.main();
     }
-
 }
