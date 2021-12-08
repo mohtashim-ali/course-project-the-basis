@@ -1,7 +1,6 @@
 package Entity;
 
 import java.lang.Math;
-import java.util.ArrayList;
 
 public class Trigonometry {
     /**

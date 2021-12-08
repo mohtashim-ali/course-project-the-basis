@@ -1,28 +1,38 @@
 package Entity;
 
-import UseCase.BasicOperations.ExpressionHandler;
-
 /**
  * Entity.Expression Object.
  */
-public class Expression extends ExpressionHandler {
+public class Expression{
     /**
      Takes in 2 numeric values, and evaluates them with the given operator.
      */
 
-    public double operand1;
-    public double operand2;
-    public String operator;
+    private Object operand1;
+    private Object operand2;
+    private String operator;
 
-    /**
-     * @param operand1 double
-     * @param operator double
-     * @param operand2 double
-     */
-    public Expression(double operand1, String operator, double operand2) throws ExpressionException {
-        super(operand1, operator, operand2);
+    public Object getOperand1() {
+        return operand1;
+    }
+
+    public void setOperand1(Object operand1) {
         this.operand1 = operand1;
+    }
+
+    public Object getOperand2() {
+        return this.operand2;
+    }
+
+    public void setOperand2(Object operand2) {
         this.operand2 = operand2;
+    }
+
+    public String getOperator() {
+        return operator;
+    }
+
+    public void setOperator(String operator) {
         this.operator = operator;
     }
 }

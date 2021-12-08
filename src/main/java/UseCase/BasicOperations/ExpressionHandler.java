@@ -10,7 +10,7 @@ import java.lang.Math;
 /**
 // * UseCase.BasicOperations.ExpressionHandler Class that handles all operations done to an Entity.Expression.
 // */
-public abstract class ExpressionHandler{
+public class ExpressionHandler {
     public double operand1;
     public double operand2;
     public String operator;
@@ -53,7 +53,6 @@ public abstract class ExpressionHandler{
                 return this.operand1 * this.operand2;
             case "^":
                 return Math.pow(this.operand1, this.operand2);
-
         }
 
         if (this.operator.equals("")){
@@ -63,21 +62,5 @@ public abstract class ExpressionHandler{
             throw new ExpressionException("Undefined");
         }
         return this.operand1 / this.operand2;
-    }
-
-    /**
-     * @return Entity.Expression
-     */
-    public Expression simplify() throws ExpressionException {
-        /*
-         * Might need to add a whole class for this as there are multiple ways of simplifying different expressions.
-         */
-        // 1/sqrt(2) -> sqrt(2)/2
-        //TO DO
-        return new Expression(1, "+", 2);
-    }
-
-    public void print() {
-        System.out.println(this.operand1 + " " + this.operator + " " + this.operand2);
     }
 }

@@ -1,6 +1,5 @@
 package UseCase.LinAlg;
 
-import Entity.Expression;
 import java.util.*;
 
 public class BuildExpression {
@@ -13,6 +12,13 @@ public class BuildExpression {
 
     public void setInput(String other) {
         input = other;
+    }
+
+    public StringBuilder createExpression(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Please type in a expression: ");
+        input = s.nextLine();
+        return makeExpression();
     }
 
     public StringBuilder makeExpression(){
