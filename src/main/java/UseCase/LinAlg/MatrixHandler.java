@@ -5,20 +5,19 @@ import Entity.Matrix;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class MatrixHandler {
     /**
      * Creates a matrix.
      */
 
-    ArrayList<ArrayList<Fraction>> matrix;
+    private final Matrix matrix = new Matrix();
 
     /**
      * @param matrix double[][]
      */
     public MatrixHandler(ArrayList<ArrayList<Fraction>> matrix) {
-        this.matrix = matrix;
+        this.matrix.setMatrix(matrix);
     }
 
     /**
@@ -28,14 +27,14 @@ public class MatrixHandler {
      * @return
      */
     public ArrayList<ArrayList<Fraction>> addMatrix(Matrix other) {
-        if (this.matrix.size() == other.matrix.size()) {
-            for (int i=0; i<this.matrix.size(); i++) {
-                for (int j=0; j<this.matrix.get(i).size(); j++) {
-                    this.matrix.get(i).get(j).add(other.matrix.get(i).get(j));
+        if (matrix.getMatrix().size() == other.getMatrix().size()) {
+            for (int i=0; i<matrix.getMatrix().size(); i++) {
+                for (int j=0; j<matrix.getMatrix().get(i).size(); j++) {
+                    matrix.getMatrix().get(i).get(j).add(other.getMatrix().get(i).get(j));
                 }
             }
         }
-        return this.matrix;
+        return matrix.getMatrix();
     }
 
     /**
@@ -44,15 +43,15 @@ public class MatrixHandler {
      * @param other
      * @return
      */
-    public ArrayList<ArrayList<Fraction>> substractMatrix(Matrix other) {
-        if (this.matrix.size() == other.matrix.size()) {
-            for (int i=0; i<this.matrix.size(); i++) {
-                for (int j=0; j<this.matrix.get(i).size(); j++) {
-                    this.matrix.get(i).get(j).substract(other.matrix.get(i).get(j));
+    public ArrayList<ArrayList<Fraction>> subtractMatrix(Matrix other) {
+        if (matrix.getMatrix().size() == other.getMatrix().size()) {
+            for (int i=0; i< matrix.getMatrix().size(); i++) {
+                for (int j=0; j<matrix.getMatrix().get(i).size(); j++) {
+                    matrix.getMatrix().get(i).get(j).substract(other.getMatrix().get(i).get(j));
                 }
             }
         }
-        return this.matrix;
+        return matrix.getMatrix();
     }
 
     /**
@@ -79,10 +78,10 @@ public class MatrixHandler {
      * @return
      */
     public ArrayList<ArrayList<Fraction>> addScalarMult(int indexRow1, int indexRow2, Fraction scalar) {
-        for (int i = 0; i < this.matrix.get(indexRow1).size(); i++) {
-            this.matrix.get(indexRow1).set(i, scalar.multiply(this.matrix.get(indexRow2).get(i)));
+        for (int i = 0; i < matrix.getMatrix().get(indexRow1).size(); i++) {
+            matrix.getMatrix().get(indexRow1).set(i, scalar.multiply(matrix.getMatrix().get(indexRow2).get(i)));
         }
-        return this.matrix;
+        return matrix.getMatrix();
     }
 
     /**
@@ -93,11 +92,11 @@ public class MatrixHandler {
      * @return
      */
     public ArrayList<ArrayList<Fraction>> rowSwap(int indexRow1, int indexRow2) {
-        ArrayList<Fraction> temp1 = this.matrix.get(indexRow1);
-        ArrayList<Fraction> temp2 = this.matrix.get(indexRow2);
-        this.matrix.set(indexRow1, temp2);
-        this.matrix.set(indexRow2, temp1);
-        return this.matrix;
+        ArrayList<Fraction> temp1 = matrix.getMatrix().get(indexRow1);
+        ArrayList<Fraction> temp2 = matrix.getMatrix().get(indexRow2);
+        matrix.getMatrix().set(indexRow1, temp2);
+        matrix.getMatrix().set(indexRow2, temp1);
+        return matrix.getMatrix();
     }
 
     public ArrayList<Fraction> scalMult(ArrayList<Fraction> row, Fraction scalar) {
@@ -125,14 +124,14 @@ public class MatrixHandler {
 
     public void moveZerosToBottom(int index) {
         int curr_row = index;
-        for (int j = 0; j < this.matrix.size() - index - 1; j++) {
+        for (int j = 0; j < matrix.getMatrix().size() - index - 1; j++) {
             rowSwap(curr_row, curr_row + 1);
             curr_row += 1;
         }
     }
 
     public boolean zeroMatrix() {
-        for (ArrayList<Fraction> i : this.matrix) {
+        for (ArrayList<Fraction> i : matrix.getMatrix()) {
             if (!rowOfZeros(i)) {
                 return false;
             }
@@ -155,44 +154,44 @@ public class MatrixHandler {
     public ArrayList<ArrayList<Fraction>> RREF() {
 
         if (zeroMatrix()) {
-            return this.matrix;
+            return matrix.getMatrix();
         }
 
-        for (int i = 0; i < this.matrix.size(); i++) {
-            if (rowOfZeros(this.matrix.get(i))) {
+        for (int i = 0; i < matrix.getMatrix().size(); i++) {
+            if (rowOfZeros(matrix.getMatrix().get(i))) {
                 moveZerosToBottom(i);
             }
         }
-        for (int k = 0; k < this.matrix.size(); k++) {
-            ArrayList<Fraction> curr_row = this.matrix.get(k);
+        for (int k = 0; k < matrix.getMatrix().size(); k++) {
+            ArrayList<Fraction> curr_row = matrix.getMatrix().get(k);
             if (!rowOfZeros(curr_row)) {
                 Fraction value = curr_row.get(k);
                 if (this.startsWithZero(curr_row)) {
-                    for (int j = k; j < this.matrix.size() - k - 1; j++) {
+                    for (int j = k; j < matrix.getMatrix().size() - k - 1; j++) {
                         rowSwap(j, j + 1);
                     }
                 }
-                curr_row = this.matrix.get(k);
+                curr_row = matrix.getMatrix().get(k);
                 value = curr_row.get(k);
                 List<Fraction> sublist = curr_row.subList(k, curr_row.size());
                 if (this.startsWithZero(new ArrayList<>(sublist))){
                     continue;
                 }
                 curr_row = scalMult(curr_row, new Fraction(value.getDenominator(), value.getNumerator()));
-                this.matrix.set(k, curr_row);
-                for (int j = 0; j < this.matrix.size(); j++) {
+                matrix.getMatrix().set(k, curr_row);
+                for (int j = 0; j < matrix.getMatrix().size(); j++) {
                     if (j != k) {
                         ArrayList<Fraction> added_row;
-                        ArrayList<Fraction> other_row = this.matrix.get(j);
+                        ArrayList<Fraction> other_row = matrix.getMatrix().get(j);
                         Fraction multiple = other_row.get(k);
                         ArrayList<Fraction> scaleRow = scalMult(curr_row, multiple.multiply(new Fraction(-1, 1)));
                         added_row = rowAdd(other_row, scaleRow);
-                        this.matrix.set(j, added_row);
+                        matrix.getMatrix().set(j, added_row);
                     }
                 }
             }
         }
-        return this.matrix;
+        return matrix.getMatrix();
     }
 
 
@@ -204,7 +203,7 @@ public class MatrixHandler {
     public ArrayList<ArrayList<Fraction>> inverse() {
         int n = 0;
         int m = 0;
-        for (ArrayList<Fraction> i : this.matrix) {
+        for (ArrayList<Fraction> i : matrix.getMatrix()) {
             if (i.size() == 2 & n == 0) {
                 i.add(new Fraction(1, 1).add(new Fraction(n, 1)));
                 n = 1;
@@ -220,7 +219,9 @@ public class MatrixHandler {
                 i.add(new Fraction(0, m).add(new Fraction(0, 1).add(new Fraction(1, 1))));
             }
         }
-        Matrix ans = new Matrix(this.matrix);
+        Matrix ans1 = new Matrix();
+        ans1.setMatrix(matrix.getMatrix());
+        MatrixHandler ans = new MatrixHandler(ans1.getMatrix());
         return ans.RREF();
     }
 
@@ -228,12 +229,12 @@ public class MatrixHandler {
 //    @Override
 //    public String toString() {
 //        StringBuilder final_string = new StringBuilder("[[");
-//        for (int i = 0; i < this.matrix.size(); i++) {
-//            for (int j = 0; j < this.matrix.get(i).size(); j++) {
-//                if (j != this.matrix.get(i).size() - 1) {
-//                    final_string.append(this.matrix.get(i).get(j).toString()).append(", ");
+//        for (int i = 0; i < matrix.getMatrix().size(); i++) {
+//            for (int j = 0; j < matrix.getMatrix().get(i).size(); j++) {
+//                if (j != matrix.getMatrix().get(i).size() - 1) {
+//                    final_string.append(matrix.getMatrix().get(i).get(j).toString()).append(", ");
 //                } else {
-//                    final_string.append(this.matrix.get(i).get(j).toString()).append("],").append("\n").append("[");
+//                    final_string.append(matrix.getMatrix().get(i).get(j).toString()).append("],").append("\n").append("[");
 //                }
 //            }
 //        }
@@ -242,33 +243,35 @@ public class MatrixHandler {
 
 
     public Fraction determinant() {
-        if (this.matrix.size() == 2 && this.matrix.get(0).size() == 2) {
+        if (matrix.getMatrix().size() == 2 && matrix.getMatrix().get(0).size() == 2) {
             Fraction a, b, c, d;
-            a = this.matrix.get(0).get(0);
-            b = this.matrix.get(0).get(1);
-            c = this.matrix.get(1).get(0);
-            d = this.matrix.get(1).get(1);
+            a = matrix.getMatrix().get(0).get(0);
+            b = matrix.getMatrix().get(0).get(1);
+            c = matrix.getMatrix().get(1).get(0);
+            d = matrix.getMatrix().get(1).get(1);
             return a.multiply(d).substract(b.multiply(c));
         } else {
             Fraction determinant = new Fraction(0, 1);
-            ArrayList<Fraction> row = this.matrix.get(0);
+            ArrayList<Fraction> row = matrix.getMatrix().get(0);
             int n = 0;
-            while (n < this.matrix.size()){
+            while (n < matrix.getMatrix().size()){
                 ArrayList<ArrayList<Fraction>> temp = new ArrayList<>();
-                for (int i = 1; i < this.matrix.size(); i++) {
+                for (int i = 1; i < matrix.getMatrix().size(); i++) {
                     ArrayList<Fraction> temp_row = new ArrayList<>();
-                    for (int j = 0; j < this.matrix.size(); j++) {
+                    for (int j = 0; j < matrix.getMatrix().size(); j++) {
                         if (j != n){
-                            temp_row.add(this.matrix.get(i).get(j));
+                            temp_row.add(matrix.getMatrix().get(i).get(j));
                         }
                     }
                     temp.add(temp_row);
                 }
-                Matrix m = new Matrix(temp);
+                Matrix m = new Matrix();
+                m.setMatrix(temp);
+                MatrixHandler control = new MatrixHandler(m.getMatrix());
                 if (n % 2 == 0) {
-                    determinant.add(row.get(n).multiply(m.determinant()));
+                    determinant.add(row.get(n).multiply(control.determinant()));
                 } else {
-                    determinant.substract(row.get(n).multiply(m.determinant()));
+                    determinant.substract(row.get(n).multiply(control.determinant()));
                 }
                 n += 1;
             }
