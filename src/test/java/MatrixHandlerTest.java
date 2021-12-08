@@ -1,5 +1,6 @@
 import Entity.Fraction;
 import Entity.Matrix;
+import UseCase.LinAlg.MatrixHandler;
 import junit.framework.TestCase;
 
 import java.util.ArrayList;
@@ -28,7 +29,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.determinant().toString(), "0/1");
     }
     public void testDeterminant2() {
@@ -44,7 +47,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m1);
             add(m2);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.determinant().toString(), "-3/1");
     }
 //    public void testDeterminant3() {
@@ -188,7 +193,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[0/1, 0/1, 0/1], [0/1, 0/1, 0/1], [0/1, 0/1, 0/1]]");
     }
 
@@ -213,7 +220,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, -5/1], [0/1, 1/1, 2/1], [0/1, 0/1, 0/1]]");
     }
 
@@ -238,7 +247,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1], [0/1, 1/1, 0/1], [0/1, 0/1, 1/1]]");
     }
 
@@ -263,7 +274,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1], [0/1, 1/1, 0/1], [0/1, 0/1, 1/1]]");
 
     }
@@ -289,7 +302,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, -1/1], [0/1, 1/1, 1/1], [0/1, 0/1, 0/1]]");
 
     }
@@ -315,7 +330,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, -9/5], [0/1, 1/1, 4/5], [0/1, 0/1, 0/1]]");
 
     }
@@ -341,7 +358,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 1/1], [0/1, 1/1, -1/1], [0/1, 0/1, 0/1]]");
 
     }
@@ -367,7 +386,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1], [0/1, 1/1, 0/1], [0/1, 0/1, 1/1]]");
 
     }
@@ -393,7 +414,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1], [0/1, 1/1, 0/1], [0/1, 0/1, 1/1]]");
 
     }
@@ -428,7 +451,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m2);
             add(m3);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, 0/1, 0/1, -4/3, 2/3], " +
                 "[0/1, 1/1, 0/1, 0/1, 4/3, -2/3], " +
                 "[0/1, 0/1, 1/1, 0/1, 2/3, -1/3]]");
@@ -450,7 +475,9 @@ public class MatrixHandlerTest extends TestCase {
             add(m1);
             add(m2);
         }};
-        Matrix temp = new Matrix(new_matrix);
+        Matrix matrix = new Matrix();
+        matrix.setMatrix(new_matrix);
+        MatrixHandler temp = new MatrixHandler(matrix.getMatrix());
         assert Objects.equals(temp.RREF().toString(), "[[1/1, 0/1, -2/7], [0/1, 1/1, -3/7]]");
 
     }
