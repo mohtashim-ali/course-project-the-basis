@@ -1,4 +1,4 @@
-package UseCase.LinAlg;
+package UseCase.BasicOperations;
 
 import java.util.*;
 
