@@ -24,29 +24,37 @@ public class CalculatorController {
     }
 
 
-    public boolean handleUser() throws IOException, ClassNotFoundException {
-            if (choice == 1) {
-                UserLogIn login = new UserLogIn();
+    public boolean handleUser() {
+        if (choice == 1) {
+            UserLogIn login = new UserLogIn();
+            try {
                 curr.setCurrentUser(login.logIn());
-                userHistory.setCurr(curr);
-                System.out.println("You have successfully logged in!");
-                return true;
-            } else if (choice == 2) {
-                UserSignUp signup = new UserSignUp();
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+            userHistory.setCurr(curr);
+            System.out.println("You have successfully logged in!");
+            return true;
+        } else if (choice == 2) {
+            UserSignUp signup = new UserSignUp();
+            try {
                 curr.setCurrentUser(signup.signUp());
-                userHistory.setCurr(curr);
-                System.out.println("You have successfully signed up!");
-                return true;
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
             }
-            else{
-                System.out.println("Invalid Option, Please Try Again!");
-                Scanner input = new Scanner(System.in);
-                choice = input.nextInt();
-                return handleUser();
-            }
+            userHistory.setCurr(curr);
+            System.out.println("You have successfully signed up!");
+            return true;
+        }
+        else{
+            System.out.println("Invalid Option, Please Try Again!");
+            Scanner input = new Scanner(System.in);
+            choice = input.nextInt();
+            return handleUser();
+        }
     }
 
-    public void handleOperations() throws IOException, ParserException, ExpressionException, ClassNotFoundException {
+    public void handleOperations() {
         if(this.choice == 1) {
             Date date = new Date();
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
@@ -54,14 +62,22 @@ public class CalculatorController {
             StringBuilder fixed_input = buildExpression.createExpression();
             userHistory.addToHistory(fixed_input.toString(), formatter.format(date)); // Temporary time
             Parser p = new Parser(fixed_input.toString());
-            System.out.println(p.stringToExpression().compute());
+            try {
+                System.out.println(p.stringToExpression().compute());
+            } catch (ExpressionException | ParserException e) {
+                e.printStackTrace();
+            }
         } else if (this.choice == 2) {
             Date date = new Date();
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
             ComputeMatrix computeMatrix = new ComputeMatrix();
             userHistory.addToHistory(String.valueOf(computeMatrix.computeMatrix()), formatter.format(date));
         } else if (this.choice == 3) {
-            userHistory.readFromHistory();
+            try {
+                userHistory.readFromHistory();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else if (this.choice == 4){
             choice = 1;
