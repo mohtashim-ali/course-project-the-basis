@@ -4,7 +4,7 @@ import Entity.User;
 
 public class CurrentUser {
 
-    public User user;
+    public User user = new User();
 
     public void setCurrentUser(User user2){
         this.user = user2;
