@@ -31,13 +31,16 @@ public class ComputeMatrix {
             BuildMatrix other = new BuildMatrix();
             System.out.println("Please type in a second matrix");
             Matrix matrix2 = other.createMatrix();
-            System.out.println(matrix.addMatrix(matrix2));
-            return matrix.addMatrix(matrix2);
+            MatrixAdd add = new MatrixAdd();
+            System.out.println(add.basicMatrixCompute(matrix_1, matrix2));
+            return add.basicMatrixCompute(matrix_1, matrix2);
         } else if (input == 3) {
             BuildMatrix other = new BuildMatrix();
             System.out.println("Please type in a second matrix");
             Matrix matrix2 = other.createMatrix();
-            return matrix.subtractMatrix(matrix2);
+            MatrixAdd sub = new MatrixAdd();
+            System.out.println(sub.basicMatrixCompute(matrix_1, matrix2));
+            return sub.basicMatrixCompute(matrix_1, matrix2);
         }
 
         return null;

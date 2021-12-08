@@ -4,7 +4,7 @@ import UseCase.BasicOperations.ExpressionException;
 import UseCase.Accounts.*;
 import UseCase.BasicOperations.Parser;
 import UseCase.BasicOperations.ParserException;
-import UseCase.LinAlg.BuildExpression;
+import UseCase.BasicOperations.BuildExpression;
 import UseCase.LinAlg.ComputeMatrix;
 
 import java.io.IOException;

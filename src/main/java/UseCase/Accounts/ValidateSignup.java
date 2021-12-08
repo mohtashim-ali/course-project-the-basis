@@ -11,7 +11,7 @@ public class ValidateSignup {
     private final User user;
     private final UserList list;
 
-    public ValidateSignup(User user, UserList list1) throws IOException, ClassNotFoundException {
+    public ValidateSignup(User user, UserList list1) {
         this.user = user;
         this.list = list1;
     }
