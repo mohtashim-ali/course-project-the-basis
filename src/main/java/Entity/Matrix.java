@@ -1,21 +1,19 @@
 package Entity;
 
-import UseCase.LinAlg.MatrixHandler;
-
 import java.util.ArrayList;
 
-public class Matrix extends MatrixHandler {
+public class Matrix {
     /**
      Creates a matrix.
      */
 
-    public ArrayList<ArrayList<Fraction>> matrix;
+    private ArrayList<ArrayList<Fraction>> matrix;
 
-    /**
-     *
-     * @param matrix int[][]
-     */
-    public Matrix(ArrayList<ArrayList<Fraction>> matrix) {
-        super(matrix);
+    public ArrayList<ArrayList<Fraction>> getMatrix() {
+        return matrix;
+    }
+
+    public void setMatrix(ArrayList<ArrayList<Fraction>> matrix) {
+        this.matrix = matrix;
     }
 }

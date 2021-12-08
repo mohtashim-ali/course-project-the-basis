@@ -22,7 +22,10 @@ public class BuildMatrix {
 
         String[] matrix = clean.split("");
 
-        return new Matrix(helper(matrix));
+        Matrix m = new Matrix();
+        m.setMatrix(helper(matrix));
+
+        return m;
 
 
     }
@@ -67,10 +70,5 @@ public class BuildMatrix {
             }
         }
         return matri;
-    }
-
-    public static void main(String[] args) {
-        BuildMatrix n = new BuildMatrix();
-        System.out.println(n.createMatrix().RREF());
     }
 }

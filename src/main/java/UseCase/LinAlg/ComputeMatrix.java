@@ -2,7 +2,6 @@ package UseCase.LinAlg;
 
 import Entity.Fraction;
 import Entity.Matrix;
-import UseCase.LinAlg.BuildMatrix;
 
 import java.util.*;
 
@@ -15,7 +14,8 @@ public class ComputeMatrix {
 
         System.out.println("Please type in a square matrix using brackets: ");
 
-        Matrix matrix = m.createMatrix();
+        Matrix matrix_1 = m.createMatrix();
+        MatrixHandler matrix = new MatrixHandler(matrix_1.getMatrix());
         Scanner choice = new Scanner(System.in);
 
         System.out.println("Please select a matrix operation: ");
@@ -37,7 +37,7 @@ public class ComputeMatrix {
             BuildMatrix other = new BuildMatrix();
             System.out.println("Please type in a second matrix");
             Matrix matrix2 = other.createMatrix();
-            return matrix.substractMatrix(matrix2);
+            return matrix.subtractMatrix(matrix2);
         }
 
         return null;
