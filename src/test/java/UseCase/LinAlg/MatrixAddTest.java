@@ -9,7 +9,6 @@ public class MatrixAddTest {
 
     @Test
     public void testMatrixAdd() {
-
         BuildMatrix n = new BuildMatrix("[[1,2],[3,4]]".split(""));
         Matrix one = n.createMatrix();
         BuildMatrix v = new BuildMatrix("[[2,2],[2,2]]".split(""));
