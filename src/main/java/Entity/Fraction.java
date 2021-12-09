@@ -3,17 +3,15 @@ package Entity;
 public class Fraction {
     /**
     Creates a fraction
-    @param numerator int
-     @param denominator int
      **/
     public int numerator;
     public int denominator;
     public Fraction(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
-        if (this.denominator == 0){
-            // Create an exception
-        }
+//        if (this.denominator == 0){
+//            // exception
+//        }
     }
 
     /**
@@ -38,7 +36,7 @@ public class Fraction {
     }
     /**
      *
-     * @param other
+     * @param other second fraction
      * @return The sum of both fractions.
      */
     public Fraction add(Fraction other) {
@@ -53,10 +51,10 @@ public class Fraction {
 
     /**
      *
-     * @param other
-     * @return
+     * @param other second fraction
+     * @return returns different of both fractions
      */
-    public Fraction substract(Fraction other) {
+    public Fraction subtract(Fraction other) {
         if(this.denominator == other.denominator) {
             Fraction new_fraction = new Fraction(this.numerator - other.numerator, this.denominator);
             return new_fraction.simplify();
@@ -75,6 +73,7 @@ public class Fraction {
         return new Fraction(this.numerator * other.numerator, this.denominator * other.denominator).simplify();
     }
 
+    // unused method but will not delete for saving purposes
     /**
      *
      * @param other
@@ -89,10 +88,6 @@ public class Fraction {
      * Converts the fraction to a decimal or a whole number.
      * @return
      */
-    public double evaluate() {
-        return this.numerator / this.denominator;
-    }
-
 
     public String toString(){
         return this.numerator + "/" + this.denominator;
@@ -102,16 +97,9 @@ public class Fraction {
         return numerator;
     }
 
-    public void setNumerator(int numerator) {
-        this.numerator = numerator;
-    }
-
     public int getDenominator() {
         return denominator;
     }
 
-    public void setDenominator(int denominator) {
-        this.denominator = denominator;
-    }
 }
 

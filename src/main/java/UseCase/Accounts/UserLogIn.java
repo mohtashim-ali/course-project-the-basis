@@ -3,7 +3,6 @@ package UseCase.Accounts;
 import Entity.User;
 import Gateway.UserList;
 
-import java.io.IOException;
 import java.util.*;
 
 public class UserLogIn implements LogIn{
@@ -11,8 +10,12 @@ public class UserLogIn implements LogIn{
     private final User user = new User();
     private final UserList list = new UserList();
 
+    /**
+     * Logs in a user
+     * @return the logged-in user
+     */
     @Override
-    public User logIn() throws IOException, ClassNotFoundException {
+    public User logIn() {
         ValidateLogin validateLogin = new ValidateLogin(user, list);
 
         Scanner info = new Scanner(System.in);

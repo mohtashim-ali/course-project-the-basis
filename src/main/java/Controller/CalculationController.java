@@ -36,12 +36,14 @@ public class CalculationController {
             SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
             BuildExpression buildExpression = new BuildExpression();
             StringBuilder fixed_input = buildExpression.createExpression();
-            userHistory.addToHistory(fixed_input.toString(), formatter.format(date)); // Temporary time
             Parser p = new Parser(fixed_input.toString());
             try {
                 System.out.println(p.stringToExpression().compute());
+                userHistory.addToHistory(fixed_input.toString(), formatter.format(date));
             } catch (ExpressionException | ParserException e) {
-                e.printStackTrace();
+                System.out.println("Please type in a valid operator");
+                this.choice = 1;
+                handleOperations();
             }
         } else if (this.choice == 2) {
             Date date = new Date();
@@ -52,7 +54,7 @@ public class CalculationController {
             try {
                 userHistory.readFromHistory();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Could not read History");
             }
         }
         else if (this.choice == 4){

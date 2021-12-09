@@ -24,7 +24,7 @@ public class UserHistory {
 
     /**
      * Helper for readFromHistory
-     * @return History in a table form
+     * prints History in a table form
      */
     public void toTable(ArrayList<String> history) {
         System.out.println("-----------------------------------------------------------------------------");

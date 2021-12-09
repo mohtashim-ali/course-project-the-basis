@@ -160,19 +160,3 @@ public class MatrixHandler {
 }
 
 
-//    @Override
-//    public String toString() {
-//        StringBuilder final_string = new StringBuilder("[[");
-//        for (int i = 0; i < matrix.getMatrix().size(); i++) {
-//            for (int j = 0; j < matrix.getMatrix().get(i).size(); j++) {
-//                if (j != matrix.getMatrix().get(i).size() - 1) {
-//                    final_string.append(matrix.getMatrix().get(i).get(j).toString()).append(", ");
-//                } else {
-//                    final_string.append(matrix.getMatrix().get(i).get(j).toString()).append("],").append("\n").append("[");
-//                }
-//            }
-//        }
-//        return final_string.toString().substring(0, final_string.length() - 3) + "]";
-//    }
-
-

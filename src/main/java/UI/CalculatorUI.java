@@ -7,10 +7,13 @@ import java.util.*;
 public class CalculatorUI {
 
     public static boolean quit = false;
-    //public CalculatorController control = new CalculatorController();
     private final UserController userController = new UserController();
     private final CalculationController calculationController = new CalculationController();
 
+    /**
+     * This is the main method for the UI. It shows the menu options to the users, and sends
+     * their request to the appropriate controller
+     */
     public void main() {
 
         Scanner read = new Scanner(System.in);

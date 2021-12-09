@@ -19,7 +19,7 @@ public class History implements Database {
 
     /**
      * Writes to history.txt in the format "USERNAME;CALCULATION;DATE".
-     * @param newLine
+     * @param newLine writes this string to history
      */
     @Override
     public void writeToFile(String newLine) {
@@ -31,23 +31,27 @@ public class History implements Database {
             System.out.println("This has been added to your history!");
         } catch (IOException e) {
             System.out.println("An error occurred.");
-            e.printStackTrace();
         }
     }
 
     /**
      *
-     * @param username
-     * @throws IOException
-     * @throws ClassNotFoundException
+     * @param username username
      * return every date/time + calculations associated with that username in the format calculation;date
      */
     @Override
-    public ArrayList<String> readWithUsername(String username) throws IOException {
+    public ArrayList<String> readWithUsername(String username) {
         ArrayList<String> final_result = new ArrayList<>();
         File myObj = new File(filepath);
-        Scanner myReader = new Scanner(myObj);
-        while (myReader.hasNextLine()) {
+        Scanner myReader = null;
+        try {
+            myReader = new Scanner(myObj);
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+        }
+        while (true) {
+            assert myReader != null;
+            if (!myReader.hasNextLine()) break;
             String data = myReader.nextLine();
             String[] split = data.split(";");
             if (split[0].equals(username)) {

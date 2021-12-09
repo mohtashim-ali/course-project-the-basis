@@ -16,7 +16,7 @@ public class UserController {
 
     /**
      * Sets user choice
-     * @param choice2
+     * @param choice2 user choice
      */
     public void setChoice(int choice2) {
         choice = choice2;
@@ -29,6 +29,10 @@ public class UserController {
         return curr;
     }
 
+    /**
+     * Handles users request
+     * @return if valid option selected
+     */
     public boolean handleUser() {
         if (choice == 1) {
             UserLogIn login = new UserLogIn();
