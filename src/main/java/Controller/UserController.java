@@ -36,21 +36,13 @@ public class UserController {
     public boolean handleUser() {
         if (choice == 1) {
             UserLogIn login = new UserLogIn();
-            try {
-                curr.setCurrentUser(login.logIn());
-            } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            curr.setCurrentUser(login.logIn());
             userHistory.setCurr(curr);
             System.out.println("You have successfully logged in!");
             return true;
         } else if (choice == 2) {
             UserSignUp signup = new UserSignUp();
-            try {
-                curr.setCurrentUser(signup.signUp());
-            } catch (IOException | ClassNotFoundException e) {
-                e.printStackTrace();
-            }
+            curr.setCurrentUser(signup.signUp());
             userHistory.setCurr(curr);
             System.out.println("You have successfully signed up!");
             return true;
