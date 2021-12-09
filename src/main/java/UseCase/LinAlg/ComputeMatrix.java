@@ -10,12 +10,12 @@ public class ComputeMatrix {
 
     public ArrayList<ArrayList<Fraction>> computeMatrix(){
 
-        BuildMatrix m = new BuildMatrix();
-
+        Scanner input1 = new Scanner(System.in);
         System.out.println("Please type in a square matrix using brackets: ");
+        String in = input1.nextLine();
+        BuildMatrix m = new BuildMatrix(in.split(""));
 
         Matrix matrix_1 = m.createMatrix();
-        MatrixHandler matrix = new MatrixHandler(matrix_1.getMatrix());
         Scanner choice = new Scanner(System.in);
 
         System.out.println("Please select a matrix operation: ");
@@ -25,20 +25,24 @@ public class ComputeMatrix {
 
         int input = choice.nextInt();
         if (input == 1){
-            System.out.println(matrix.RREF());
-            return matrix.RREF();
+            MatrixRREF ref = new MatrixRREF();
+            ref.setMatrix(matrix_1);
+            System.out.println(ref.compute());
+            return ref.compute();
         } else if (input == 2) {
-            BuildMatrix other = new BuildMatrix();
             System.out.println("Please type in a second matrix");
-            Matrix matrix2 = other.createMatrix();
+            String in1 = input1.nextLine();
+            BuildMatrix m1 = new BuildMatrix(in1.split(""));
+            Matrix matrix2 = m1.createMatrix();
             MatrixAdd add = new MatrixAdd();
             System.out.println(add.basicMatrixCompute(matrix_1, matrix2));
             return add.basicMatrixCompute(matrix_1, matrix2);
         } else if (input == 3) {
-            BuildMatrix other = new BuildMatrix();
             System.out.println("Please type in a second matrix");
-            Matrix matrix2 = other.createMatrix();
-            MatrixAdd sub = new MatrixAdd();
+            String in1 = input1.nextLine();
+            BuildMatrix m1 = new BuildMatrix(in1.split(""));
+            Matrix matrix2 = m1.createMatrix();
+            MatrixSubtract sub = new MatrixSubtract();
             System.out.println(sub.basicMatrixCompute(matrix_1, matrix2));
             return sub.basicMatrixCompute(matrix_1, matrix2);
         }

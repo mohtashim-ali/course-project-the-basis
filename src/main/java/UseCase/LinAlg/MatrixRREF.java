@@ -149,4 +149,8 @@ public class MatrixRREF implements MatrixOperation {
         }
         return new_row;
     }
+
+    public void setMatrix(Matrix matrix) {
+        this.matrix = matrix;
+    }
 }
