@@ -12,18 +12,16 @@ public class BuildMatrix {
      *
      * @return Matrix
      */
+    private final String[] matrix;
+
+    public BuildMatrix(String[] m){
+        this.matrix = m;
+    }
 
     public Matrix createMatrix() {
 
-
-        Scanner input = new Scanner(System.in);
-
-        String clean = input.nextLine().replaceAll(" ", "");
-
-        String[] matrix = clean.split("");
-
         Matrix m = new Matrix();
-        m.setMatrix(helper(matrix));
+        m.setMatrix(helper());
 
         return m;
 
@@ -34,10 +32,9 @@ public class BuildMatrix {
      * This method takes in the users matrix split, reads the matrix and places
      * it into a nested ArrayList which will be used to create a matrix.
      *
-     * @param matrix - Contains the input matrix split into an array
      * @return ArrayList<ArrayList < Fraction>> - returns the input for Matrix entity
      */
-    public ArrayList<ArrayList<Fraction>> helper(String[] matrix) {
+    public ArrayList<ArrayList<Fraction>> helper() {
 
         int x = 1;
         ArrayList<ArrayList<Fraction>> matri = new ArrayList<>();

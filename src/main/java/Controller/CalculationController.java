@@ -59,6 +59,9 @@ public class CalculationController {
             choice = 1;
             System.out.println("You have been successfully logged out!");
             System.out.println("Log-In Menu");
+            UserController n = new UserController();
+            n.setChoice(1);
+            n.handleUser();
         }
         else if (this.choice == 5){
             System.out.println("Thank you for using The Basis Calculator!");

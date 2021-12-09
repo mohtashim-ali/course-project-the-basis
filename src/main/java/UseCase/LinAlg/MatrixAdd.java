@@ -20,7 +20,7 @@ public class MatrixAdd implements MatrixBasicOp {
         if (matrix1.getMatrix().size() == matrix2.getMatrix().size()) {
             for (int i=0; i<matrix1.getMatrix().size(); i++) {
                 for (int j=0; j<matrix1.getMatrix().get(i).size(); j++) {
-                    matrix1.getMatrix().get(i).get(j).add(matrix2.getMatrix().get(i).get(j));
+                    matrix1.getMatrix().get(i).set(j, matrix1.getMatrix().get(i).get(j).add(matrix2.getMatrix().get(i).get(j)));
                 }
             }
         }
