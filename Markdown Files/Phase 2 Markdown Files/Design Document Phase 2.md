@@ -49,7 +49,7 @@ Spliiting and improving ExpressionHandler
 
 ## SOLID
 
-#### Single Responsibility:
+### Single Responsibility:
 
 SRP states that a class has one responsibility, and one reason to change. We adhered to this by ensuring any new features added were in its own separate class. Below is a breakdown of some examples of this!
 
@@ -57,35 +57,35 @@ SRP states that a class has one responsibility, and one reason to change. We adh
 > At first, we had one class which was responsible for logging in a user and signing them up. However, this violated SRP. So, what we did was make separate use-cases for signing up a new user, logging in a new user, and validating the log-in of a new user.
 
 
-### Implementing Basic Operations:
+#### Implementing Basic Operations:
 
 > At first, we had a single class for every single operation, such as addition, subtraction, and division. But we found this violated SRP since a single class was responsible for more than one operation. We fixed this by implementing the Strategy Pattern, which will be explained later on in the report.
 
 
-### Implementing Matrix Operations:
+#### Implementing Matrix Operations:
 
 > At first, we had every single matrix operation in one class called MatrixHandler, however this was a clear violation of SRP. To resolve this issue, we made interfaces which were implemented by the different operations such as determinant, and RREF. 
 
 
-### Controllers for Users and Calculation:
+#### Controllers for Users and Calculation:
 
 > Initially, there was one controller for both dealing with accounts, and calculations. This violates SRP since there is more than one responsibility on the controller. We split this into two controllers, this adhering to SRP. 
 
-#### Open/Closed:
+### Open/Closed:
 
 Open Closed Principle principle allows for new features to be easily created, but closed is for modification. We adhered to this by ensuring we used interfaces which defined the methods. Below are some examples of this!
 
-##### Implementing Gateway to Text Files:
+#### Implementing Gateway to Text Files:
 
 > At first, we defined the two types of gateways, however this violated SRP since we would have to rely on making new classes and defining how it works. So instead, we made an interface called ReadWrite, which defined the two methods. One for reading the file, and one for writing to a file. Since a gateways responsibility consists of those two, it was a perfect interface to have. This allows for easy expansion of any possible databases in the future!
 
 
-##### Implementing Operations
+#### Implementing Operations
 
 > As noted before, we used the strategy pattern to implement operations. In the event of a new operation, we can easily expand onto this since adding a new strategy is very easy to do, which will be explained below.
 
 
-#### Liskov Substitution:
+### Liskov Substitution:
 
 Liskov’s states that a class should be easily replaceable with its subclasses. In other words, retain the contract with the main class. Below are some examples of how this was achieved. Do note, with interfaces the contract is implementing every single method in the interface as this also complies with interface segregation.
 
@@ -97,19 +97,19 @@ Liskov’s states that a class should be easily replaceable with its subclasses.
 > The computation interface has one method which takes in two doubles. This contract is agreed to by each operation (+, -, ^, /, *). Thus, LSP is used. 
 
 
-#### Interface Segregation:
+### Interface Segregation:
 
 Interface Segregation was implemented by splitting up interfaces so no classes are forced to implement methods it does not need. Below are some examples of this!
 
-##### Matrix Operations:
+#### Matrix Operations:
 
 > Addition and Subtraction: These two methods are very closely related to each other, so we created one interface which defines the method and its inputs. We were thinking about having one interface for every operation so we could use the strategy design pattern, but this would violate ISP since classes would be forced to implement methods it does not need since there are different return types, and parameter inputs for each operation. 
 
-##### Interfaces are Short:
+#### Interfaces are Short:
 > Having short interfaces is important since we do not have to have too many methods forced upon classes. This can cause issues of dependency on methods classes do not need. Simply stating the necessary and shared methods is enough, and allows for unique methods to be moved into different interfaces.
 
 
-#### Dependency Inversion:
+### Dependency Inversion:
 
 > Regarding DIP, it is when a class relies on another class. By creating an interface in the relied class and implementing the interface,i t doesn’t remove the dependency, but makes it more abstract. We did not get enough time to completely implement DIP, but one case where we could use it is when we validate the password of the user, and check if a username exists. Since there is a dependency on a gateway, by creating an interface in these use cases, the dependency would follow DIP by allowing it to rely on abstraction, and not directly. Another case where DIP could be implemented is how the username and password checker use cases read the databases, thus acting as a gateway. By implementing DIP, this direct dependency could become abstract by adding an interface in the use cases, and having the gateway method implement the interfaces methods.
 
