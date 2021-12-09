@@ -117,6 +117,9 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 
 > Regarding DIP, it is when a class relies on another class. By creating an interface in the relied class and implementing the interface,i t doesn’t remove the dependency, but makes it more abstract. We did not get enough time to completely implement DIP, but one case where we could use it is when we validate the password of the user, and check if a username exists. Since there is a dependency on a gateway, by creating an interface in these use cases, the dependency would follow DIP by allowing it to rely on abstraction, and not directly. Another case where DIP could be implemented is how the username and password checker use cases read the databases, thus acting as a gateway. By implementing DIP, this direct dependency could become abstract by adding an interface in the use cases, and having the gateway method implement the interfaces methods.
 
+[Validate Log-in](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/UseCase/Accounts/ValidateLogin.java)
+[Validator Sign-up](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/UseCase/Accounts/ValidateSignup.java)
+
 
 ## Packaging Strategies
 
@@ -134,12 +137,18 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 
 > The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files. The gateways communicate to the database and either add information such as when a user signs up, and when the user wants to read their history the gateway will read the database.
 
+> [Gateways](https://github.com/CSC207-UofT/course-project-the-basis/tree/main/src/main/java/Gateway)
+
 #### Facade: 
 > The facade design pattern is implemented through our controllers. First, we had one large facade then we split it up to adhere to SRP, alongside ensuring we follow the facade design pattern. Having the facade design pattern improved functionality of our code since we could have the controller take in the user input, log in/sign up the user by calling the corresponding use cases, then the operation Controller is called where it will take in the users choice and call the corresponding operation use case.
+
+> [Controllers](https://github.com/CSC207-UofT/course-project-the-basis/tree/main/src/main/java/Controller)
 
 
 #### Builder:
 > We have tried to attempt at implementing the builder design pattern for building a matrix, however due to time constraints it is not perfect. For instance, there is not a single class which acts as the middleman which calls on the classes for building a matrix. There is a use case which takes in the users string, builds the matrix, and then in the controller the matrix is built and sent off into the correct operations.
+
+> [BuildMatrix](https://github.com/CSC207-UofT/course-project-the-basis/blob/main/src/main/java/UseCase/LinAlg/BuildMatrix.java)
 
 #### Memento:
 > We could have implemented Memento, if we had more time, to restore a matrix or expression from history. The pattern would have helped us add a feature for returning the answer from something a user computed in the past. Currently, the user can only view the history and the time they computed it. But in the future having this feature would be easier using the memento design pattern.
@@ -161,17 +170,18 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 
 ## Refactoring
 
-- Deleting uncessarry Classes.
+- Deleting unnecessary Classes.
 - Removing unused methods.
 - Adding JavaDocs.
-- Implemeint design patterns to clean up code functinality.
-- Packaging Use Cases by operation type to clean up view.
+- Implement design patterns to clean up code functionality.
+- Packaging Use Cases by operation type to clean up file structure.
 - Renaming classes to help understand the responsibility of each class.
 - [Pull Request 1](https://github.com/CSC207-UofT/course-project-the-basis/pull/71)
 - [Pull Request 2](https://github.com/CSC207-UofT/course-project-the-basis/pull/75)
 - [Pull Request 3](https://github.com/CSC207-UofT/course-project-the-basis/pull/83)
 - [Pull Request 4](https://github.com/CSC207-UofT/course-project-the-basis/pull/84/files)
-- Code Smell: There is a unused class, Trig, we did not have enough time to connect it but it was completed.
+- Code Smell: There is an unused class, Trig, we did not have enough time to connect it but it was completed.
+
 
 ## Testing
 
