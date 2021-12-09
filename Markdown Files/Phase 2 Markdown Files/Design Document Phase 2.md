@@ -122,6 +122,10 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 #### Strategy Pattern:
 > We used the strategy pattern to define a family of operations. Since addition, subtraction, division, multiplication and powers all use two numbers, the strategy pattern helped us clean up the code. This was done by defining an interface for computation, and defining a compute method which took in two numbers. We then created a specific strategy object and passed it to the context. The context exposes a setter which lets clients replace the strategy associated with the context at runtime. The context in this example would be addition, subtraction, division, multiplication and exponents. Finally we have a class single expression, this class implements different variations of an algorithm the context uses. we check the context by the associated string operand. For example, when we have "+", the resultant method in single operation checks it and calls the Addition class. After it finds out the appropriate class, it uses the method setStrategy in the calculator class. After being set the method resultant then calls upon getStrategy in calculator class to get the result. 
 
+> [Pull Request 1](https://github.com/CSC207-UofT/course-project-the-basis/commit/6f621052451fbc362c7a0a851cc63381ba9ba202)
+
+> [Pull Request 2](https://github.com/CSC207-UofT/course-project-the-basis/commit/050b10840b1b08ca28622b5089b3e66b850c6843)
+
 #### Observer: 
 
 > The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files. The gateways communicate to the database and either add information such as when a user signs up, and when the user wants to read their history the gateway will read the database.
