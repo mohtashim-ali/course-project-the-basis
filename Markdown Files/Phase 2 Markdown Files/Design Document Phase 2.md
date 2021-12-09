@@ -162,4 +162,12 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 
 > Every member of our group made various test cases for most, if not all, of the aspects we implemented in our project. We made effective test cases by having the maker of a given method get other group members to give him edge cases so that we could ensure that our test cases weren't just made from the creators mindset. We tried our best to make sure that the test cases for each method covered as many edge cases as possible to ensure our code's validity.
 
+## Functionality
+
+> The program does exactly what is in the specification, with the exception of Trig not being implemented due to time constraints. We also did not have time to connect the backend to the front end due to time constraints, however, the frontend code was completed. The functionality is sufficiently ambitious given we are a group of 5. Two people worked on the UI, Controllers, Gateways, all of which brought the responsibility of creating the User entity. Three people mainly worked on the math side of the project. Such as Matrices, Basic Operations, and converting the inputs and returning the correct output.
+
+
+> Our program can store state, by storing the users calculations, and the time it was completed. Then at any point, the user can view their history where they can see the calculations and the time it was completed. The history will also stay if the user runs the Main class again, by simply logging back in, and viewing their history.
+
+
 
