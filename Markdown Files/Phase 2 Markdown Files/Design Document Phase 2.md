@@ -35,13 +35,15 @@ Spliiting and improving ExpressionHandler
 5. Once the user has successfully logged in, the controller will set the current user, so that the history is saved for the logged in user.
 6. Now, the UI will take this result, and while the user is logged in, the below will happen.
 7. The UI will present the user with 5 options, let's suppose they click compute. 
-8. The CalculationController will be called, and the UseCase for building an Expression, Parser, will be called. Note, that the user's input will be saved to the history database, at the same time. 
-9. Once Parser has processed the given string, the output will be an Expression object, from here, the Expression object will compute the answer using the Strategy Pattern implemented for single expressions or the SingleExpression class! 
+8. The CalculationController will be called, and the UseCase for building an Expression, Parser, will be called. Note, that the user's input will be saved to the history database at the same time via the Gateway. 
+9. Once Parser has processed the given string, the output will be an Expression object, from here, the Expression object will compute the answer using the Strategy Pattern implemented for single expressions or the SingleExpression class.
 10. Now, the output is sent back to the controller, and presented to the User through the UI!
 
 ### Clear Violations: 
 
 > There are some violations with how Exceptions are called. Initially, Exceptions were called all the way to the Main class, but we were able to reduce that dependency to the Controller. The controller currently catches these errors, however that might be a violation since then the controller is dealing with the use cases errors. When the controller should deal with the user's input.
+
+> Fraction Class: Fraction is an Entity Class, however it does define use cases. At first, we thought it may not be a violation, however we are leaning towards the fact that it does act as an Entity and Use Case. The reason is because use cases being functionality, so defining a fraction is the entity part. But defining the operations of a fraction should be a use case since it brings functionality to fractions.
 
 
 ### Dependency Rule with details from the Outer Layer
