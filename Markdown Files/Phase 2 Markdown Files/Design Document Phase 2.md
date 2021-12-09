@@ -39,7 +39,9 @@ Spliiting and improving ExpressionHandler
 
 ### Clear Violations: 
 
-> There are some violations with how Exceptions are called. Initially, Exceptions were called all the way to the Main class, but we were able to reduce that dependency to the Controller. The controller currently catches these errors, however that might be a violation since then the controller is dealing with the use cases errors. When the controller should deal with the user's input.
+> Handling exceptions: There are some violations with how Exceptions are called. Initially, Exceptions were called all the way to the Main class, but we were able to reduce that dependency to the Controller. The controller currently catches these errors, however that might be a violation since then the controller is dealing with the use cases errors. When the controller should deal with the user's input.
+> 
+> Fraction Class: Fraction is an Entity Class, however it does define use cases. At first, we thought it may not be a violation, however we are leaning towards the fact that it does act as an Entity and Use Case. The reason is because use cases being functionality, so defining a fraction is the entity part. But defining the operations of a fraction should be a use case since it brings functionality to fractions.
 
 
 ### Dependency Rule with details from the Outer Layer
