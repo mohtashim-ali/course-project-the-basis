@@ -166,6 +166,7 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 - [Pull Request 1](https://github.com/CSC207-UofT/course-project-the-basis/pull/71)
 - [Pull Request 2](https://github.com/CSC207-UofT/course-project-the-basis/pull/75)
 - [Pull Request 3](https://github.com/CSC207-UofT/course-project-the-basis/pull/83)
+- Code Smell: There is a unused class, Trig, we did not have enough time to connect it but it was completed
 
 ## Testing
 
