@@ -5,6 +5,8 @@ import Entity.Trigonometry;
 import junit.framework.TestCase;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class MatrixAddTest {
 
     @Test
@@ -15,6 +17,7 @@ public class MatrixAddTest {
         Matrix two = v.createMatrix();
         MatrixAdd add = new MatrixAdd();
         System.out.println(add.basicMatrixCompute(one, two));
+        assertEquals(add.basicMatrixCompute(one, two).toString(), "[[5/1, 6/1], [7/1, 8/1]]");
     }
 
 }
