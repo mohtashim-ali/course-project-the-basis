@@ -153,14 +153,17 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 
 ## Refactoring
 
-- A major refractor done was splitting up WalkThroughCustomInput. This really helped in conforming to SOLID and Clean Architecture properties. As a result, it was also easier to see any design pattern we implemented, or can implement.
-- Creating Packages helped clean up file organization.
+- Deleting uncessarry Classes
+- Removing unused methods
+- Adding JavaDocs
+- Implemeint design patterns to clean up code functinality
+- Packaging Use Cases by operation type to clean up view
 - Renaming classes to help understand the responsibility of each class.
-- Implementing the Strategy Pattern to clean up executing operations.
+- [Pull Request]()
 
 ## Testing
 
-> Every member of our group made various test cases for most, if not all, of the aspects we implemented in our project. We made effective test cases by having the maker of a given method get other group members to give him edge cases so that we could ensure that our test cases weren't just made from the creators mindset. We tried our best to make sure that the test cases for each method covered as many edge cases as possible to ensure our code's validity.
+> Most components of our code are tested. We tested every math operation we have. Matrices, Basic Operation, and error handling tests for these operations were all tested. Testing account creation is a little difficult to test since it would have to simulate an entire log in process for each test case, and then based on our return types it would be hard to do so. Also, text files can be wiped by opening the file, so keeping test cases which read only are not possible.
 
 ## Functionality
 
