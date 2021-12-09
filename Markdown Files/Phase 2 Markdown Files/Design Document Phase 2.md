@@ -12,6 +12,8 @@ This is our design report for Phase 2!
 
 - History can be viewed for both Basic Operations and Linear Algebra Operations.
 
+- Switching Accounts is now possible
+
 
 ## Major Design Decisions
 
@@ -179,6 +181,8 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 
 
 > Our program can store state, by storing the users calculations, and the time it was completed. Then at any point, the user can view their history where they can see the calculations and the time it was completed. The history will also stay if the user runs the Main class again, by simply logging back in, and viewing their history.
+
+> Something to note is how typing in an invalid expression for computing will prevent the program from crashing. It will let the user retry until the expression is valid.
 
 
 
