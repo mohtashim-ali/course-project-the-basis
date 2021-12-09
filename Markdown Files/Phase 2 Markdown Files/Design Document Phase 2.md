@@ -25,30 +25,93 @@ Spliiting and improving ExpressionHandler
 
 ## Clean Architecture
 
-> Our project adheres to Clean Architecture by ensuring we follow the dependency rule. First, there are Entity classes for Users, and defining any mathematical property such as expressions, matrix, and equations. Next, our use cases use entities to provide functionality to our code. For example, there are use cases for logging in and signing up the user, building and computing an expression, alongside accessing the database through a gateway. Controllers are present and use the use cases to process user input from the UI and send back results from presenters. The UI calls the controller, and does not know about any other layers. Thus, adhering to the dependency rule.
+### Scenario WalkThrough:
+1. First, the Main class is run, and the UI is created and called.
+2. In the UI, it will first ask the User to log in or sign up. Let's assume they want to log in. 
+3. Now, the UI will call the UserController, and send in “1”, which corresponds to log in.
+4. In the UserController, the use cases for login and password validation are executed.
+5. Once the user has successfully logged in, the controller will set the current user, so that the history is saved for the logged in user.
+6. Now, the UI will take this result, and while the user is logged in, the below will happen.
+7. The UI will present the user with 5 options, let's suppose they click compute. 
+8. The CalculationController will be called, and the UseCase for building an Expression, Parser, will be called. Note, that the user's input will be saved to the history database, at the same time. 
+9. Once Parser has processed the given string, the output will be an Expression object, from here, the Expression object will compute the answer using the Strategy Pattern implemented for single expressions or the SingleExpression class! 
+10. Now, the output is sent back to the controller, and presented to the User through the UI!
+
+### Clear Violations: 
+
+> There are some violations with how Exceptions are called. Initially, Exceptions were called all the way to the Main class, but we were able to reduce that dependency to the Controller. The controller currently catches these errors, however that might be a violation since then the controller is dealing with the use cases errors. When the controller should deal with the user's input.
+
+
+### Dependency Rule with details from the Outer Layer
+
+> The UI presents the users the options, and takes in their input and sends it to the controller. Then the controller processes the input, saves the calculator to the database using the gateway, and then calls the correct use cases which will process, and present the final answer back to the UI. The only way the dependency rule is violated in the outer layer is how the password validate and username validate use cases take on the responsibility of a gateway. They are use cases, however making them gateways would work better design wise if we had more time to implement it.
 
 
 ## SOLID
 
 #### Single Responsibility:
 
-> We followed SR by ensuring a class does not have more than one responsibility. This was done by creating many classes to separate features from each other. For example, before we had log-in and sign-up in one use case class, but this violated SR, so it was split into two use case classes. More examples include different classes for adding to history to users list and  to history of calculations done by the user. There are also many entity classes to separate the types of math we have in our code including: Matrix, Trig, Expression, Equation, Fraction.
+SRP states that a class has one responsibility, and one reason to change. We adhered to this by ensuring any new features added were in its own separate class. Below is a breakdown of some examples of this!
+
+#### Implementing Users: 
+> At first, we had one class which was responsible for logging in a user and signing them up. However, this violated SRP. So, what we did was make separate use-cases for signing up a new user, logging in a new user, and validating the log-in of a new user.
+
+
+### Implementing Basic Operations:
+
+> At first, we had a single class for every single operation, such as addition, subtraction, and division. But we found this violated SRP since a single class was responsible for more than one operation. We fixed this by implementing the Strategy Pattern, which will be explained later on in the report.
+
+
+### Implementing Matrix Operations:
+
+> At first, we had every single matrix operation in one class called MatrixHandler, however this was a clear violation of SRP. To resolve this issue, we made interfaces which were implemented by the different operations such as determinant, and RREF. 
+
+
+### Controllers for Users and Calculation:
+
+> Initially, there was one controller for both dealing with accounts, and calculations. This violates SRP since there is more than one responsibility on the controller. We split this into two controllers, this adhering to SRP. 
 
 #### Open/Closed:
 
-> We followed O/C by making interfaces for features which could be expanded. For example, we created an interface for the ReadWrite class since there could be more databases in our code. But, will include the same methods. This shows that it is Open for adding new databases, but closed for changing the structure of databases. Another example is the Operations interface. Since a calculator can have many operations, we do not want to limit the number of possible operations. The methods used by operations are always the same format, so it is closed for modification. 
+Open Closed Principle principle allows for new features to be easily created, but closed is for modification. We adhered to this by ensuring we used interfaces which defined the methods. Below are some examples of this!
+
+##### Implementing Gateway to Text Files:
+
+> At first, we defined the two types of gateways, however this violated SRP since we would have to rely on making new classes and defining how it works. So instead, we made an interface called ReadWrite, which defined the two methods. One for reading the file, and one for writing to a file. Since a gateways responsibility consists of those two, it was a perfect interface to have. This allows for easy expansion of any possible databases in the future!
+
+
+##### Implementing Operations
+
+> As noted before, we used the strategy pattern to implement operations. In the event of a new operation, we can easily expand onto this since adding a new strategy is very easy to do, which will be explained below.
+
 
 #### Liskov Substitution:
 
-> Liskov was followed by ensuring input parameters for objects of the same type are the same. In the History and UserList classes, both methods overridden input the same parameters. This ensures if the class were to be replaced by one another, then no exceptions would occur.
+Liskov’s states that a class should be easily replaceable with its subclasses. In other words, retain the contract with the main class. Below are some examples of how this was achieved. Do note, with interfaces the contract is implementing every single method in the interface as this also complies with interface segregation.
+
+##### Gateways:
+> Both gateways have implemented both the writetoFile and readfromFile methods defined in the ReadWrite interface. This does not void the contract of implementing all methods. And the parameters are the same for both gateways.
+
+
+##### Computation:
+> The computation interface has one method which takes in two doubles. This contract is agreed to by each operation (+, -, ^, /, *). Thus, LSP is used. 
+
 
 #### Interface Segregation:
 
-> Interface Segregation was followed by having Interfaces just for computation errors. For example, addition and subtraction do not have errors when adding any two numbers.  But, division by zero is something that is unique to dividing. So, by creating a new interface which the division will implement, we follow interface segregation. We also decided to formulate an interface for the history part of your program, which could then be implemented either using files or a database. We did this because with this design, if we wanted to change the way we store our information, we wouldn't need to modify anything in the code that we already have. Instead, we could just use the interface we created. On top of this, all of our interfaces are short which also aligns with the principles of interface segregation
+Interface Segregation was implemented by splitting up interfaces so no classes are forced to implement methods it does not need. Below are some examples of this!
+
+##### Matrix Operations:
+
+> Addition and Subtraction: These two methods are very closely related to each other, so we created one interface which defines the method and its inputs. We were thinking about having one interface for every operation so we could use the strategy design pattern, but this would violate ISP since classes would be forced to implement methods it does not need since there are different return types, and parameter inputs for each operation. 
+
+##### Interfaces are Short:
+> Having short interfaces is important since we do not have to have too many methods forced upon classes. This can cause issues of dependency on methods classes do not need. Simply stating the necessary and shared methods is enough, and allows for unique methods to be moved into different interfaces.
+
 
 #### Dependency Inversion:
 
-> Directly calling a gateway in a use case violates DIP. So to fix this, we made an interface for the gateways which read and write to our text files. Thus, by implementing the interface in the History and UserList classes, we can call them in the use cases and adhere to DIP.
+> Regarding DIP, it is when a class relies on another class. By creating an interface in the relied class and implementing the interface,i t doesn’t remove the dependency, but makes it more abstract. We did not get enough time to completely implement DIP, but one case where we could use it is when we validate the password of the user, and check if a username exists. Since there is a dependency on a gateway, by creating an interface in these use cases, the dependency would follow DIP by allowing it to rely on abstraction, and not directly. Another case where DIP could be implemented is how the username and password checker use cases read the databases, thus acting as a gateway. By implementing DIP, this direct dependency could become abstract by adding an interface in the use cases, and having the gateway method implement the interfaces methods.
 
 
 ## Packaging Strategies
@@ -56,19 +119,23 @@ Spliiting and improving ExpressionHandler
 > The packaging strategy used is “By Layers”. This approach allowed us to make adding features to our code much easier. It also makes it easy to see how the dependency rule is implemented in our project. Another strategy we considered is by feature, however there were far too many classes in one folder for storing the math related classes, so packaging by layers was the best one for us.
 ## Design Patterns
 
-#### Strategy:
+#### Strategy Pattern:
+> We used the strategy pattern to define a family of operations. Since addition, subtraction, division, multiplication and powers all use two numbers, the strategy pattern helped us clean up the code. This was done by defining an interface for computation, and defining a compute method which took in two numbers. We then created a specific strategy object and passed it to the context. The context exposes a setter which lets clients replace the strategy associated with the context at runtime. The context in this example would be addition, subtraction, division, multiplication and exponents. Finally we have a class single expression, this class implements different variations of an algorithm the context uses. we check the context by the associated string operand. For example, when we have "+", the resultant method in single operation checks it and calls the Addition class. After it finds out the appropriate class, it uses the method setStrategy in the calculator class. After being set the method resultant then calls upon getStrategy in calculator class to get the result. 
 
-> We used the strategy pattern to implement operations. Since computing an operation is very similar, the strategy pattern allows for two input numbers to be computing according to the operand. This helps clean up calling operations as new "strategies'' can be called.
+#### Observer: 
 
-#### Facade:
+> The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files. The gateways communicate to the database and either add information such as when a user signs up, and when the user wants to read their history the gateway will read the database.
 
-> Our controller uses the Facade design pattern by contatning the use cases and calling the correct one depending on the user input. The facade class is called in our UI. Implementing the facade pattern helps us make sure the UI is not directly communicating with our use cases.
+#### Facade: 
+> The facade design pattern is implemented through our controllers. First, we had one large facade then we split it up to adhere to SRP, alongside ensuring we follow the facade design pattern. Having the facade design pattern improved functionality of our code since we could have the controller take in the user input, log in/sign up the user by calling the corresponding use cases, then the operation Controller is called where it will take in the users choice and call the corresponding operation use case.
 
-#### Observer:
 
-> The observer design pattern is implemented by having a gateway for our text files. Since we want to be able to store users and user history, having a gateway will allow us for our code to adhere to clean architecture, alongside making it easy to read and store information to the txt files.
+#### Builder:
+> We have tried to attempt at implementing the builder design pattern for building a matrix, however due to time constraints it is not perfect. For instance, there is not a single class which acts as the middleman which calls on the classes for building a matrix. There is a use case which takes in the users string, builds the matrix, and then in the controller the matrix is built and sent off into the correct operations.
 
-> (will add more later)
+#### Memento:
+> We could have implemented Memento, if we had more time, to restore a matrix or expression from history. The pattern would have helped us add a feature for returning the answer from something a user computed in the past. Currently, the user can only view the history and the time they computed it. But in the future having this feature would be easier using the memento design pattern.
+
 
 ## GitHub Features
 
@@ -78,8 +145,11 @@ Spliiting and improving ExpressionHandler
 
 #### Issues
 
-> We used Issues to keep track of any major changes that needed to be made. For example, we had an issue with being able to log in with any password, so it helped us ensure we got to resolving it.
+> We used issues to keep a checklist of changes we need to make, or any reviews of the code. For example, keeping track of changes which could improve the design of our code, or fixing bugs in use cases for operations. Overall, issues were nice to use as it kept a easy to access checklist everyone could view, and comment on.
 
+#### Actions:
+
+> We did not use actions for development, instead as a group we would join Discord calls, and someone would go live. From here, we would test out their code, and make sure it does not break any functionality. 
 
 ## Refactoring
 
