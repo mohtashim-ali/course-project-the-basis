@@ -159,7 +159,9 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 - Implemeint design patterns to clean up code functinality
 - Packaging Use Cases by operation type to clean up view
 - Renaming classes to help understand the responsibility of each class.
-- [Pull Request]()
+- [Pull Request 1](https://github.com/CSC207-UofT/course-project-the-basis/pull/71)
+- [Pull Request 2](https://github.com/CSC207-UofT/course-project-the-basis/pull/75)
+- [Pull Request 3](https://github.com/CSC207-UofT/course-project-the-basis/pull/83)
 
 ## Testing
 
