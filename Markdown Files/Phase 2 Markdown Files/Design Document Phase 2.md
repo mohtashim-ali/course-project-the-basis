@@ -89,11 +89,11 @@ Open Closed Principle principle allows for new features to be easily created, bu
 
 Liskov’s states that a class should be easily replaceable with its subclasses. In other words, retain the contract with the main class. Below are some examples of how this was achieved. Do note, with interfaces the contract is implementing every single method in the interface as this also complies with interface segregation.
 
-##### Gateways:
+#### Gateways:
 > Both gateways have implemented both the writetoFile and readfromFile methods defined in the ReadWrite interface. This does not void the contract of implementing all methods. And the parameters are the same for both gateways.
 
 
-##### Computation:
+#### Computation:
 > The computation interface has one method which takes in two doubles. This contract is agreed to by each operation (+, -, ^, /, *). Thus, LSP is used. 
 
 
