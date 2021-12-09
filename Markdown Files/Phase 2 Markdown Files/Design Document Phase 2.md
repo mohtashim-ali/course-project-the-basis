@@ -157,16 +157,17 @@ Interface Segregation was implemented by splitting up interfaces so no classes a
 
 ## Refactoring
 
-- Deleting uncessarry Classes
-- Removing unused methods
-- Adding JavaDocs
-- Implemeint design patterns to clean up code functinality
-- Packaging Use Cases by operation type to clean up view
+- Deleting uncessarry Classes.
+- Removing unused methods.
+- Adding JavaDocs.
+- Implemeint design patterns to clean up code functinality.
+- Packaging Use Cases by operation type to clean up view.
 - Renaming classes to help understand the responsibility of each class.
 - [Pull Request 1](https://github.com/CSC207-UofT/course-project-the-basis/pull/71)
 - [Pull Request 2](https://github.com/CSC207-UofT/course-project-the-basis/pull/75)
 - [Pull Request 3](https://github.com/CSC207-UofT/course-project-the-basis/pull/83)
-- Code Smell: There is a unused class, Trig, we did not have enough time to connect it but it was completed
+- [Pull Request 4](https://github.com/CSC207-UofT/course-project-the-basis/pull/84/files)
+- Code Smell: There is a unused class, Trig, we did not have enough time to connect it but it was completed.
 
 ## Testing
 
