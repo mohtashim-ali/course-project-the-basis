@@ -3,7 +3,6 @@ package UseCase.Accounts;
 import Entity.User;
 import Gateway.UserList;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class ValidateSignup {
@@ -19,7 +18,7 @@ public class ValidateSignup {
     /**
      * Checks if username is already taken when signing up
      */
-    public String isTaken() throws IOException, ClassNotFoundException {
+    public String isTaken() {
         while (!(list.readWithUsername(this.user.getUsername()).isEmpty())) {
             System.out.println("This username is already taken, please try another one.");
             Scanner potUser = new Scanner(System.in);

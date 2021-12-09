@@ -3,7 +3,6 @@ package UseCase.Accounts;
 import Entity.User;
 import Gateway.UserList;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class ValidateLogin {
@@ -18,12 +17,10 @@ public class ValidateLogin {
     }
 
     /**
-     *
-     * @return
-     * @throws IOException
-     * @throws ClassNotFoundException
+     * validates the input password
+     * @return password
      */
-    public String validatePassword() throws IOException, ClassNotFoundException {
+    public String validatePassword() {
         while (!(list.readWithUsername(user.getUsername()).get(0).equals(this.user.getPassword()))) {
             System.out.println("Incorrect password, please try again: ");
             Scanner pass = new Scanner(System.in);
@@ -37,11 +34,9 @@ public class ValidateLogin {
     /**
      *
      * Checks if username exists
-     * @throws IOException
-     * @throws ClassNotFoundException
      */
 
-    public String validateUsername() throws IOException, ClassNotFoundException {
+    public String validateUsername(){
         while ((list.readWithUsername(this.user.getUsername()).isEmpty())) {
             System.out.println("This user does not exist, please try a different account: ");
             Scanner username = new Scanner(System.in);

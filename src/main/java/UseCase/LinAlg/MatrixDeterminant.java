@@ -27,7 +27,7 @@ public class MatrixDeterminant implements MatrixDetInt {
             b = matrix.getMatrix().get(0).get(1);
             c = matrix.getMatrix().get(1).get(0);
             d = matrix.getMatrix().get(1).get(1);
-            return a.multiply(d).substract(b.multiply(c));
+            return a.multiply(d).subtract(b.multiply(c));
         } else {
             Fraction determinant = new Fraction(0, 1);
             ArrayList<Fraction> row = matrix.getMatrix().get(0);
@@ -49,7 +49,7 @@ public class MatrixDeterminant implements MatrixDetInt {
                 if (n % 2 == 0) {
                     determinant.add(row.get(n).multiply(control.compute()));
                 } else {
-                    determinant.substract(row.get(n).multiply(control.compute()));
+                    determinant.subtract(row.get(n).multiply(control.compute()));
                 }
                 n += 1;
             }

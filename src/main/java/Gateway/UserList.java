@@ -1,9 +1,6 @@
 package Gateway;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,12 +10,11 @@ public class UserList implements Database{
 
     /**
      * Writes to users.txt in the format "USERNAME;PASSWORD"
-     * @param newLine
-     * @throws IOException
+     * @param newLine input string
      */
 
     @Override
-    public void writeToFile(String newLine) throws IOException {
+    public void writeToFile(String newLine) {
         try {
             FileWriter myWriter = new FileWriter(filepath, true);
             PrintWriter printWriter = new PrintWriter(myWriter);
@@ -33,17 +29,22 @@ public class UserList implements Database{
 
     /**
      *
-     * @param username
+     * @param username username
      * @return The password associated with that username or an empty list if the account doesn't exist.
-     * @throws IOException
-     * @throws ClassNotFoundException
      */
     @Override
-    public ArrayList<String> readWithUsername(String username) throws IOException, ClassNotFoundException {
+    public ArrayList<String> readWithUsername(String username) {
         ArrayList<String> final_result = new ArrayList<>();
         File myObj = new File(filepath);
-        Scanner myReader = new Scanner(myObj);
-        while (myReader.hasNextLine()) {
+        Scanner myReader = null;
+        try {
+            myReader = new Scanner(myObj);
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred");
+        }
+        while (true) {
+            assert myReader != null;
+            if (!myReader.hasNextLine()) break;
             String data = myReader.nextLine();
             String[] split = data.split(";");
             if (split[0].equals(username)) {

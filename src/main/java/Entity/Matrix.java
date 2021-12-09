@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Matrix {
     /**
-     Creates a matrix.
+     Creates a matrix as a Double ArrayList with Fractions.
      */
 
     private ArrayList<ArrayList<Fraction>> matrix;

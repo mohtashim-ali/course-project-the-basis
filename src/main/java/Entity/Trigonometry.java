@@ -3,6 +3,10 @@ package Entity;
 import java.lang.Math;
 
 public class Trigonometry {
+
+    private final int round = 10000;
+
+
     /**
      *
      * @param x is the input inside sin
@@ -10,7 +14,7 @@ public class Trigonometry {
      */
     public double computeSin(double x) {
         double ans = Math.sin(x);
-        return (double) Math.round(ans*10000)/10000;
+        return (double) Math.round(ans*round)/round;
     }
     /**
      *
@@ -19,7 +23,7 @@ public class Trigonometry {
      */
     public double computeCos(double x) {
         double ans= Math.cos(x);
-        return (double) Math.round(ans*10000)/10000;
+        return (double) Math.round(ans*round)/round;
     }
     /**
      *
@@ -28,7 +32,7 @@ public class Trigonometry {
      */
     public double computeTan(double x){
         double ans = computeSin(x)/computeCos(x);
-        return (double) Math.round(ans*10000)/10000;
+        return (double) Math.round(ans*round)/round;
     }
     /**
      *
@@ -37,7 +41,7 @@ public class Trigonometry {
      */
     public double computeCsc(double x) {
         double ans = 1 / computeSin(x);
-        return (double) Math.round(ans*10000)/10000;
+        return (double) Math.round(ans*round)/round;
     }
     /**
      *
@@ -46,7 +50,7 @@ public class Trigonometry {
      */
     public double computeSec(double x){
         double ans = 1 / computeCos(x);
-        return (double) Math.round(ans*10000) /10000;
+        return (double) Math.round(ans*round)/round;
     }
     /**
      *
@@ -55,7 +59,7 @@ public class Trigonometry {
      */
     public double computeCot(double x){
         double ans = 1 / computeTan(x);
-        return (double) Math.round(ans*10000) / 10000;
+        return (double) Math.round(ans*round)/round;
     }
 
 }

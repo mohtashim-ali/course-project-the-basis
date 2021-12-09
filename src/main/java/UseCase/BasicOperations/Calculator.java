@@ -3,6 +3,11 @@ package UseCase.BasicOperations;
 public class Calculator {
     private Computation _operation;
 
+    /**
+     * Strategy pattern, sets the operand
+     * @param operand input operand
+     */
+
     public void setStrategy(Computation operand) {
         this._operation = operand;
     }

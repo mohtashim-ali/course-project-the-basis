@@ -3,7 +3,6 @@ package UseCase.Accounts;
 import Entity.User;
 import Gateway.UserList;
 
-import java.io.IOException;
 import java.util.*;
 
 public class UserSignUp {
@@ -11,7 +10,7 @@ public class UserSignUp {
     private final User newer = new User();
     private final UserList list = new UserList();
 
-    public User signUp() throws IOException, ClassNotFoundException {
+    public User signUp() {
         ValidateSignup validateSignup = new ValidateSignup(newer, list);
         Scanner info = new Scanner(System.in);
         System.out.println("Username: ");

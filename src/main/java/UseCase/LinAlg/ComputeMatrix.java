@@ -7,6 +7,9 @@ import java.util.*;
 
 public class ComputeMatrix {
 
+    /**
+     * This class allows the user to perform linear algebra operations by creating a matrix
+     */
 
     public ArrayList<ArrayList<Fraction>> computeMatrix(){
 
